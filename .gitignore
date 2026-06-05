@@ -1,0 +1,81 @@
+# ============================================================================
+# AB-900 study-prep — .gitignore
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# Old backup copies of the study guide (kept locally for reference, not in VCS)
+# ----------------------------------------------------------------------------
+AB-900T00-Study-Guide - Copy.md
+AB-900T00-Study-Guide - Copy (2).md
+# Future-proof: ignore any new " - Copy" / " - Copy (N).md" variants
+AB-900T00-Study-Guide - Copy *.md
+
+# ----------------------------------------------------------------------------
+# OS / editor noise
+# ----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+.vs/
+*.user
+*.suo
+
+# PowerShell
+*.ps1~
+
+# ----------------------------------------------------------------------------
+# Temporary / scratch / tooling artifacts
+# ----------------------------------------------------------------------------
+*.tmp
+*.bak
+*.orig
+*.rej
+*.log
+*.cache
+.tmp/
+.cache/
+*.lnk
+
+# OS-generated temp files
+*~*
+.*.tmp
+*.temp
+
+# Windows-specific
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+$RECYCLE.BIN
+$WINDOWS.~BT
+$Windows.~WS
+
+# ----------------------------------------------------------------------------
+# Secrets (defense in depth — never commit credentials)
+# ----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+config.local.*
+
+# ----------------------------------------------------------------------------
+# MemPalace / local brain dumps (keep personal notes out of the public repo)
+# ----------------------------------------------------------------------------
+mempalace/
+brain/
+notes-private/
+*.mmd
