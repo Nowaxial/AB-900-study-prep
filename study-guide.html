@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="sv" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Guide — AB-900 Study Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">AB-900 Study Hub</a>
+      <button id="hamburger" class="hamburger" aria-label="Menu">☰</button>
+      <nav id="nav" class="nav">
+        <a href="index.html">Home</a>
+        <a href="study-guide.html" class="active">Study Guide</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="key-pointers.html">Key Pointers</a>
+      </nav>
+      <div class="search-box">
+        <span>🔍</span>
+        <input id="searchInput" type="text" placeholder="Search...">
+      </div>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙 Dark</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Study Guide</h1>
+    <p class="searchable">Complete study material for the AB-900 exam. Click any subsection to expand. Study priority: <strong>Domain 2</strong> (35&ndash;40%) is the largest.</p>
+
+    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.5rem;">
+      <a href="#domain1" class="theme-toggle" style="font-size:0.8rem;">Domain 1 (30&ndash;35%)</a>
+      <a href="#domain2" class="theme-toggle" style="font-size:0.8rem;">Domain 2 (35&ndash;40%)</a>
+      <a href="#domain3" class="theme-toggle" style="font-size:0.8rem;">Domain 3 (25&ndash;30%)</a>
+      <button class="theme-toggle" id="expandAll" style="font-size:0.8rem;">▼ Expand All</button>
+      <button class="theme-toggle" id="collapseAll" style="font-size:0.8rem;">▲ Collapse All</button>
+    </div>
+
+    <div id="guideContent"></div>
+  </div>
+
+  <script src="data/study-guide.js"></script>
+  <script>
+    const container = document.getElementById('guideContent');
+    const fragment = document.createDocumentFragment();
+
+    studyGuideSections.forEach(section => {
+      const sectionEl = document.createElement('div');
+      sectionEl.className = 'card searchable';
+      sectionEl.id = section.id;
+
+      const h2 = document.createElement('h2');
+      h2.className = 'section-header';
+      h2.textContent = section.title;
+      sectionEl.appendChild(h2);
+
+      section.subsections.forEach(sub => {
+        const wrapper = document.createElement('div');
+
+        const header = document.createElement('div');
+        header.className = 'collapsible-header';
+        header.setAttribute('role', 'button');
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('aria-expanded', 'false');
+
+        const title = document.createElement('h3');
+        if (sub.id) title.id = sub.id;
+        title.textContent = sub.title;
+        header.appendChild(title);
+
+        const chevron = document.createElement('span');
+        chevron.className = 'chevron';
+        chevron.textContent = '▶';
+        header.appendChild(chevron);
+
+        const body = document.createElement('div');
+        body.className = 'collapsible-body';
+        body.innerHTML = sub.content;
+
+        header.addEventListener('click', () => {
+          const isOpen = body.classList.toggle('open');
+          header.setAttribute('aria-expanded', isOpen);
+          chevron.textContent = isOpen ? '▼' : '▶';
+        });
+        header.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            header.click();
+          }
+        });
+
+        wrapper.appendChild(header);
+        wrapper.appendChild(body);
+        sectionEl.appendChild(wrapper);
+      });
+
+      // Key concepts box if present
+      if (section.keyConcepts && section.keyConcepts.tags && section.keyConcepts.tags.length > 0) {
+        const box = document.createElement('div');
+        box.className = 'key-concepts-box';
+        const boxTitle = document.createElement('h3');
+        boxTitle.textContent = section.keyConcepts.title || 'Key Concepts';
+        box.appendChild(boxTitle);
+        section.keyConcepts.tags.forEach(tag => {
+          const span = document.createElement('span');
+          span.className = 'concept-tag';
+          span.textContent = tag;
+          box.appendChild(span);
+        });
+        sectionEl.appendChild(box);
+      }
+
+      fragment.appendChild(sectionEl);
+    });
+
+    container.appendChild(fragment);
+
+    // Expand / Collapse all
+    document.getElementById('expandAll').addEventListener('click', () => {
+      document.querySelectorAll('.collapsible-body').forEach(b => {
+        b.classList.add('open');
+        b.previousElementSibling.querySelector('.chevron').textContent = '▼';
+        b.previousElementSibling.setAttribute('aria-expanded', 'true');
+      });
+    });
+    document.getElementById('collapseAll').addEventListener('click', () => {
+      document.querySelectorAll('.collapsible-body').forEach(b => {
+        b.classList.remove('open');
+        b.previousElementSibling.querySelector('.chevron').textContent = '▶';
+        b.previousElementSibling.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

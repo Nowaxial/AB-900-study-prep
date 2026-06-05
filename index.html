@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="sv" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AB-900 Study Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">AB-900 Study Hub</a>
+      <button id="hamburger" class="hamburger" aria-label="Menu">☰</button>
+      <nav id="nav" class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="study-guide.html">Study Guide</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="key-pointers.html">Key Pointers</a>
+      </nav>
+      <div class="search-box">
+        <span>🔍</span>
+        <input id="searchInput" type="text" placeholder="Search...">
+      </div>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙 Dark</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>AB-900 Study Hub</h1>
+      <p>Microsoft 365 Copilot and Agent Administration Fundamentals</p>
+      <div class="hero-tags">
+        <span class="tag tag-blue">Passing score: 700</span>
+        <span class="tag tag-orange">MCQ &middot; Multi-select &middot; Scenario &middot; Drag &amp; drop</span>
+        <span class="tag tag-green">No labs, no case studies</span>
+      </div>
+    </section>
+
+    <div class="container">
+      <h2>Exam Domains</h2>
+      <div class="domain-grid">
+        <div class="domain-card">
+          <h3>Domain 1</h3>
+          <p>Core M365 features &amp; objects</p>
+          <div class="domain-bar"><div class="domain-bar-fill" style="width:35%"></div></div>
+          <strong>30&ndash;35%</strong>
+        </div>
+        <div class="domain-card" style="border-color:var(--primary);">
+          <h3>Domain 2</h3>
+          <p>Data protection &amp; governance</p>
+          <div class="domain-bar"><div class="domain-bar-fill" style="width:40%;background:var(--accent-orange)"></div></div>
+          <strong>35&ndash;40%</strong> <span style="color:var(--accent-red);font-size:0.8rem;">&larr; Largest</span>
+        </div>
+        <div class="domain-card">
+          <h3>Domain 3</h3>
+          <p>Copilot &amp; agents admin</p>
+          <div class="domain-bar"><div class="domain-bar-fill" style="width:30%;background:var(--accent-green)"></div></div>
+          <strong>25&ndash;30%</strong>
+        </div>
+      </div>
+
+      <h2 style="margin-top:3rem;">Study Material</h2>
+      <div class="section-grid">
+        <a href="study-guide.html" class="section-card">
+          <div class="icon">📖</div>
+          <h3>Study Guide</h3>
+          <p>Complete exam content across 3 domains, 6 modules, 53 units</p>
+        </a>
+        <a href="flashcards.html" class="section-card">
+          <div class="icon">🃏</div>
+          <h3>Flashcards</h3>
+          <p>Interactive Q&amp;A with multiple choice and drag-to-reveal modes</p>
+        </a>
+        <a href="key-pointers.html" class="section-card">
+          <div class="icon">📌</div>
+          <h3>Key Pointers</h3>
+          <p>One-page quick reference with all essential facts</p>
+        </a>
+      </div>
+
+      <h2 style="margin-top:3rem;">Quick Links</h2>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+        <a href="https://learn.microsoft.com/en-us/training/paths/explore-microsoft-365-administration/" target="_blank" rel="noopener" class="theme-toggle">📚 LP1: Explore M365 administration</a>
+        <a href="https://learn.microsoft.com/en-us/training/paths/explore-microsoft-365-copilot-agent-administration/" target="_blank" rel="noopener" class="theme-toggle">🤖 LP2: Explore Copilot &amp; agent admin</a>
+        <a href="https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/" target="_blank" rel="noopener" class="theme-toggle">🎯 Certification page</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
