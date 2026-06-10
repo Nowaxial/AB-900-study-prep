@@ -226,30 +226,25 @@
         cardCategory.textContent = card.category;
       }
 
+      // Exact LP/Module/Unit address
+      const cardLabel = findUnit(card.unitId);
+      const mod = findModule(card.moduleId);
+      const lp = getLearningPathForModule(card.moduleId);
+      let exactAddr = '';
+      if (lp && mod && cardLabel) {
+        const lpNum = lp.id === 'lp1' ? 'LP1' : 'LP2';
+        exactAddr = lpNum + ' &gt; ' + mod.id.toUpperCase() + ' &gt; ' + card.unitId + ': ' + cardLabel.title;
+      } else if (card.reference) {
+        exactAddr = card.reference;
+      }
+
       // Front — reference
-      let refHtml = '';
-      if (card.reference) {
-        refHtml += '<span>📚 ' + card.reference + '</span>';
-      }
-      if (card.learnLink) {
-        refHtml += ' &middot; <a href="' + card.learnLink + '" target="_blank" rel="noopener">📖 Learn more</a>';
-      }
-      cardRef.innerHTML = refHtml;
+      cardRef.innerHTML = '<span>📚 ' + exactAddr + '</span>';
 
       // Back — answer + explanation
       answerText.textContent = card.answer;
 
-      const cardLabel = findUnit(card.unitId);
-      let backRefHtml = '';
-      if (cardLabel) {
-        const mod = findModule(card.moduleId);
-        const lp = getLearningPathForModule(card.moduleId);
-        if (lp && mod) {
-          backRefHtml += '<span>📚 ' + lp.title + ' → ' + mod.title + ' → ' + cardLabel.title + '</span>';
-        }
-      } else if (card.reference) {
-        backRefHtml += '<span>📚 ' + card.reference + '</span>';
-      }
+      let backRefHtml = '<span>📚 ' + exactAddr + '</span>';
       if (card.learnLink) {
         backRefHtml += ' &middot; <a href="' + card.learnLink + '" target="_blank" rel="noopener">📖 Learn more</a>';
       }
@@ -271,14 +266,23 @@
 
       const cat = categoryFilter.value;
       const cards = cat === 'all' ? flashcards : flashcards.filter(c => c.category === cat);
-      answersList.innerHTML = cards.map(c => `
+      answersList.innerHTML = cards.map(c => {
+        const cl = findUnit(c.unitId);
+        const m = findModule(c.moduleId);
+        const lp2 = getLearningPathForModule(c.moduleId);
+        let addr = c.reference || '';
+        if (lp2 && m && cl) {
+          const n = lp2.id === 'lp1' ? 'LP1' : 'LP2';
+          addr = n + ' > ' + m.id.toUpperCase() + ' > ' + c.unitId + ': ' + cl.title;
+        }
+        return `
         <div class="show-answers-item">
           <q>${c.question}</q>
           <div class="answer">${c.answer}</div>
           ${c.explanation ? '<div class="explanation">' + c.explanation + '</div>' : ''}
-          ${c.reference ? '<div class="explanation">📚 ' + c.reference + '</div>' : ''}
-        </div>
-      `).join('');
+          <div class="explanation">📚 ${addr}</div>
+        </div>`;
+      }).join('');
     });
 
     renderCard();
