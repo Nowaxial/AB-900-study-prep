@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Tree Navigation
 // ============================================================
 function initTreeNav(containerId, selectedUnitId) {
+  if (typeof studyGuideData === 'undefined') return;
   const container = document.getElementById(containerId);
   if (!container) return;
 
@@ -125,6 +126,7 @@ function initTreeNav(containerId, selectedUnitId) {
 // Render Unit Content
 // ============================================================
 function renderUnit(unitId, containerId) {
+  if (typeof studyGuideData === 'undefined') return;
   const container = containerId ? document.getElementById(containerId) : document.getElementById('content-area');
   if (!container) return;
 
@@ -183,6 +185,8 @@ function updateTreeSelection(unitId) {
 
 // Exposed for tree nav click
 window.loadUnit = function (unitId) {
+  // Restore tree items if filtered by search
+  document.querySelectorAll('.tree-item').forEach(el => el.style.display = '');
   history.pushState(null, '', '#unit-' + unitId);
   renderUnit(unitId);
 };
@@ -193,6 +197,8 @@ window.loadUnit = function (unitId) {
 window.pageSearch = function (q) {
   const contentArea = document.getElementById('content-area');
   if (!contentArea) return;
+
+  q = q.toLowerCase().trim();
 
   if (!q) {
     // Reset — show all tree sections
@@ -228,8 +234,8 @@ window.pageSearch = function (q) {
 
   // Navigate to first match
   const firstMatch = matches[0];
-  contentArea.dataset.lastUnitId = firstMatch;
   renderUnit(firstMatch);
+  contentArea.dataset.lastUnitId = firstMatch;
 
   // Highlight matches in content
   const re = new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');

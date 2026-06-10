@@ -144,10 +144,6 @@ tr:hover { background: var(--primary-light); }
 .content-area .key-concepts h3 { margin-top: 0; font-size: 1rem; color: var(--primary); }
 .search-no-results { text-align: center; padding: 2rem; color: var(--text-secondary); font-size: 1.1rem; }
 
-/* Sidebar toggle for mobile */
-.sidebar-toggle { display: none; background: none; border: 1px solid var(--border); border-radius: var(--radius); padding: 0.35rem 0.55rem; cursor: pointer; font-size: 0.9rem; color: var(--text); margin-bottom: 0.75rem; }
-.sidebar-toggle:hover { background: var(--primary-light); }
-
 /* Flashcards */
 .flashcard-wrap { max-width: 700px; margin: 0 auto; }
 .flashcard-question { font-size: 1.1rem; font-weight: 600; margin-bottom: 1.25rem; line-height: 1.5; }
@@ -184,7 +180,7 @@ tr:hover { background: var(--primary-light); }
 .key-pointer-group li::before { content: ""; position: absolute; left: 0; top: 0.7rem; width: 6px; height: 6px; background: var(--primary); border-radius: 50%; }
 
 /* Search highlight */
-.search-highlight { background: rgba(245,158,11,0.3); padding: 0.1rem 0.15rem; border-radius: 2px; }
+.search-highlight { background: var(--highlight-bg, rgba(245,158,11,0.3)); padding: 0.1rem 0.15rem; border-radius: 2px; }
 
 /* Nav counter */
 #cardCounter { text-align: center; color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.75rem; }
