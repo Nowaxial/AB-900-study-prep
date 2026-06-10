@@ -130,3 +130,17 @@ function getLearningPathForModule(moduleId) {
   }
   return null;
 }
+
+const moduleBadgeColors = {
+  m1: '#4a90d9',
+  m2: '#7c4dff',
+  m3: '#e67e22',
+  m4: '#2ecc71',
+  m5: '#e74c3c',
+  m6: '#9b59b6'
+};
+
+function getModuleBadgeHtml(moduleId) {
+  const color = moduleBadgeColors[moduleId] || '#666';
+  return '<span class="module-badge" style="background:' + color + '18;color:' + color + ';border:1px solid ' + color + '30;border-radius:4px;padding:1px 7px;font-size:0.75rem;font-weight:600;">[' + moduleId + ']</span>';
+}
