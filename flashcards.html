@@ -33,6 +33,9 @@
         <select id="categoryFilter">
           <option value="all">All Categories</option>
         </select>
+        <select id="moduleFilter">
+          <option value="">All modules</option>
+        </select>
         <button id="shuffleBtn" class="theme-toggle">🔀 Shuffle</button>
         <button id="modeToggle" class="theme-toggle">🎯 Quiz Mode</button>
         <button id="showAllBtn" class="theme-toggle">👁️ Show Answers</button>
@@ -70,6 +73,7 @@
     </div>
   </div>
 
+  <script src="data/modules.js"></script>
   <script src="data/flashcards.js"></script>
   <script>
     let currentIndex = 0;
@@ -77,7 +81,32 @@
     let mode = 'quiz';
     let shuffled = false;
 
+    const flashcardModuleMap = {
+      "Exam basics": null,
+      "Zero Trust & identity": "m1",
+      "Identity types in Entra": "m1",
+      "MFA & sign-in methods": "m1",
+      "Conditional Access": "m1",
+      "RBAC, PIM, JEA, JIT": "m1",
+      "Identity Secure Score & audit": "m1",
+      "Defender XDR": "m1",
+      "M365 core services": "m2",
+      "Microsoft 365 admin center": "m2",
+      "Microsoft Purview": "m3",
+      "SharePoint governance": "m3",
+      "Microsoft 365 Copilot": "m4",
+      "Agents": "m4",
+      "Work IQ, content safety, groundedness": "m4",
+      "Licensing": "m5",
+      "Adoption & rollout": "m5",
+      "Responsible AI": "m4",
+      "Hybrid identity": "m1",
+      "Intune": "m1",
+      "Numbers to remember": null
+    };
+
     const categoryFilter = document.getElementById('categoryFilter');
+    const moduleFilter = document.getElementById('moduleFilter');
     const cardCounter = document.getElementById('cardCounter');
     const questionText = document.getElementById('questionText');
     const cardCategory = document.getElementById('cardCategory');
@@ -103,11 +132,25 @@
       categoryFilter.appendChild(opt);
     });
 
+    // Populate module filter
+    learningPaths.forEach((lp, lpIndex) => {
+      lp.modules.forEach(mod => {
+        const opt = document.createElement('option');
+        opt.value = mod.id;
+        opt.textContent = 'LP' + (lpIndex + 1) + ': ' + lp.title + ' \u2192 ' + mod.title;
+        moduleFilter.appendChild(opt);
+      });
+    });
+
     let searchQuery = '';
 
     function applyFilters() {
       const cat = categoryFilter.value;
+      const modVal = moduleFilter.value;
       let cards = cat === 'all' ? [...flashcards] : flashcards.filter(c => c.category === cat);
+      if (modVal) {
+        cards = cards.filter(c => flashcardModuleMap[c.category] === modVal);
+      }
       if (shuffled) cards.sort(() => 0.5 - Math.random());
       if (searchQuery) {
         cards = cards.filter(c =>
@@ -124,8 +167,9 @@
 
     window.pageSearch = function(q) { searchQuery = q; applyFilters(); };
 
-    // Filter
+    // Filters
     categoryFilter.addEventListener('change', applyFilters);
+    moduleFilter.addEventListener('change', applyFilters);
 
     // Shuffle
     shuffleBtn.addEventListener('click', () => {
@@ -214,7 +258,7 @@
     function renderCard() {
       const card = filteredCards[currentIndex];
       if (!card || filteredCards.length === 0) {
-        cardCounter.textContent = 'No cards in this category';
+        cardCounter.textContent = 'No cards match your filters';
         questionText.textContent = '';
         optionsContainer.innerHTML = '';
         dragContainer.style.display = 'none';
@@ -223,9 +267,14 @@
         return;
       }
 
-      cardCounter.textContent = `Card ${currentIndex + 1} / ${filteredCards.length} (${card.category})`;
+      cardCounter.textContent = 'Showing ' + filteredCards.length + ' of ' + flashcards.length + ' cards \u2014 Card ' + (currentIndex + 1) + ' of ' + filteredCards.length;
       questionText.textContent = card.question;
-      cardCategory.textContent = card.category;
+      const modId = flashcardModuleMap[card.category];
+      if (modId) {
+        cardCategory.innerHTML = getModuleBadgeHtml(modId) + ' ' + card.category;
+      } else {
+        cardCategory.textContent = card.category;
+      }
 
       // Reference + Learn link
       let refHtml = '';
