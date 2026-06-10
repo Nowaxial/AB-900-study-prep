@@ -113,7 +113,7 @@ function findUnit(unitId) {
   return null;
 }
 
-function getModule(moduleId) {
+function findModule(moduleId) {
   for (const lp of learningPaths) {
     for (const mod of lp.modules) {
       if (mod.id === moduleId) return mod;
@@ -122,7 +122,7 @@ function getModule(moduleId) {
   return null;
 }
 
-function getLearningPath(moduleId) {
+function getLearningPathForModule(moduleId) {
   for (const lp of learningPaths) {
     for (const mod of lp.modules) {
       if (mod.id === moduleId) return lp;
