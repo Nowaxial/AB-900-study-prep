@@ -138,6 +138,19 @@
 
     container.appendChild(fragment);
 
+    // Handle hash after rendering
+    if (location.hash) {
+      var h2 = document.getElementById(location.hash.replace('#',''));
+      if (h2) {
+        var group = h2.closest('.key-pointer-group');
+        if (group) {
+          group.querySelector('.key-pointer-group-body').classList.add('open');
+          group.querySelector('.chevron').classList.add('open');
+        }
+        setTimeout(function() { h2.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+      }
+    }
+
     function applyPointerFilters(q) {
       const modVal = moduleFilter.value;
       document.querySelectorAll('.key-pointer-group').forEach(group => {

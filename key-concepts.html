@@ -46,7 +46,7 @@
 
       keyConceptsByDomain.forEach(function(d) {
         var color = domainColors[d.domain] || '#2563eb';
-        html += '<div class="concept-domain" data-domain="' + d.domain + '">';
+        html += '<div class="concept-domain" id="' + d.domain + '" data-domain="' + d.domain + '">';
         html += '<div class="concept-domain-header" onclick="toggleDomain(this)">';
         html += '<h2 style="border-left:3px solid ' + color + ';padding-left:0.6rem;">' + domainIcons[d.domain] + ' ' + d.title + ' <span class="weight-badge">' + d.concepts.length + ' concepts</span></h2>';
         html += '<span class="chevron">\u25B6</span>';
@@ -66,10 +66,14 @@
 
       container.innerHTML = html;
 
-      // Expand domain from URL hash
+      // Handle hash after rendering
       if (location.hash) {
-        var target = document.querySelector('[data-domain="' + location.hash.replace('#','') + '"]');
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        var target = document.getElementById(location.hash.replace('#',''));
+        if (target) {
+          target.querySelector('.concept-domain-body').classList.add('open');
+          target.querySelector('.chevron').classList.add('open');
+          setTimeout(function() { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+        }
       }
     })();
 
