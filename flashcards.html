@@ -145,12 +145,14 @@
     });
 
     // Construct direct unit URL from module URL
-    function getUnitUrl(moduleUrl, unitId, unitTitle) {
-      if (!moduleUrl) return null;
-      const unitNum = unitId ? unitId.split('-u')[1] : null;
-      if (!unitNum) return moduleUrl;
-      const slug = unitTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-      return moduleUrl.replace(/\/?$/, '/') + unitNum + '-' + slug + '/';
+    function getUnitUrl(moduleUrl, unitId) {
+      if (!moduleUrl || !unitId) return null;
+      if (!moduleUrl.includes('/training/modules/')) return null;
+      const unitNum = unitId.split('-u')[1];
+      if (!unitNum) return null;
+      const unit = findUnit(unitId);
+      if (!unit || !unit.urlSlug) return null;
+      return moduleUrl.replace(/\/?$/, '/') + unitNum + '-' + unit.urlSlug + '/';
     }
 
     // Card flip
@@ -248,7 +250,7 @@
       }
 
       // Front — reference (linkable to unit)
-      const unitUrl = getUnitUrl(card.learnLink, card.unitId, cardLabel ? cardLabel.title : null);
+      const unitUrl = getUnitUrl(card.learnLink, card.unitId);
       cardRef.innerHTML = unitUrl
         ? '<span>📚 <a href="' + unitUrl + '" target="_blank" rel="noopener" style="color:var(--text-secondary);text-decoration:underline;text-decoration-style:dotted;">' + exactAddr + '</a></span>'
         : '<span>📚 ' + exactAddr + '</span>';
@@ -289,7 +291,7 @@
           const n = lp2.id === 'lp1' ? 'LP1' : 'LP2';
           addr = n + ' > ' + m.id.toUpperCase() + ' > ' + c.unitId + ': ' + cl.title;
         }
-        const unitUrl = getUnitUrl(c.learnLink, c.unitId, cl ? cl.title : null);
+        const unitUrl = getUnitUrl(c.learnLink, c.unitId);
         const linkHtml = unitUrl ? ' &middot; <a href="' + unitUrl + '" target="_blank" rel="noopener" style="color:var(--primary);">📖 Learn more</a>' : '';
         return `
         <div class="show-answers-item">
