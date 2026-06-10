@@ -29,20 +29,74 @@
   <div class="container">
     <h1>Key Pointers</h1>
     <p class="searchable">Quick reference &mdash; all essential AB-900 facts in one place. Study priority: spend ~35&ndash;40% of your prep time on <strong>Domain 2</strong> (data protection &amp; governance).</p>
+    <div style="margin-bottom:1.25rem;">
+      <select id="moduleFilter" style="padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text);font-size:0.9rem;">
+        <option value="">All modules</option>
+      </select>
+    </div>
     <div id="pointersContent"></div>
   </div>
 
+  <script src="data/modules.js"></script>
   <script src="data/key-pointers.js"></script>
   <script>
+    const keyPointerModuleMap = {
+      "exam-basics": null,
+      "zero-trust-identity": "m1",
+      "identity-types-entra": "m1",
+      "mfa-signin": "m1",
+      "conditional-access": "m1",
+      "rbac-pim-jea-jit": { main: "m1", also: "m2" },
+      "identity-secure-score": "m1",
+      "defender-xdr": "m1",
+      "m365-core-services": "m2",
+      "m365-admin-center": "m2",
+      "microsoft-purview": "m3",
+      "sharepoint-governance": "m3",
+      "m365-copilot": "m4",
+      "agents": "m4",
+      "work-iq-safety": "m4",
+      "licensing": "m5",
+      "adoption-rollout": "m5",
+      "responsible-ai": "m4",
+      "hybrid-identity": "m1",
+      "intune": "m1",
+      "numbers": null
+    };
+
+    function getPointerModuleId(catId) {
+      const v = keyPointerModuleMap[catId];
+      if (!v) return null;
+      if (typeof v === 'string') return v;
+      return v.main;
+    }
+
     const container = document.getElementById('pointersContent');
+    const moduleFilter = document.getElementById('moduleFilter');
     const fragment = document.createDocumentFragment();
 
+    // Populate module filter
+    learningPaths.forEach((lp, lpIndex) => {
+      lp.modules.forEach(mod => {
+        const opt = document.createElement('option');
+        opt.value = mod.id;
+        opt.textContent = 'LP' + (lpIndex + 1) + ': ' + lp.title + ' \u2192 ' + mod.title;
+        moduleFilter.appendChild(opt);
+      });
+    });
+
     keyPointerCategories.forEach(cat => {
+      const modId = getPointerModuleId(cat.id);
       const group = document.createElement('div');
       group.className = 'key-pointer-group searchable';
+      if (modId) group.dataset.module = modId;
       const h2 = document.createElement('h2');
       h2.id = cat.id;
-      h2.innerHTML = cat.title;
+      if (modId) {
+        h2.innerHTML = getModuleBadgeHtml(modId) + ' ' + cat.title;
+      } else {
+        h2.innerHTML = cat.title;
+      }
       group.appendChild(h2);
       const ul = document.createElement('ul');
       cat.pointers.forEach(p => {
@@ -55,6 +109,39 @@
     });
 
     container.appendChild(fragment);
+
+    function applyPointerFilters(q) {
+      const modVal = moduleFilter.value;
+      document.querySelectorAll('.key-pointer-group').forEach(group => {
+        let modMatch = !modVal;
+        if (modVal) {
+          const groupMod = group.dataset.module;
+          if (groupMod === modVal) {
+            modMatch = true;
+          } else {
+            const catId = group.querySelector('h2').id;
+            const v = keyPointerModuleMap[catId];
+            if (v && typeof v === 'object' && v.main === modVal) modMatch = true;
+            if (v && typeof v === 'object' && v.also === modVal) modMatch = true;
+          }
+        }
+        const textMatch = !q || group.textContent.toLowerCase().includes(q);
+        group.style.display = (modMatch && textMatch) ? '' : 'none';
+      });
+    }
+
+    moduleFilter.addEventListener('change', function() {
+      const input = document.getElementById('searchInput');
+      if (input && window.pageSearch) {
+        window.pageSearch(input.value.toLowerCase().trim());
+      } else {
+        applyPointerFilters('');
+      }
+    });
+
+    window.pageSearch = function(q) {
+      applyPointerFilters(q);
+    };
   </script>
   <script src="script.js"></script>
 </body>
