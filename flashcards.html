@@ -37,7 +37,6 @@
           <option value="">All modules</option>
         </select>
         <button id="shuffleBtn" class="theme-toggle">🔀 Shuffle</button>
-        <button id="modeToggle" class="theme-toggle">🎯 Quiz Mode</button>
         <button id="showAllBtn" class="theme-toggle">👁️ Show Answers</button>
       </div>
     </div>
@@ -61,8 +60,6 @@
       </div>
     </div>
 
-    <div id="optionsContainer" class="flashcard-options"></div>
-
     <div class="flashcard-nav">
       <button id="prevBtn" class="theme-toggle">⬅ Previous</button>
       <span class="card-progress">
@@ -83,7 +80,6 @@
   <script>
     let currentIndex = 0;
     let filteredCards = [...flashcards];
-    let mode = 'quiz';
     let shuffled = false;
 
     const flashcardModuleMap = {
@@ -117,7 +113,6 @@
     const flashcard3d = $('flashcard3d');
     const questionText = $('questionText');
     const cardCategory = $('cardCategory');
-    const optionsContainer = $('optionsContainer');
     const answerText = $('answerText');
     const explanationBox = $('explanationBox');
     const backLinks = $('backLinks');
@@ -128,7 +123,6 @@
     const answersList = $('answersList');
     const showPanel = $('showAnswersPanel');
     const shuffleBtn = $('shuffleBtn');
-    const modeToggle = $('modeToggle');
     const progressCurrent = $('progressCurrent');
     const progressTotal = $('progressTotal');
     const progressLabel = $('progressLabel');
@@ -190,12 +184,6 @@
       applyFilters();
     });
 
-    modeToggle.addEventListener('click', () => {
-      mode = mode === 'quiz' ? 'reveal' : 'quiz';
-      modeToggle.textContent = mode === 'quiz' ? '🎯 Quiz Mode' : '🖐️ Reveal Mode';
-      renderCard();
-    });
-
     prevBtn.addEventListener('click', () => {
       if (currentIndex > 0) { currentIndex--; renderCard(); }
     });
@@ -208,18 +196,6 @@
       if (e.key === 'ArrowRight' && currentIndex < filteredCards.length - 1) { currentIndex++; renderCard(); }
     });
 
-    // Check answer (quiz mode)
-    window.checkAnswer = function(el, correctIndex, selectedIndex) {
-      const allOptions = document.querySelectorAll('.flashcard-option');
-      allOptions.forEach(o => o.style.pointerEvents = 'none');
-      if (selectedIndex === correctIndex) {
-        el.classList.add('correct');
-      } else {
-        el.classList.add('wrong');
-        allOptions[correctIndex].classList.add('revealed');
-      }
-    };
-
     function renderCard() {
       const card = filteredCards[currentIndex];
       flashcard3d.classList.remove('flipped');
@@ -227,7 +203,6 @@
       if (!card || filteredCards.length === 0) {
         cardCounter.textContent = 'No cards match your filters';
         questionText.textContent = '';
-        optionsContainer.innerHTML = '';
         cardRef.innerHTML = '';
         backLinks.innerHTML = '';
         explanationBox.classList.remove('visible');
@@ -286,20 +261,6 @@
         explanationBox.classList.add('visible');
       } else {
         explanationBox.classList.remove('visible');
-      }
-
-      // Options (quiz mode only)
-      if (mode === 'quiz') {
-        optionsContainer.style.display = '';
-        if (card.options && card.options.length > 0) {
-          optionsContainer.innerHTML = card.options.map((opt, i) =>
-            `<div class="flashcard-option" data-index="${i}" onclick="checkAnswer(this, ${card.correctIndex}, ${i})">${opt}</div>`
-          ).join('');
-        } else {
-          optionsContainer.innerHTML = '<p style="color:var(--text-secondary);">No options available. Switch to Reveal mode to flip the card.</p>';
-        }
-      } else {
-        optionsContainer.style.display = 'none';
       }
     }
 
