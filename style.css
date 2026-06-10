@@ -276,6 +276,7 @@ tr:hover { background: var(--primary-light); }
   .search-box input { width: 0; padding: 0; border: none; }
   .search-box.mobile-open { position: absolute; right: 0.5rem; top: 0.5rem; z-index: 300; background: var(--bg-card); padding: 0.4rem 0.65rem; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
   .search-box.mobile-open input { display: block; width: 160px; padding: 0.2rem 0; }
+  #moduleFilter { width: 100%; }
   .search-dropdown { left: 0; right: 0; min-width: 0; width: 100%; }
   table { font-size: 0.75rem; }
   th, td { padding: 0.3rem 0.4rem; word-break: break-word; }
