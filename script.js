@@ -194,7 +194,7 @@ window.loadUnit = function (unitId) {
 // ============================================================
 // Study Guide Page Search
 // ============================================================
-window.pageSearch = function (q) {
+if (!window.pageSearch) window.pageSearch = function (q) {
   const contentArea = document.getElementById('content-area');
   if (!contentArea) return;
 
