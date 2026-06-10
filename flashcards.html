@@ -135,11 +135,11 @@
     });
 
     // Populate module filter
-    learningPaths.forEach((lp, lpIndex) => {
-      lp.modules.forEach(mod => {
+    examDomains.forEach((d, dIdx) => {
+      d.modules.forEach(mod => {
         const opt = document.createElement('option');
         opt.value = mod.id;
-        opt.textContent = 'LP' + (lpIndex + 1) + ': ' + lp.title + ' \u2192 ' + mod.title;
+        opt.textContent = 'Domain ' + (dIdx + 1) + ' (' + d.weight + '): ' + d.shortTitle + ' \u2192 ' + mod.title;
         moduleFilter.appendChild(opt);
       });
     });

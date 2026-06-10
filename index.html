@@ -97,9 +97,9 @@
     (function() {
       const treeContainer = document.getElementById('moduleTree');
       let html = '';
-      learningPaths.forEach(function(lp, lpIdx) {
-        html += '<div style="grid-column:1/-1;"><h3 style="margin-bottom:0.5rem;">Learning Path ' + (lpIdx + 1) + ': ' + lp.title + '</h3></div>';
-        lp.modules.forEach(function(mod) {
+      examDomains.forEach(function(d, dIdx) {
+        html += '<div style="grid-column:1/-1;"><h3 style="margin-bottom:0.5rem;">Domain ' + (dIdx + 1) + ' <span class="weight-badge">' + d.weight + '</span><br><span style="font-weight:400;font-size:1rem;">' + d.title + '</span></h3></div>';
+        d.modules.forEach(function(mod) {
           const firstUnitId = mod.units.length > 0 ? mod.units[0].id : '';
           html += '<a href="study-guide.html#unit-' + firstUnitId + '" class="section-card searchable" style="text-decoration:none;">';
           html += '<h3>' + getModuleBadgeHtml(mod.id) + ' ' + mod.title + '</h3>';

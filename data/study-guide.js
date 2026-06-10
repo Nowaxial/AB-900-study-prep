@@ -621,6 +621,25 @@ const studyGuideData = {
   <li>Each report includes MITRE ATT&amp;CK mappings and recommended mitigations (config changes, enable features).</li>
   <li>Helps organizations stay ahead of evolving attack trends by applying proactive defenses.</li>
 </ul>
+
+<h4>Microsoft Threat Intelligence Center (MSTIC)</h4>
+<ul>
+  <li><strong>MSTIC</strong> analyzes 65+ trillion signals daily from across Microsoft's cloud, endpoint, and identity ecosystem.</li>
+  <li>Tracks nation-state actors, ransomware groups, dark web activity, and global attack campaigns.</li>
+  <li>Intel feeds directly into Defender XDR products for real-time blocking and detection.</li>
+</ul>
+<h4>Threat Explorer</h4>
+<ul>
+  <li><strong>Real-time investigation tool</strong> for email and collaboration threats within Defender for Office 365.</li>
+  <li>Pivot investigations by sender, recipient, URL, file hash, or campaign ID.</li>
+  <li>Supports immediate remediation: soft-delete messages, block senders/URLs, submit to Microsoft for analysis.</li>
+</ul>
+<h4>Threat Analytics</h4>
+<ul>
+  <li><strong>Researcher-written reports</strong> on emerging threats, active adversary campaigns, and attacker techniques (TTPs).</li>
+  <li>Each report includes MITRE ATT&amp;CK mappings and recommended mitigations (config changes, enable features).</li>
+  <li>Helps organizations stay ahead of evolving attack trends by applying proactive defenses.</li>
+</ul>
 `,
               examTips: [],
               keyConcepts: []
@@ -660,6 +679,23 @@ const studyGuideData = {
     </ul>
   </li>
   <li><strong>Federation-era best practice</strong> — today, instead of deploying your own ADFS to federate third-party SaaS apps, <strong>configure those apps to federate with Entra ID</strong> and let Entra do the work.</li>
+</ul>
+
+<h4>Authentication in Hybrid Environments</h4>
+<table>
+  <thead>
+    <tr><th>Method</th><th>How it works</th><th>Best for</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Password Hash Sync (PHS)</strong></td><td>Password hashes synced from on-prem AD to Entra ID; user signs in against the cloud</td><td>Most organizations — no on-prem dependency, includes Identity Protection and leak detection</td></tr>
+    <tr><td><strong>Pass-Through Authentication (PTA)</strong></td><td>Password validated in real-time against on-prem AD via an agent on domain-joined servers</td><td>Orgs that require immediate on-prem password policy enforcement or disabled-account lockout</td></tr>
+    <tr><td><strong>Federation (AD FS)</strong></td><td>Authentication handled by on-prem identity provider; user redirected to AD FS</td><td>Legacy or complex scenarios requiring custom auth, third-party MFA, or smart-card integration</td></tr>
+  </tbody>
+</table>
+<ul>
+  <li><strong>Microsoft recommends PHS or PTA</strong> for most organizations. Federation is considered legacy and adds complexity.</li>
+  <li><strong>Seamless SSO</strong> available with both PHS and PTA — users see no sign-in prompt on domain-joined devices.</li>
+  <li><strong>Password Writeback</strong> (requires PHS + Entra Connect) enables hybrid SSPR — password changes in cloud sync back to on-prem.</li>
 </ul>
 
 <h4>Authentication in Hybrid Environments</h4>
@@ -749,6 +785,15 @@ const studyGuideData = {
   <li>Use cases: new employee onboarding (grants all required apps/sites), external collaborator access (time-limited, reviewed, auto-expires).</li>
   <li><strong>Exam tip</strong>: Access Packages are the recommended approach for granting time-limited, auditable access compared to manual group membership assignments.</li>
 </ul>
+
+<h4>Access Packages (Entra Identity Governance)</h4>
+<ul>
+  <li><strong>Access Packages</strong> bundle permissions across multiple resources (groups, apps, SharePoint sites) into a single requestable catalog.</li>
+  <li><strong>Features</strong>: approval workflows, expiration policies (time-bound access), access reviews, automated onboarding/offboarding.</li>
+  <li>Managed via <strong>Entra admin center → Identity Governance → Access Packages</strong> within a Catalog.</li>
+  <li>Use cases: new employee onboarding (grants all required apps/sites), external collaborator access (time-limited, reviewed, auto-expires).</li>
+  <li><strong>Exam tip</strong>: Access Packages are the recommended approach for granting time-limited, auditable access compared to manual group membership assignments.</li>
+</ul>
 `,
               examTips: [],
               keyConcepts: []
@@ -797,6 +842,20 @@ const studyGuideData = {
   <li><strong>Unified Audit Log (Microsoft Purview)</strong> — every action across M365 workloads; default retention <strong>180 days</strong>; <strong>Premium</strong> = 1 year (requires E5).</li>
   <li>Tools: <strong>Microsoft Purview → Audit</strong>, <strong>Entra admin center → Audit logs</strong>, <strong>M365 Admin Center → Audit logs</strong>, <strong>Microsoft 365 Defender → Hunting</strong>.</li>
 </ul>
+
+<h4>Common Scenario Walkthroughs</h4>
+<table>
+  <thead>
+    <tr><th>Scenario</th><th>Troubleshooting Steps</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>MFA prompt not appearing</strong></td><td>Check user MFA registration status in Entra admin center; verify Authenticator app is up-to-date; re-register device if needed; fix device time drift for TOTP codes</td></tr>
+    <tr><td><strong>Conditional Access denying access</strong></td><td>Use the <strong>What If</strong> tool to simulate the exact sign-in (user, app, location, device) and identify which policy blocks; check Intune device compliance status; review Defender for Endpoint device risk score</td></tr>
+    <tr><td><strong>Risky sign-in flagged</strong></td><td>Review risk level (Low/Medium/High) in Entra → Identity Protection → Risky sign-ins; investigate event details (anonymous IP, unfamiliar location, leaked credentials); dismiss if false positive, force password reset if confirmed</td></tr>
+    <tr><td><strong>Location/IP-based block while traveling</strong></td><td>Review sign-in logs for named location mismatch; add a temporary exclusion in the Conditional Access policy (compliance grace period) or guide user through registered-location MFA prompt</td></tr>
+    <tr><td><strong>Legacy authentication failure</strong></td><td>Identify the client (Exchange ActiveSync, legacy IMAP/POP, older Office); enable modern auth for that protocol; upgrade Office client; create a Conditional Access policy to block legacy auth entirely</td></tr>
+  </tbody>
+</table>
 
 <h4>Common Scenario Walkthroughs</h4>
 <table>
@@ -1047,6 +1106,24 @@ const studyGuideData = {
   <li><strong>Unified Audit Log</strong> — default retention <strong>180 days</strong>; <strong>1 year with E5</strong> (Premium Audit)</li>
 </ul>
 
+
+<h4>Intune Device Compliance Policies — What They Check</h4>
+<ul>
+  <li><strong>Encryption</strong> — BitLocker (Windows), FileVault (macOS), device encryption (mobile)</li>
+  <li><strong>OS version</strong> — minimum and maximum allowed versions; blocks outdated, vulnerable devices</li>
+  <li><strong>Antivirus</strong> — Windows Defender or third-party AV must be active and up-to-date (Windows 10/11)</li>
+  <li><strong>Firewall</strong> — must be enabled with approved config</li>
+  <li><strong>Password/PIN</strong> — minimum length, complexity, max inactivity lock, history requirements</li>
+  <li><strong>Jailbroken/rooted detection</strong> — mobile devices with root access are blocked immediately</li>
+  <li>Devices that fail compliance are <strong>blocked</strong> by Conditional Access unless granted a grace period for remediation</li>
+</ul>
+<h4>App Protection Policies (MAM) for BYOD</h4>
+<ul>
+  <li>Protect corporate data inside approved apps <strong>without enrolling the device</strong> (no MDM). Ideal for BYOD scenarios.</li>
+  <li><strong>Common controls</strong>: block copy/paste between work and personal apps, prevent "Save As" to local storage, require PIN/biometric to open work apps, block screenshots, restrict data transfer to unmanaged apps.</li>
+  <li>Configured in <strong>Microsoft Intune → App protection policies</strong>. Target specific apps (Outlook, Teams, OneDrive) and data types.</li>
+  <li><strong>Selective wipe</strong>: remove corporate data without affecting personal data on the device — important for offboarding.</li>
+</ul>
 
 <h4>Intune Device Compliance Policies — What They Check</h4>
 <ul>
@@ -1462,6 +1539,25 @@ const studyGuideData = {
   <li>Granting <strong>Edit</strong> permissions when <strong>View only</strong> was intended.</li>
   <li>Granting <strong>external guests full site access</strong> when they only needed a single file.</li>
   <li>Data Access Governance (DAG) reports flag sites with: sensitive content, excessive sharing, inactive owners, missing sensitivity labels.</li>
+</ul>
+
+<h4>SharePoint Advanced Management (SAM) — Full Feature Breakdown</h4>
+<table>
+  <thead>
+    <tr><th>Feature</th><th>What it does</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Data access governance (DAG) reports</strong></td><td>Identify overshared sites, sites with sensitive content and excessive external access, sites with no owners or inactive owners, sites missing sensitivity labels. Guides remediation actions.</td></tr>
+    <tr><td><strong>Restricted SharePoint Search</strong></td><td>Limits Copilot grounding to up to 100 explicitly allowed sites. All other sites are invisible to Copilot. Hub sites excluded from the restriction automatically. Key control to reduce Copilot oversharing risk.</td></tr>
+    <tr><td><strong>Restricted site access</strong></td><td>Limit site access to an Entra ID security group; users outside the group cannot access the site even with a direct link. Applies at the site level, not content level.</td></tr>
+    <tr><td><strong>Site ownership policies</strong></td><td>Require ≥ 2 owners per site. Alerts when a site has only one owner or no owners. Prevents orphaned sites and reduces risk from ungoverned content.</td></tr>
+  </tbody>
+</table>
+<h4>Conditional Access Integration</h4>
+<ul>
+  <li>SAM integrates with <strong>Conditional Access</strong> to require MFA or block unmanaged devices from accessing sensitive sites.</li>
+  <li><strong>Inactivity alerts</strong> flag unused sites (no recent activity) to reduce risk from abandoned content.</li>
+  <li><strong>Site access reviews</strong> prompt site owners to periodically confirm the access list is correct.</li>
 </ul>
 
 <h4>SharePoint Advanced Management (SAM) — Full Feature Breakdown</h4>
@@ -1982,6 +2078,16 @@ const studyGuideData = {
   <li>All agents honor existing <strong>Sensitivity Labels</strong>, <strong>DLP policies</strong>, and <strong>SharePoint permissions</strong>.</li>
 </ul>
 
+
+<h4>Responsible AI Principles for Copilot</h4>
+<ul>
+  <li><strong>Data minimization</strong> — Copilot only retrieves the data needed to answer the query, not the entire user mailbox or tenant.</li>
+  <li><strong>Transparency</strong> — Copilot cites its sources (document names, URLs) so users can verify responses. If it cannot find information, it says so rather than inventing data.</li>
+  <li><strong>Content filtering</strong> — Harmful, offensive, or inappropriate content is blocked at both input (prompt) and output (response) stages.</li>
+  <li><strong>Accountability</strong> — All Copilot interactions are logged to Microsoft Purview Audit (Standard or Premium). Admins can review prompts, responses, and source documents for compliance.</li>
+  <li><strong>Fairness &amp; reliability</strong> — LLM models are tested to reduce bias and produce grounded, factual responses based on tenant data (RAG).</li>
+  <li><strong>No LLM training on tenant data</strong> — Your organization's data is never used to train or retrain the underlying AI models. Tenant data remains within your compliance boundary.</li>
+</ul>
 
 <h4>Responsible AI Principles for Copilot</h4>
 <ul>

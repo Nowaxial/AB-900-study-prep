@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Dark mode
   const savedTheme = localStorage.getItem('theme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
   const toggleBtn = document.getElementById('themeToggle');
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mobile hamburger
   const hamburger = document.getElementById('hamburger');
   const nav = document.getElementById('nav');
   if (hamburger && nav) {
@@ -24,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Global search
   const searchInput = document.getElementById('searchInput');
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
@@ -40,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // "What If" tool simulation for study guide
   document.querySelectorAll('[data-search]').forEach(el => {
     el.addEventListener('click', () => {
       const q = el.dataset.search;
@@ -49,12 +45,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Load unit from URL hash on page load
   if (location.hash.startsWith('#unit-')) {
     const unitId = location.hash.slice(6);
     setTimeout(() => renderUnit(unitId), 100);
   }
 });
+
+// ============================================================
+// Helpers
+// ============================================================
+function findSgUnit(unitId) {
+  if (typeof studyGuideData === 'undefined') return null;
+  for (const lp of studyGuideData.learningPaths) {
+    for (const mod of lp.modules) {
+      for (const unit of mod.units) {
+        if (unit.unitId === unitId) return unit;
+      }
+    }
+  }
+  return null;
+}
+
+function getModId(unitId) {
+  const m = unitId.match(/^(m\d+)/);
+  return m ? m[1] : null;
+}
 
 // ============================================================
 // Tree Navigation
@@ -76,18 +91,22 @@ function initTreeNav(containerId, selectedUnitId) {
   });
   html += '</div></div>';
 
-  // Learning Paths
-  studyGuideData.learningPaths.forEach(lp => {
+  // Exam Domains
+  examDomains.forEach(domain => {
     html += '<div class="tree-section">';
-    html += `<div class="tree-section-title">${lp.lpTitle}</div>`;
+    html += `<div class="tree-section-title">${domain.shortTitle} <span class="weight-badge">${domain.weight}</span></div>`;
     html += '<div class="tree-children">';
-    lp.modules.forEach(mod => {
+    domain.modules.forEach(mod => {
       html += '<div class="tree-module">';
-      html += `<div class="tree-module-title">${mod.moduleTitle}</div>`;
+      const modTitle = mod.title;
+      html += `<div class="tree-module-title">${modTitle}</div>`;
       html += '<div class="tree-children">';
       mod.units.forEach(unit => {
-        const isSelected = unit.unitId === selectedUnitId;
-        html += `<div class="tree-item${isSelected ? ' selected' : ''}" data-id="${unit.unitId}">${unit.unitTitle}</div>`;
+        if (unit.id.endsWith('-assessment') || unit.id.endsWith('-summary')) return;
+        const sgUnit = findSgUnit(unit.id);
+        const displayTitle = sgUnit ? sgUnit.unitTitle : unit.title;
+        const isSelected = unit.id === selectedUnitId;
+        html += `<div class="tree-item${isSelected ? ' selected' : ''}" data-id="${unit.id}">${displayTitle}</div>`;
       });
       html += '</div></div>';
     });
@@ -97,14 +116,12 @@ function initTreeNav(containerId, selectedUnitId) {
   html += '</div>';
   container.innerHTML = html;
 
-  // Collapse modules by default
   container.querySelectorAll('.tree-module > .tree-children').forEach(el => {
     el.classList.add('collapsed');
     const title = el.previousElementSibling;
     if (title) title.classList.add('collapsed');
   });
 
-  // Collapsible sections
   container.querySelectorAll('.tree-section-title, .tree-module-title').forEach(el => {
     el.addEventListener('click', () => {
       el.classList.toggle('collapsed');
@@ -113,7 +130,6 @@ function initTreeNav(containerId, selectedUnitId) {
     });
   });
 
-  // Unit click
   container.querySelectorAll('.tree-item[data-id]').forEach(el => {
     el.addEventListener('click', () => {
       const id = el.dataset.id;
@@ -139,36 +155,69 @@ function renderUnit(unitId, containerId) {
     return;
   }
 
-  // Find unit in hierarchy
-  let foundUnit = null, foundModule = null, foundLp = null;
-  for (const lp of studyGuideData.learningPaths) {
-    for (const mod of lp.modules) {
-      for (const unit of mod.units) {
-        if (unit.unitId === unitId) { foundUnit = unit; foundModule = mod; foundLp = lp; break; }
+  // Look up domain/module context from modules.js, content from study-guide.js
+  const modId = typeof findModule !== 'undefined' ? getModId(unitId) : null;
+  const moduleData = modId ? findModule(modId) : null;
+  const domainData = modId ? getDomainForModule(modId) : null;
+  const sgUnit = findSgUnit(unitId);
+
+  if (!sgUnit && !moduleData) {
+    // fallback: search in studyGuideData.learningPaths directly
+    let foundUnit = null, foundModule = null, foundLp = null;
+    for (const lp of studyGuideData.learningPaths) {
+      for (const mod of lp.modules) {
+        for (const unit of mod.units) {
+          if (unit.unitId === unitId) { foundUnit = unit; foundModule = mod; foundLp = lp; break; }
+        }
+        if (foundUnit) break;
       }
       if (foundUnit) break;
     }
-    if (foundUnit) break;
-  }
-
-  if (!foundUnit) {
-    container.innerHTML = '<p>Content not found.</p>';
+    if (!foundUnit) {
+      container.innerHTML = '<p>Content not found.</p>';
+      return;
+    }
+    const breadcrumb = `${foundLp.lpTitle} &rarr; ${foundModule.moduleTitle}`;
+    let html = `<p class="breadcrumb">${breadcrumb}</p>`;
+    html += `<h2>${foundUnit.unitTitle}</h2>`;
+    html += foundUnit.content || '<p>Content coming soon.</p>';
+    if (foundUnit.examTips && foundUnit.examTips.length) {
+      html += '<div class="exam-tips"><h3>Exam Tips</h3><ul>';
+      foundUnit.examTips.forEach(t => { html += `<li>${t}</li>`; });
+      html += '</ul></div>';
+    }
+    if (foundUnit.keyConcepts && foundUnit.keyConcepts.length) {
+      html += '<div class="key-concepts"><h3>Key Concepts</h3><ul>';
+      foundUnit.keyConcepts.forEach(k => { html += `<li>${k}</li>`; });
+      html += '</ul></div>';
+    }
+    container.innerHTML = html;
+    updateTreeSelection(unitId);
+    window.scrollTo(0, 0);
     return;
   }
 
-  const breadcrumb = `${foundLp.lpTitle} &rarr; ${foundModule.moduleTitle}`;
-  let html = `<p class="breadcrumb">${breadcrumb}</p>`;
-  html += `<h2>${foundUnit.unitTitle}</h2>`;
-  html += foundUnit.content || '<p>Content coming soon.</p>';
+  const domainTitle = domainData ? domainData.shortTitle : '';
+  const modTitle = moduleData ? moduleData.title : (sgUnit ? 'Module' : '');
 
-  if (foundUnit.examTips && foundUnit.examTips.length) {
+  let breadcrumbParts = [];
+  if (domainTitle) breadcrumbParts.push(domainTitle);
+  if (modTitle) breadcrumbParts.push(modTitle);
+  const breadcrumb = breadcrumbParts.length ? breadcrumbParts.join(' &rarr; ') : '';
+  const unitTitle = sgUnit ? sgUnit.unitTitle : unitId;
+
+  let html = breadcrumb ? `<p class="breadcrumb">${breadcrumb}</p>` : '';
+  html += `<h2>${unitTitle}</h2>`;
+  html += sgUnit ? (sgUnit.content || '<p>Content coming soon.</p>') : '<p>Content coming soon.</p>';
+
+  if (sgUnit && sgUnit.examTips && sgUnit.examTips.length) {
     html += '<div class="exam-tips"><h3>Exam Tips</h3><ul>';
-    foundUnit.examTips.forEach(t => { html += `<li>${t}</li>`; });
+    sgUnit.examTips.forEach(t => { html += `<li>${t}</li>`; });
     html += '</ul></div>';
   }
-  if (foundUnit.keyConcepts && foundUnit.keyConcepts.length) {
+  if (sgUnit && sgUnit.keyConcepts && sgUnit.keyConcepts.length) {
     html += '<div class="key-concepts"><h3>Key Concepts</h3><ul>';
-    foundUnit.keyConcepts.forEach(k => { html += `<li>${k}</li>`; });
+    sgUnit.keyConcepts.forEach(k => { html += `<li>${k}</li>`; });
     html += '</ul></div>';
   }
 
@@ -183,9 +232,7 @@ function updateTreeSelection(unitId) {
   if (sel) sel.classList.add('selected');
 }
 
-// Exposed for tree nav click
 window.loadUnit = function (unitId) {
-  // Restore tree items if filtered by search
   document.querySelectorAll('.tree-item').forEach(el => el.style.display = '');
   history.pushState(null, '', '#unit-' + unitId);
   renderUnit(unitId);
@@ -201,16 +248,13 @@ if (!window.pageSearch) window.pageSearch = function (q) {
   q = q.toLowerCase().trim();
 
   if (!q) {
-    // Reset — show all tree sections
     document.querySelectorAll('.tree-children.collapsed').forEach(el => el.classList.remove('collapsed'));
     document.querySelectorAll('.tree-section-title.collapsed, .tree-module-title.collapsed').forEach(el => el.classList.remove('collapsed'));
-    // Re-render current unit if was in search mode
     if (contentArea.dataset.lastUnitId) renderUnit(contentArea.dataset.lastUnitId);
     contentArea.dataset.lastUnitId = '';
     return;
   }
 
-  // Search all units, find matches
   const matches = [];
   studyGuideData.preamble.forEach(p => {
     if (p.title.toLowerCase().includes(q) || p.content.toLowerCase().includes(q)) {
@@ -232,12 +276,10 @@ if (!window.pageSearch) window.pageSearch = function (q) {
     return;
   }
 
-  // Navigate to first match
   const firstMatch = matches[0];
   renderUnit(firstMatch);
   contentArea.dataset.lastUnitId = firstMatch;
 
-  // Highlight matches in content
   const re = new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
   contentArea.querySelectorAll('p, li, td, th, dt, dd').forEach(el => {
     if (el.children.length === 0) {
@@ -245,11 +287,9 @@ if (!window.pageSearch) window.pageSearch = function (q) {
     }
   });
 
-  // Expand tree nav to show all matching units
   document.querySelectorAll('.tree-item').forEach(el => {
     el.style.display = matches.includes(el.dataset.id) ? '' : 'none';
   });
-  // Expand all parent sections
   document.querySelectorAll('.tree-section, .tree-module').forEach(el => {
     const children = el.querySelector('.tree-children');
     if (children && Array.from(children.querySelectorAll('.tree-item')).some(item => item.style.display !== 'none')) {
