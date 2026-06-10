@@ -250,3 +250,55 @@ tr:hover { background: var(--primary-light); }
 
 /* Weight badge for tree nav domain headers */
 .weight-badge { font-size: 0.65rem; background: var(--primary); color: #fff; padding: 0.1rem 0.4rem; border-radius: 6px; font-weight: 600; letter-spacing: 0.02em; }
+
+/* Hero improvements */
+.hero { background: linear-gradient(180deg, var(--primary-light) 0%, transparent 100%); padding: 3rem 1rem 2rem; }
+.hero h1 { font-size: 2.25rem; letter-spacing: -0.02em; }
+.hero-sub { font-size: 1.05rem; max-width: 550px; margin: 0.5rem auto 0; color: var(--text-secondary); }
+
+/* Domain cards v2 */
+.domain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 1.25rem; }
+.domain-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; transition: transform 0.15s, box-shadow 0.15s; }
+.domain-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+.domain-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+.domain-card h3 { margin: 0 0 0.35rem; font-size: 1.25rem; }
+.domain-title { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.4; min-height: 2.4em; }
+.domain-bar { height: 6px; width: 100%; max-width: 200px; background: var(--bg); border-radius: 3px; overflow: hidden; margin: 0.5rem 0 0.35rem; }
+.domain-bar-fill { height: 100%; border-radius: 3px; transition: width 0.5s; }
+.domain-weight { font-size: 0.8rem; font-weight: 600; color: var(--text); }
+.domain-modules { font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.15rem; }
+
+/* Section card with CTA */
+.section-card .card-cta { display: inline-block; margin-top: 0.75rem; font-size: 0.82rem; font-weight: 600; color: var(--primary); }
+.section-card:hover .card-cta { text-decoration: underline; }
+
+/* Pill links */
+.pill-group { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.75rem; }
+.pill-link { display: inline-block; padding: 0.4rem 1rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; font-size: 0.85rem; color: var(--text); transition: background 0.15s, border-color 0.15s; text-decoration: none; }
+.pill-link:hover { background: var(--primary-light); border-color: var(--primary); color: var(--primary); text-decoration: none; }
+
+/* Domain module group on home */
+.domain-module-group { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; }
+.domain-module-header { margin: 0 0 0.75rem; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem; }
+.module-card { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.65rem; border-radius: var(--radius); text-decoration: none; color: var(--text); font-size: 0.85rem; transition: background 0.15s; }
+.module-card:hover { background: var(--primary-light); text-decoration: none; }
+.module-card .module-count { margin-left: auto; font-size: 0.75rem; color: var(--text-secondary); white-space: nowrap; }
+.domain-module-group + .domain-module-group { margin-top: 1rem; }
+
+/* Search dropdown overlay */
+.search-box { position: relative; }
+.search-dropdown { display: none; position: absolute; top: 100%; right: 0; left: 0; min-width: 360px; margin-top: 4px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: 0 8px 24px rgba(0,0,0,0.12); max-height: 400px; overflow-y: auto; z-index: 200; }
+[data-theme="dark"] .search-dropdown { box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.search-dropdown.open { display: block; }
+.search-dropdown-group { padding: 0.5rem 0; }
+.search-dropdown-group + .search-dropdown-group { border-top: 1px solid var(--border); }
+.search-dropdown-label { padding: 0.25rem 0.75rem; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); }
+.search-dropdown-item { display: flex; align-items: baseline; gap: 0.35rem; padding: 0.35rem 0.75rem; cursor: pointer; font-size: 0.82rem; color: var(--text); transition: background 0.1s; text-decoration: none; }
+.search-dropdown-item:hover { background: var(--primary-light); text-decoration: none; }
+.search-dropdown-item .match-text { color: var(--text-secondary); font-size: 0.78rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+.search-dropdown-item .match-source { font-size: 0.65rem; color: var(--primary); font-weight: 500; white-space: nowrap; }
+.search-dropdown-empty { padding: 1rem; text-align: center; color: var(--text-secondary); font-size: 0.85rem; }
+
+/* Section spacing on home */
+.domains-section, .materials-section, .quicklinks-section, .modules-section { margin-bottom: 2rem; }
+.domains-section h2, .materials-section h2, .quicklinks-section h2, .modules-section h2 { margin-bottom: 0; }

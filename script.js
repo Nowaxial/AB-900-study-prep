@@ -24,17 +24,126 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const searchInput = document.getElementById('searchInput');
   if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-      const q = e.target.value.toLowerCase().trim();
-      if (window.pageSearch) {
-        window.pageSearch(q);
-      } else {
-        document.querySelectorAll('.searchable').forEach(el => {
-          if (!q) { el.style.display = ''; return; }
-          el.style.display = el.textContent.toLowerCase().includes(q) ? '' : 'none';
+    // On pages with pageSearch (study-guide, flashcards, key-pointers), use their built-in search
+    // On all pages, also show the cross-page dropdown with results from all data sources
+    var searchTimer;
+    searchInput.addEventListener('input', function() {
+      var q = this.value;
+      if (window.pageSearch) window.pageSearch(q.toLowerCase().trim());
+
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(function() {
+        if (!window.pageSearch) {
+          // Fallback for pages without pageSearch: filter .searchable elements
+          var sq = q.toLowerCase().trim();
+          document.querySelectorAll('.searchable').forEach(function(el) {
+            if (!sq) { el.style.display = ''; return; }
+            el.style.display = el.textContent.toLowerCase().indexOf(sq) !== -1 ? '' : 'none';
+          });
+        }
+        doGlobalSearch(q);
+      }, window.pageSearch ? 200 : 0);
+    });
+    searchInput.addEventListener('focus', function() {
+      if (this.value.trim()) doGlobalSearch(this.value);
+    });
+    document.addEventListener('click', function(e) {
+      var dd = document.getElementById('searchResults');
+      if (dd && !searchInput.contains(e.target) && !dd.contains(e.target)) dd.classList.remove('open');
+    });
+  }
+
+  function doGlobalSearch(q) {
+    var dd = document.getElementById('searchResults');
+    if (!dd) return;
+    q = q.toLowerCase().trim();
+    if (q.length < 2) { dd.classList.remove('open'); return; }
+    var results = [];
+
+    // Search study guide data
+    if (typeof studyGuideData !== 'undefined' && studyGuideData && studyGuideData.learningPaths) {
+      studyGuideData.preamble.forEach(function(p) {
+        if (p.title.toLowerCase().indexOf(q) !== -1 || (p.content && p.content.toLowerCase().indexOf(q) !== -1)) {
+          results.push({ title: p.title, source: 'Study Guide', url: 'study-guide.html#unit-' + p.id, text: p.content ? p.content.replace(/<[^>]+>/g,'').substring(0,80) : '' });
+        }
+      });
+      studyGuideData.learningPaths.forEach(function(lp) {
+        lp.modules.forEach(function(mod) {
+          mod.units.forEach(function(unit) {
+            var txt = (unit.unitTitle + ' ' + (unit.content || '') + ' ' + (unit.examTips || []).join(' ') + ' ' + (unit.keyConcepts || []).join(' ')).toLowerCase();
+            if (txt.indexOf(q) !== -1) {
+              if (unit.unitId && !unit.unitId.match(/assessment|summary/)) {
+                results.push({ title: unit.unitTitle, source: 'Study Guide', url: 'study-guide.html#unit-' + unit.unitId, text: (unit.content || '').replace(/<[^>]+>/g,'').substring(0,80) });
+              }
+            }
+          });
         });
+      });
+    }
+
+    // Search flashcards
+    if (typeof flashcards !== 'undefined' && flashcards) {
+      flashcards.forEach(function(card) {
+        var txt = (card.question + ' ' + card.answer + ' ' + card.category).toLowerCase();
+        if (txt.indexOf(q) !== -1) {
+          results.push({ title: card.question, source: 'Flashcards', url: 'flashcards.html', text: card.answer.substring(0,80) });
+        }
+      });
+    }
+
+    // Search key pointers
+    if (typeof keyPointerCategories !== 'undefined' && keyPointerCategories) {
+      keyPointerCategories.forEach(function(cat) {
+        cat.pointers.forEach(function(p) {
+          if (p.toLowerCase().indexOf(q) !== -1) {
+            results.push({ title: p.replace(/<[^>]+>/g,''), source: 'Key Pointers', url: 'key-pointers.html#' + cat.id, text: cat.title });
+          }
+        });
+      });
+    }
+
+    // Deduplicate (limit to 8 per source, 20 total)
+    var seen = {}, filtered = [];
+    results.forEach(function(r) {
+      var key = r.url + r.title;
+      if (!seen[key] && filtered.length < 20) {
+        seen[key] = true;
+        filtered.push(r);
       }
     });
+    results = filtered.slice(0, 20);
+
+    if (results.length === 0) {
+      dd.innerHTML = '<div class="search-dropdown-empty">No results found.</div>';
+      dd.classList.add('open');
+      return;
+    }
+
+    var html = '';
+    var groups = { 'Study Guide': [], 'Flashcards': [], 'Key Pointers': [] };
+    results.forEach(function(r) {
+      if (groups[r.source]) groups[r.source].push(r);
+    });
+    Object.keys(groups).forEach(function(src) {
+      var items = groups[src];
+      if (items.length === 0) return;
+      html += '<div class="search-dropdown-group">';
+      html += '<div class="search-dropdown-label">' + src + '</div>';
+      items.forEach(function(r) {
+        html += '<a href="' + r.url + '" class="search-dropdown-item">';
+        html += '<span class="match-text">' + escapeHtml(r.title) + '</span>';
+        html += '<span class="match-source">' + src + '</span>';
+        html += '</a>';
+      });
+      html += '</div>';
+    });
+    dd.innerHTML = html;
+    dd.classList.add('open');
+  }
+
+  function escapeHtml(s) {
+    if (!s) return '';
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
   document.querySelectorAll('[data-search]').forEach(el => {

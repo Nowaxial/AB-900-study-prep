@@ -18,9 +18,10 @@
         <a href="flashcards.html">Flashcards</a>
         <a href="key-pointers.html">Key Pointers</a>
       </nav>
-      <div class="search-box">
+      <div class="search-box" id="searchBox">
         <span>🔍</span>
-        <input id="searchInput" type="text" placeholder="Search...">
+        <input id="searchInput" type="text" placeholder="Search all content...">
+        <div id="searchResults" class="search-dropdown"></div>
       </div>
       <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙 Dark</button>
     </div>
@@ -29,7 +30,7 @@
   <main>
     <section class="hero">
       <h1>AB-900 Study Hub</h1>
-      <p>Microsoft 365 Copilot and Agent Administration Fundamentals</p>
+      <p class="hero-sub">Microsoft 365 Copilot and Agent Administration Fundamentals</p>
       <div class="hero-tags">
         <span class="tag tag-blue">Passing score: 700</span>
         <span class="tag tag-orange">MCQ &middot; Multi-select &middot; Scenario &middot; Drag &amp; drop</span>
@@ -38,56 +39,48 @@
     </section>
 
     <div class="container">
-      <h2>Exam Domains</h2>
-      <div class="domain-grid">
-        <div class="domain-card searchable">
-          <h3>Domain 1</h3>
-          <p>Core M365 features &amp; objects</p>
-          <div class="domain-bar"><div class="domain-bar-fill" style="width:35%"></div></div>
-          <strong>30&ndash;35%</strong>
-        </div>
-        <div class="domain-card searchable" style="border-color:var(--primary);">
-          <h3>Domain 2</h3>
-          <p>Data protection &amp; governance</p>
-          <div class="domain-bar"><div class="domain-bar-fill" style="width:40%;background:var(--accent-orange)"></div></div>
-          <strong>35&ndash;40%</strong> <span style="color:var(--accent-red);font-size:0.8rem;">&larr; Largest</span>
-        </div>
-        <div class="domain-card searchable">
-          <h3>Domain 3</h3>
-          <p>Copilot &amp; agents admin</p>
-          <div class="domain-bar"><div class="domain-bar-fill" style="width:30%;background:var(--accent-green)"></div></div>
-          <strong>25&ndash;30%</strong>
-        </div>
-      </div>
+      <section class="domains-section">
+        <h2>Exam Domains</h2>
+        <div class="domain-grid" id="domainGrid"></div>
+      </section>
 
-      <h2 style="margin-top:3rem;">Study Material</h2>
-      <div class="section-grid">
-        <a href="study-guide.html" class="section-card searchable">
-          <div class="icon">📖</div>
-          <h3>Study Guide</h3>
-          <p>Complete exam content across 3 domains, 6 modules, 53 units</p>
-        </a>
-        <a href="flashcards.html" class="section-card searchable">
-          <div class="icon">🃏</div>
-          <h3>Flashcards</h3>
-          <p>Interactive Q&amp;A with multiple choice and drag-to-reveal modes</p>
-        </a>
-        <a href="key-pointers.html" class="section-card searchable">
-          <div class="icon">📌</div>
-          <h3>Key Pointers</h3>
-          <p>One-page quick reference with all essential facts</p>
-        </a>
-      </div>
+      <section class="materials-section">
+        <h2>Study Material</h2>
+        <div class="section-grid">
+          <a href="study-guide.html" class="section-card">
+            <div class="icon">📖</div>
+            <h3>Study Guide</h3>
+            <p>Complete exam content across 3 domains, 6 modules, 53 units</p>
+            <span class="card-cta">Open Study Guide &rarr;</span>
+          </a>
+          <a href="flashcards.html" class="section-card">
+            <div class="icon">🃏</div>
+            <h3>Flashcards</h3>
+            <p>Interactive Q&amp;A with multiple choice and drag-to-reveal modes</p>
+            <span class="card-cta">Start Flashcards &rarr;</span>
+          </a>
+          <a href="key-pointers.html" class="section-card">
+            <div class="icon">📌</div>
+            <h3>Key Pointers</h3>
+            <p>One-page quick reference with all essential facts across 21 categories</p>
+            <span class="card-cta">View Pointers &rarr;</span>
+          </a>
+        </div>
+      </section>
 
-      <h2 style="margin-top:3rem;">Quick Links</h2>
-      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-        <a href="https://learn.microsoft.com/en-us/training/paths/explore-microsoft-365-administration/" target="_blank" rel="noopener" class="theme-toggle searchable">📚 LP1: Explore M365 administration</a>
-        <a href="https://learn.microsoft.com/en-us/training/paths/explore-microsoft-365-copilot-agent-administration/" target="_blank" rel="noopener" class="theme-toggle searchable">🤖 LP2: Explore Copilot &amp; agent admin</a>
-        <a href="https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/" target="_blank" rel="noopener" class="theme-toggle searchable">🎯 Certification page</a>
-      </div>
+      <section class="quicklinks-section">
+        <h2>Quick Links</h2>
+        <div class="pill-group">
+          <a href="https://learn.microsoft.com/en-us/training/paths/explore-microsoft-365-administration/" target="_blank" rel="noopener" class="pill-link">📚 LP1: Explore M365 administration</a>
+          <a href="https://learn.microsoft.com/en-us/training/paths/explore-microsoft-365-copilot-agent-administration/" target="_blank" rel="noopener" class="pill-link">🤖 LP2: Explore Copilot &amp; agent admin</a>
+          <a href="https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/" target="_blank" rel="noopener" class="pill-link">🎯 Certification page</a>
+        </div>
+      </section>
 
-      <h2 style="margin-top:3rem;">Learning Paths</h2>
-      <div id="moduleTree" class="section-grid"></div>
+      <section class="modules-section">
+        <h2>Learning Paths</h2>
+        <div id="moduleTree" class="section-grid"></div>
+      </section>
     </div>
   </main>
 
@@ -95,19 +88,34 @@
   <script src="script.js"></script>
   <script>
     (function() {
-      const treeContainer = document.getElementById('moduleTree');
-      let html = '';
-      examDomains.forEach(function(d, dIdx) {
-        html += '<div style="grid-column:1/-1;"><h3 style="margin-bottom:0.5rem;">Domain ' + (dIdx + 1) + ' <span class="weight-badge">' + d.weight + '</span><br><span style="font-weight:400;font-size:1rem;">' + d.title + '</span></h3></div>';
-        d.modules.forEach(function(mod) {
-          const firstUnitId = mod.units.length > 0 ? mod.units[0].id : '';
-          html += '<a href="study-guide.html#unit-' + firstUnitId + '" class="section-card searchable" style="text-decoration:none;">';
-          html += '<h3>' + getModuleBadgeHtml(mod.id) + ' ' + mod.title + '</h3>';
-          html += '<p>' + mod.units.length + ' units</p>';
-          html += '</a>';
-        });
-      });
-      treeContainer.innerHTML = html;
+      const domainGrid = document.getElementById('domainGrid');
+      domainGrid.innerHTML = examDomains.map(function(d, dIdx) {
+        var colors = ['#4a90d9', '#e67e22', '#2ecc71'];
+        var icons = ['🔐', '🛡️', '🤖'];
+        return '<div class="domain-card" style="border-top:4px solid ' + colors[dIdx] + ';">' +
+          '<div class="domain-icon">' + icons[dIdx] + '</div>' +
+          '<h3>Domain ' + (dIdx + 1) + '</h3>' +
+          '<p class="domain-title">' + d.title + '</p>' +
+          '<div class="domain-bar"><div class="domain-bar-fill" style="width:' + d.weight.replace(/[^0-9]/g,'').substring(0,2) + '%;background:' + colors[dIdx] + ';"></div></div>' +
+          '<span class="domain-weight">' + d.weight + ' of exam</span>' +
+          '<span class="domain-modules">' + d.modules.length + ' module' + (d.modules.length > 1 ? 's' : '') + '</span>' +
+          '</div>';
+      }).join('');
+
+      var treeContainer = document.getElementById('moduleTree');
+      treeContainer.innerHTML = examDomains.map(function(d, dIdx) {
+        var colors = ['#4a90d9', '#e67e22', '#2ecc71'];
+        return '<div class="domain-module-group">' +
+          '<h4 class="domain-module-header"><span style="color:' + colors[dIdx] + ';">Domain ' + (dIdx + 1) + '</span> <span class="weight-badge">' + d.weight + '</span></h4>' +
+          d.modules.map(function(mod) {
+            var firstUnitId = mod.units.length > 0 ? mod.units[0].id : '';
+            return '<a href="study-guide.html#unit-' + firstUnitId + '" class="module-card">' +
+              getModuleBadgeHtml(mod.id) + ' ' + mod.title +
+              '<span class="module-count">' + mod.units.length + ' units</span>' +
+              '</a>';
+          }).join('') +
+          '</div>';
+      }).join('');
     })();
   </script>
 </body>
