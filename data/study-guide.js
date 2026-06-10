@@ -1312,7 +1312,9 @@ const studyGuideData = {
 <ul>
   <li><strong>Trainable classifiers</strong> \u2014 machine-learning models that identify categories like <em>Resume</em>, <em>Source Code</em>, <em>HR</em>, <em>Finance</em> (built-in) and custom categories you train.</li>
   <li><strong>Sensitive Information Types (SITs)</strong> \u2014 pattern matches (regex, checksum) for items like credit card, SSN, passport, IBAN.</li>
-  <li><strong>Exact Data Match (EDM)</strong> \u2014 match against a structured database of sensitive records (e.g., patient IDs).</li>
+  <li><strong>Exact Data Match (EDM)</strong> \u2014 match against a structured database of sensitive records (e.g., patient IDs, employee IDs) for high-precision detection without false positives.</li>
+  <li>EDM workflow: define schema \u2192 create rule package \u2192 hash + upload source data \u2192 validate classifier. Integrated with DLP, auto-labeling, and eDiscovery.</li>
+  <li>EDM vs regex: regex detects patterns by format (e.g., \d{3}-\d{2}-\d{4} for SSNs), which can produce false positives. EDM only triggers when the exact value from a secure list is matched.</li>
   <li><strong>Activity classification</strong> \u2014 track which labels users apply and to what content.</li>
 </ul>
 
@@ -1391,6 +1393,9 @@ const studyGuideData = {
   <li>Monitors internal email and Teams chat for harassment, regulatory violations, conflicts of interest, and policy breaches.</li>
   <li>Monitored channels: Microsoft Teams chats and channels, Exchange Online email, Viva Engage, and third-party connectors (Slack, Bloomberg, etc.).</li>
   <li>Uses trainable classifiers to detect policy violations including harassment, profanity, and sensitive info leaks.</li>
+  <li><strong>Reviewer dashboard</strong> lets compliance analysts assess flagged messages, dismiss false positives, escalate to HR/legal, or tag for policy training.</li>
+  <li><strong>Industry-specific policies</strong>: FINRA (financial services, MNPI detection), HIPAA (healthcare), insider trading patterns.</li>
+  <li><strong>DLP for endpoints</strong> (via Defender for Endpoint) enforces policies on Windows/macOS devices: block USB copy, print, clipboard paste, or cloud upload of sensitive files.</li>
 </ul>
 
 <h3>Compliance Manager Control Types</h3>
