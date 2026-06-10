@@ -1,18 +1,8 @@
 const studyGuideData = {
   // ============================================================
-  // PREAMBLE — Getting Started (4 items)
+  // PREAMBLE — Getting Started (3 items)
   // ============================================================
   preamble: [
-    {
-      id: "exam-basics",
-      title: "Exam Basics",
-      content: `<p>Passing score: <strong>700</strong></p>
-<ul>
-  <li>Format: Multiple-choice, multi-select, scenario-based, drag-and-drop</li>
-  <li>Most questions cover features in <strong>General Availability (GA)</strong>; some Preview features may appear</li>
-  <li>30 extra minutes available on request for non-English speakers</li>
-</ul>`
-    },
     {
       id: "exam-weightings",
       title: "Exam Weightings (Skills at a Glance)",

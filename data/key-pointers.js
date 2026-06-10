@@ -1,14 +1,5 @@
 const keyPointerCategories = [
   {
-    title: "Exam basics",
-    id: "exam-basics",
-    pointers: [
-      "Passing score: 700 &middot; Format: MCQ + multi-select + scenario + drag-and-drop &middot; No labs, no case studies.",
-      "Three domains: ① Core M365 features &amp; objects (30&ndash;35%), ② Data protection &amp; governance (35&ndash;40%, largest), ③ Copilot &amp; agents admin (25&ndash;30%).",
-      "Most questions cover GA features; some Preview may appear."
-    ]
-  },
-  {
     title: "Zero Trust &amp; identity",
     id: "zero-trust-identity",
     pointers: [

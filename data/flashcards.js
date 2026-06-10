@@ -1,49 +1,5 @@
 ﻿const flashcards = [
   {
-    id: 0,
-    category: "Exam basics",
-    moduleId: null,
-    unitId: null,
-    question: "What is the passing score for the AB-900 exam?",
-    answer: "700 (out of 1000).",
-    reference: "AB-900 certification page",
-    learnLink: "https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/",
-    explanation: null
-  },
-  {
-    id: 1,
-    category: "Exam basics",
-    moduleId: null,
-    unitId: null,
-    question: "How is the AB-900 exam formatted?",
-    answer: "Multiple-choice, multi-select, scenario-based, and drag-and-drop — no labs, no case studies.",
-    reference: "AB-900 certification page",
-    learnLink: "https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/",
-    explanation: null
-  },
-  {
-    id: 2,
-    category: "Exam basics",
-    moduleId: null,
-    unitId: null,
-    question: "How many exam domains does AB-900 have, and what are they?",
-    answer: "Three: ① Core M365 features & objects (30–35%), ② Data protection & governance (35–40%, largest), ③ Copilot & agents admin (25–30%).",
-    reference: "AB-900 certification page",
-    learnLink: "https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/",
-    explanation: null
-  },
-  {
-    id: 3,
-    category: "Exam basics",
-    moduleId: null,
-    unitId: null,
-    question: "Which features does the AB-900 exam cover most — GA or Preview?",
-    answer: "Mostly GA. Some Preview features may appear but are flagged as such.",
-    reference: "AB-900 certification page",
-    learnLink: "https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/",
-    explanation: null
-  },
-  {
     id: 4,
     category: "Zero Trust & identity",
     moduleId: "m1",
