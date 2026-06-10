@@ -27,7 +27,7 @@
     moduleId: "m1",
     unitId: "m1-u2",
     question: "Name the six Zero Trust pillars in Microsoft framework.",
-    answer: "**I**dentity · **E**ndpoints · **A**pplications · **D**ata · **I**nfrastructure · **N**etwork (mnemonic: \"I Eat Data In Networks\").",
+    answer: "Identity · Endpoints · Applications · Data · Infrastructure · Network (mnemonic: \"I Eat Data In Networks\").",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -38,7 +38,7 @@
     moduleId: "m1",
     unitId: "m1-u2",
     question: "What is the difference between authentication and authorization?",
-    answer: "Authentication = prove *who* you are (n factor). Authorization = *what* you're allowed to do (z factor).",
+    answer: "Authentication = prove who you are (n factor). Authorization = what you're allowed to do (z factor).",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -126,7 +126,7 @@
     moduleId: "m1",
     unitId: "m1-u7",
     question: "Name the three hybrid authentication methods.",
-    answer: "**PHS** (Password Hash Sync, preferred) · **PTA** (Pass-Through Authentication) · **Federation** (AD FS, legacy).",
+    answer: "PHS (Password Hash Sync, preferred) · PTA (Pass-Through Authentication) · Federation (AD FS, legacy).",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -159,7 +159,7 @@
     moduleId: "m1",
     unitId: "m1-u7",
     question: "What is the difference between an app registration and a service principal (enterprise app)?",
-    answer: "App registration = the *definition* of the app (in the dev tenant). Service principal / enterprise app = the *instance* of that app in a target tenant.",
+    answer: "App registration = the definition of the app (in the dev tenant). Service principal / enterprise app = the instance of that app in a target tenant.",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -203,7 +203,7 @@
     moduleId: "m1",
     unitId: "m1-u5",
     question: "Does SSPR work for hybrid users out of the box?",
-    answer: "No — hybrid users need **Password Writeback** enabled in Entra Connect.",
+    answer: "No — hybrid users need Password Writeback enabled in Entra Connect.",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -247,7 +247,7 @@
     moduleId: "m1",
     unitId: "m1-u5",
     question: "What session controls can a CA policy enforce?",
-    answer: "Sign-in frequency, persistent browser session, **Continuous Access Evaluation (CAE)**, and Defender for Cloud Apps app control.",
+    answer: "Sign-in frequency, persistent browser session, Continuous Access Evaluation (CAE), and Defender for Cloud Apps app control.",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -291,7 +291,7 @@
     moduleId: "m1",
     unitId: "m1-u5",
     question: "How do you safely test a CA policy before enabling it?",
-    answer: "Use the **What If** tool in Entra to simulate the policy's effect on a user sign-in.",
+    answer: "Use the What If tool in Entra to simulate the policy's effect on a user sign-in.",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -324,7 +324,7 @@
     moduleId: "m1",
     unitId: "m1-u6",
     question: "What is the recommended target number of Global Admins, and how should they be assigned?",
-    answer: "Keep ≤ 4. Assign as **eligible in PIM**, not permanent active.",
+    answer: "Keep ≤ 4. Assign as eligible in PIM, not permanent active.",
     reference: "Learning Path 1, Module 2 — Intro to M365 core services",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/",
     explanation: null
@@ -412,7 +412,7 @@
     moduleId: "m1",
     unitId: "m1-u8",
     question: "What is the default Unified Audit Log retention, and how does E5 change it?",
-    answer: "Default 180 days; **1 year (365 days) with E5**.",
+    answer: "Default 180 days; 1 year (365 days) with E5.",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -434,7 +434,7 @@
     moduleId: "m1",
     unitId: "m1-u4",
     question: "What four (or five) products make up Defender XDR, and where do they unify?",
-    answer: "Defender for **Identity** + **Office 365** + **Endpoint** + **Cloud Apps** (+ optional **Cloud**) — unified at **security.microsoft.com**.",
+    answer: "Defender for Identity + Office 365 + Endpoint + Cloud Apps (+ optional Cloud) — unified at security.microsoft.com.",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -445,7 +445,7 @@
     moduleId: "m1",
     unitId: "m1-u4",
     question: "What is MSTIC and how big is its signal?",
-    answer: "Microsoft Threat Intelligence Center; **65T+ signals/day** of nation-state, dark-web, and attacker telemetry.",
+    answer: "Microsoft Threat Intelligence Center; 65T+ signals/day of nation-state, dark-web, and attacker telemetry.",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -456,7 +456,7 @@
     moduleId: "m1",
     unitId: "m1-u4",
     question: "Which Defender for Office 365 plan unlocks Threat Explorer and Attack simulation training?",
-    answer: "**Plan 2** (included in E5).",
+    answer: "Plan 2 (included in E5).",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -467,7 +467,7 @@
     moduleId: "m1",
     unitId: "m1-u4",
     question: "What does Safe Links do?",
-    answer: "Rewrites URLs in email and rescans **at click time** to catch delayed-bomb URLs.",
+    answer: "Rewrites URLs in email and rescans at click time to catch delayed-bomb URLs.",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -478,7 +478,7 @@
     moduleId: "m1",
     unitId: "m1-u4",
     question: "What does ZAP (Zero-hour Auto Purge) do?",
-    answer: "**Retroactively** removes malicious messages from user mailboxes after a threat is detected.",
+    answer: "Retroactively removes malicious messages from user mailboxes after a threat is detected.",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -489,7 +489,7 @@
     moduleId: "m1",
     unitId: "m1-u4",
     question: "What is the difference between Spoof intelligence and Impersonation protection?",
-    answer: "Spoof intelligence = fake/impersonated **sender domain**. Impersonation protection = lookalike-sender targeting **specific execs** (CEO fraud).",
+    answer: "Spoof intelligence = fake/impersonated sender domain. Impersonation protection = lookalike-sender targeting specific execs (CEO fraud).",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -533,7 +533,7 @@
     moduleId: "m1",
     unitId: "m1-u4",
     question: "What framework do Threat Analytics reports map to?",
-    answer: "**MITRE ATT&CK**.",
+    answer: "MITRE ATT&CK.",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -544,7 +544,7 @@
     moduleId: "m1",
     unitId: "m1-u4",
     question: "What can Defender for Endpoint do?",
-    answer: "EDR · AV · attack surface reduction rules · automated investigations · **attack path tracking** · **device isolation**.",
+    answer: "EDR · AV · attack surface reduction rules · automated investigations · attack path tracking · device isolation.",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -566,7 +566,7 @@
     moduleId: "m1",
     unitId: "m1-u4",
     question: "What is Microsoft Sentinel?",
-    answer: "Cloud-native **SIEM + SOAR** with KQL hunting queries and Logic Apps playbooks for response.",
+    answer: "Cloud-native SIEM + SOAR with KQL hunting queries and Logic Apps playbooks for response.",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -577,7 +577,7 @@
     moduleId: "m1",
     unitId: "m1-u4",
     question: "What does Defender for Cloud cover?",
-    answer: "Posture management and threat protection for **Azure, AWS, and GCP** workloads.",
+    answer: "Posture management and threat protection for Azure, AWS, and GCP workloads.",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -610,7 +610,7 @@
     moduleId: "m2",
     unitId: "m2-u2",
     question: "Where can you create a distribution list?",
-    answer: "Only in the **Microsoft 365 admin center** (not in Entra — Entra supports mail-enabled security groups).",
+    answer: "Only in the Microsoft 365 admin center (not in Entra — Entra supports mail-enabled security groups).",
     reference: "Learning Path 1, Module 2 — Intro to M365 core services",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/",
     explanation: null
@@ -621,7 +621,7 @@
     moduleId: "m2",
     unitId: "m2-u2",
     question: "What are the three Teams channel types?",
-    answer: "Standard · private · **shared** (cross-team).",
+    answer: "Standard · private · shared (cross-team).",
     reference: "Learning Path 1, Module 2 — Intro to M365 core services",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/",
     explanation: null
@@ -654,7 +654,7 @@
     moduleId: "m2",
     unitId: "m2-u2",
     question: "What are the three SharePoint site roles?",
-    answer: "**Owner** (full control) · **Member** (edit) · **Visitor** (read only).",
+    answer: "Owner (full control) · Member (edit) · Visitor (read only).",
     reference: "Learning Path 1, Module 2 — Intro to M365 core services",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/",
     explanation: null
@@ -676,7 +676,7 @@
     moduleId: "m2",
     unitId: "m2-u2",
     question: "How much OneDrive storage does a user get, and what is Known Folder Move?",
-    answer: "**1 TB+ per user** (up to 5 TB). Known Folder Move = back up Desktop/Documents/Pictures to OneDrive.",
+    answer: "1 TB+ per user (up to 5 TB). Known Folder Move = back up Desktop/Documents/Pictures to OneDrive.",
     reference: "Learning Path 1, Module 2 — Intro to M365 core services",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/",
     explanation: null
@@ -698,7 +698,7 @@
     moduleId: "m2",
     unitId: "m2-u3",
     question: "What is the URL of the M365 admin center?",
-    answer: "**https://admin.microsoft.com**.",
+    answer: "https://admin.microsoft.com.",
     reference: "Learning Path 1, Module 2 — Intro to M365 core services",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/",
     explanation: null
@@ -720,7 +720,7 @@
     moduleId: "m2",
     unitId: "m2-u3",
     question: "What do you need to add a custom domain to a M365 tenant?",
-    answer: "**DNS verification** of the domain by adding a TXT/MX record.",
+    answer: "DNS verification of the domain by adding a TXT/MX record.",
     reference: "Learning Path 1, Module 2 — Intro to M365 core services",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/",
     explanation: null
@@ -731,7 +731,7 @@
     moduleId: "m2",
     unitId: "m2-u3",
     question: "Name the four PowerShell modules for M365 admin.",
-    answer: "**Exchange Online** · **Microsoft Teams** · **SharePoint Online Management Shell** · **Microsoft Graph PowerShell SDK**.",
+    answer: "Exchange Online · Microsoft Teams · SharePoint Online Management Shell · Microsoft Graph PowerShell SDK.",
     reference: "Learning Path 1, Module 2 — Intro to M365 core services",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/",
     explanation: null
@@ -742,7 +742,7 @@
     moduleId: "m3",
     unitId: "m3-u2",
     question: "What is the URL of the Microsoft Purview portal?",
-    answer: "**https://purview.microsoft.com**.",
+    answer: "https://purview.microsoft.com.",
     reference: "Learning Path 1, Module 3 — Protect and govern M365 data",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/",
     explanation: null
@@ -753,7 +753,7 @@
     moduleId: "m3",
     unitId: "m3-u2",
     question: "What are Sensitivity Labels used for?",
-    answer: "Classify and protect content with encryption, watermarks, and access restrictions — labels **travel with the file**.",
+    answer: "Classify and protect content with encryption, watermarks, and access restrictions — labels travel with the file.",
     reference: "Learning Path 1, Module 3 — Protect and govern M365 data",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/",
     explanation: null
@@ -764,7 +764,7 @@
     moduleId: "m3",
     unitId: "m3-u2",
     question: "How are labels distributed, and can a label be optional or mandatory?",
-    answer: "Via **label policies**. A label can be optional (user chooses) or mandatory (auto-applied / required). **Override rules** can require justification to downgrade.",
+    answer: "Via label policies. A label can be optional (user chooses) or mandatory (auto-applied / required). Override rules can require justification to downgrade.",
     reference: "Learning Path 1, Module 3 — Protect and govern M365 data",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/",
     explanation: null
@@ -775,7 +775,7 @@
     moduleId: "m3",
     unitId: "m3-u2",
     question: "What does DLP (Data Loss Prevention) do?",
-    answer: "Detects and blocks sensitive data (PII, PHI, financial) across Exchange, SharePoint, OneDrive, Teams, endpoints, cloud apps — **including Copilot prompts/responses**.",
+    answer: "Detects and blocks sensitive data (PII, PHI, financial) across Exchange, SharePoint, OneDrive, Teams, endpoints, cloud apps — including Copilot prompts/responses.",
     reference: "Learning Path 1, Module 3 — Protect and govern M365 data",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/",
     explanation: null
@@ -786,7 +786,7 @@
     moduleId: "m3",
     unitId: "m3-u2",
     question: "What signals does Insider Risk Management correlate?",
-    answer: "Resignation + data download, off-hours activity, mass copy, optional **endpoint activity** and **HR events**. It can auto-feed **Conditional Access via Adaptive Protection**.",
+    answer: "Resignation + data download, off-hours activity, mass copy, optional endpoint activity and HR events. It can auto-feed Conditional Access via Adaptive Protection.",
     reference: "Learning Path 1, Module 3 — Protect and govern M365 data",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/",
     explanation: null
@@ -797,7 +797,7 @@
     moduleId: "m3",
     unitId: "m3-u2",
     question: "What does Communication Compliance monitor?",
-    answer: "Teams messages, Exchange mail, **Viva Engage** (Yammer), and 3rd-party connectors — for harassment, regulatory violations, **insider trading** risk.",
+    answer: "Teams messages, Exchange mail, Viva Engage (Yammer), and 3rd-party connectors — for harassment, regulatory violations, insider trading risk.",
     reference: "Learning Path 1, Module 3 — Protect and govern M365 data",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/",
     explanation: null
@@ -808,7 +808,7 @@
     moduleId: "m3",
     unitId: "m3-u2",
     question: "What is DSPM for AI?",
-    answer: "Data Security Posture Management for AI/Copilot — surfaces **shadow AI**, risky prompts, prompt-injection attempts. Integrates with **Activity Explorer** (last 30 days of Copilot interactions).",
+    answer: "Data Security Posture Management for AI/Copilot — surfaces shadow AI, risky prompts, prompt-injection attempts. Integrates with Activity Explorer (last 30 days of Copilot interactions).",
     reference: "Learning Path 1, Module 3 — Protect and govern M365 data",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/",
     explanation: null
@@ -830,7 +830,7 @@
     moduleId: "m3",
     unitId: "m3-u2",
     question: "What is Data Lifecycle Management?",
-    answer: "Retention policies + retention labels + disposition reviews + records management. **Auto-apply rules** can fire on keywords, sensitive info types, or trainable classifiers.",
+    answer: "Retention policies + retention labels + disposition reviews + records management. Auto-apply rules can fire on keywords, sensitive info types, or trainable classifiers.",
     reference: "Learning Path 1, Module 3 — Protect and govern M365 data",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/",
     explanation: null
@@ -841,7 +841,7 @@
     moduleId: "m3",
     unitId: "m3-u2",
     question: "Difference between eDiscovery Standard and Premium?",
-    answer: "Standard (E3) = search, hold, export. **Premium (E5)** = adds legal-hold workflows, review sets, redaction, analytics.",
+    answer: "Standard (E3) = search, hold, export. Premium (E5) = adds legal-hold workflows, review sets, redaction, analytics.",
     reference: "Learning Path 1, Module 3 — Protect and govern M365 data",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/",
     explanation: null
@@ -852,7 +852,7 @@
     moduleId: "m3",
     unitId: "m3-u2",
     question: "What does Compliance Manager track?",
-    answer: "**Microsoft-managed** (auto-monitored) + **customer-managed** (manual) controls, improvement actions with owners, and an overall **Compliance Score**.",
+    answer: "Microsoft-managed (auto-monitored) + customer-managed (manual) controls, improvement actions with owners, and an overall Compliance Score.",
     reference: "Learning Path 1, Module 3 — Protect and govern M365 data",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/",
     explanation: null
@@ -863,7 +863,7 @@
     moduleId: "m3",
     unitId: "m3-u2",
     question: "What is the difference between Data Explorer and Activity Explorer?",
-    answer: "**Data Explorer** = query *where* sensitive data lives (by site, label, content type). **Activity Explorer** = *who* viewed/modified/printed/emailed labeled content.",
+    answer: "Data Explorer = query where sensitive data lives (by site, label, content type). Activity Explorer = who viewed/modified/printed/emailed labeled content.",
     reference: "Learning Path 1, Module 3 — Protect and govern M365 data",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/",
     explanation: null
@@ -874,7 +874,7 @@
     moduleId: "m3",
     unitId: "m3-u2",
     question: "What is Customer Key vs Customer Lockbox?",
-    answer: "**Customer Key** = customer-managed encryption keys for M365 data. **Customer Lockbox** = explicit customer consent before a Microsoft engineer can access tenant data.",
+    answer: "Customer Key = customer-managed encryption keys for M365 data. Customer Lockbox = explicit customer consent before a Microsoft engineer can access tenant data.",
     reference: "Learning Path 1, Module 3 — Protect and govern M365 data",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/",
     explanation: null
@@ -885,7 +885,7 @@
     moduleId: "m3",
     unitId: "m3-u5",
     question: "What is the #1 risk Copilot exposes in SharePoint?",
-    answer: "**Oversharing** — Semantic Index finds data that \"security by obscurity\" used to hide.",
+    answer: "Oversharing — Semantic Index finds data that \"security by obscurity\" used to hide.",
     reference: "Learning Path 1, Module 3 — Protect and govern M365 data",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/",
     explanation: null
@@ -940,7 +940,7 @@
     moduleId: "m3",
     unitId: "m3-u5",
     question: "What is a site ownership policy?",
-    answer: "A policy such as \"every site must have **≥ 2 owners**\" — enforced automatically.",
+    answer: "A policy such as \"every site must have ≥ 2 owners\" — enforced automatically.",
     reference: "Learning Path 1, Module 3 — Protect and govern M365 data",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/",
     explanation: null
@@ -962,7 +962,7 @@
     moduleId: "m3",
     unitId: "m3-u5",
     question: "What does Restricted SharePoint Search do at the tenant level, and what's the limit?",
-    answer: "Limits Copilot and search to a curated list of up to **100 sites**. **Hub sites and their children don't count** against the limit.",
+    answer: "Limits Copilot and search to a curated list of up to 100 sites. Hub sites and their children don't count against the limit.",
     reference: "Learning Path 1, Module 3 — Protect and govern M365 data",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/",
     explanation: null
@@ -973,7 +973,7 @@
     moduleId: "m4",
     unitId: "m4-u2",
     question: "What is the architectural definition of M365 Copilot?",
-    answer: "**RAG over Microsoft Graph + Semantic Index, permission-aware** — using the user's existing OAuth token (no new data-access path).",
+    answer: "RAG over Microsoft Graph + Semantic Index, permission-aware — using the user's existing OAuth token (no new data-access path).",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -984,7 +984,7 @@
     moduleId: "m4",
     unitId: "m4-u2",
     question: "How does Copilot access data?",
-    answer: "It uses the **user's OAuth token** and queries Graph + Semantic Index — the LLM has no direct access to tenant data.",
+    answer: "It uses the user's OAuth token and queries Graph + Semantic Index — the LLM has no direct access to tenant data.",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1028,7 +1028,7 @@
     moduleId: "m4",
     unitId: "m4-u2",
     question: "What is the difference between Copilot Chat (free) and Microsoft 365 Copilot (paid)?",
-    answer: "**Copilot Chat (free)** = web grounding only, no Graph. **Microsoft 365 Copilot (paid)** = adds work grounding (Graph + Semantic Index).",
+    answer: "Copilot Chat (free) = web grounding only, no Graph. Microsoft 365 Copilot (paid) = adds work grounding (Graph + Semantic Index).",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1050,7 +1050,7 @@
     moduleId: "m4",
     unitId: "m4-u2",
     question: "Where do you find Copilot adoption analytics?",
-    answer: "In the M365 admin center, and deep metrics in **Viva Insights → Copilot Analytics**.",
+    answer: "In the M365 admin center, and deep metrics in Viva Insights → Copilot Analytics.",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1083,7 +1083,7 @@
     moduleId: "m4",
     unitId: "m4-u3",
     question: "What is the difference between a Copilot and an Agent?",
-    answer: "**Copilot** = personal assistant that responds to the user. **Agent** = scoped, often autonomous, may run on a trigger or schedule.",
+    answer: "Copilot = personal assistant that responds to the user. Agent = scoped, often autonomous, may run on a trigger or schedule.",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1094,7 +1094,7 @@
     moduleId: "m4",
     unitId: "m4-u3",
     question: "Name four pre-built agents.",
-    answer: "**Researcher** (deep research with citations) · **Analyst** (data analysis) · Writing Coach · Prompt Coach · SharePoint site agents. (Pick four.)",
+    answer: "Researcher (deep research with citations) · Analyst (data analysis) · Writing Coach · Prompt Coach · SharePoint site agents. (Pick four.)",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1105,7 +1105,7 @@
     moduleId: "m4",
     unitId: "m4-u3",
     question: "What are the three ways to build a custom agent?",
-    answer: "**Copilot Studio** (low-code) · **VS Code + Azure AI Foundry** (pro-code) · **Declarative agents** (manifest JSON).",
+    answer: "Copilot Studio (low-code) · VS Code + Azure AI Foundry (pro-code) · Declarative agents (manifest JSON).",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1116,7 +1116,7 @@
     moduleId: "m4",
     unitId: "m4-u3",
     question: "What are the limits of Copilot Studio knowledge?",
-    answer: "Up to **20 knowledge sources**; each file up to **512 MB**; web toggle; suggested prompts; instructions & rules; triggers for autonomous behavior.",
+    answer: "Up to 20 knowledge sources; each file up to 512 MB; web toggle; suggested prompts; instructions & rules; triggers for autonomous behavior.",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1127,7 +1127,7 @@
     moduleId: "m4",
     unitId: "m4-u3",
     question: "What is a SharePoint agent, and why is it the fastest path to a governed agent?",
-    answer: "An agent scoped to a single SharePoint site. It **inherits the site's permissions** — no extra data-access decisions to make.",
+    answer: "An agent scoped to a single SharePoint site. It inherits the site's permissions — no extra data-access decisions to make.",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1138,7 +1138,7 @@
     moduleId: "m4",
     unitId: "m4-u3",
     question: "Why prefer APIs and MCP over GUI scripting?",
-    answer: "UIs change often; APIs and the **Model Context Protocol (MCP)** are stable contracts.",
+    answer: "UIs change often; APIs and the Model Context Protocol (MCP) are stable contracts.",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1149,7 +1149,7 @@
     moduleId: "m4",
     unitId: "m4-u3",
     question: "What is MCP?",
-    answer: "**Model Context Protocol** — an open standard for AI agents to call tools and access knowledge.",
+    answer: "Model Context Protocol — an open standard for AI agents to call tools and access knowledge.",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1171,7 +1171,7 @@
     moduleId: "m4",
     unitId: "m4-u3",
     question: "What is Entra Agent ID?",
-    answer: "A preview feature that gives **AI agents a first-class identity** in Entra (separate from user/service-principal).",
+    answer: "A preview feature that gives AI agents a first-class identity in Entra (separate from user/service-principal).",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1182,7 +1182,7 @@
     moduleId: "m4",
     unitId: "m4-u3",
     question: "What are the five phases of the agent lifecycle?",
-    answer: "**Draft → Test → Publish → Operate → Retire**.",
+    answer: "Draft → Test → Publish → Operate → Retire.",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1204,7 +1204,7 @@
     moduleId: "m4",
     unitId: "m4-u3",
     question: "Where do you monitor agent activity?",
-    answer: "M365 admin center + Power Platform admin center; DLP for connectors; **DSPM for AI** for risky prompts.",
+    answer: "M365 admin center + Power Platform admin center; DLP for connectors; DSPM for AI for risky prompts.",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1215,7 +1215,7 @@
     moduleId: "m4",
     unitId: "m4-u2",
     question: "What is Work IQ?",
-    answer: "A preview feature that exposes the Semantic Index to your **custom AI apps**, not just Microsoft Copilot.",
+    answer: "A preview feature that exposes the Semantic Index to your custom AI apps, not just Microsoft Copilot.",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1237,7 +1237,7 @@
     moduleId: "m4",
     unitId: "m4-u2",
     question: "What is groundedness detection?",
-    answer: "Flags Copilot answers that aren't backed by retrieved data (potential hallucinations). Check it in **Activity Explorer**.",
+    answer: "Flags Copilot answers that aren't backed by retrieved data (potential hallucinations). Check it in Activity Explorer.",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1270,7 +1270,7 @@
     moduleId: "m5",
     unitId: "m5-u2",
     question: "What is the per-user price of M365 Copilot?",
-    answer: "**~$30 per user per month.**",
+    answer: "~$30 per user per month.",
     reference: "Learning Path 2, Module 5 — Admin tasks for M365 Copilot",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/perform-admin-tasks-microsoft-365-copilot/",
     explanation: null
@@ -1281,7 +1281,7 @@
     moduleId: "m5",
     unitId: "m5-u2",
     question: "What is PAYG billing for agents, and what controls it?",
-    answer: "Pay-as-you-go metering billed against an **Azure subscription**; use **Azure budgets + cost alerts** to control cost.",
+    answer: "Pay-as-you-go metering billed against an Azure subscription; use Azure budgets + cost alerts to control cost.",
     reference: "Learning Path 2, Module 5 — Admin tasks for M365 Copilot",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/perform-admin-tasks-microsoft-365-copilot/",
     explanation: null
@@ -1303,7 +1303,7 @@
     moduleId: "m5",
     unitId: "m5-u2",
     question: "What is the user cap of Microsoft 365 Business plans, and what do they lack?",
-    answer: "**300 users** max. They lack full **Purview** features and **Insider Risk Management**.",
+    answer: "300 users max. They lack full Purview features and Insider Risk Management.",
     reference: "Learning Path 2, Module 5 — Admin tasks for M365 Copilot",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/perform-admin-tasks-microsoft-365-copilot/",
     explanation: null
@@ -1314,7 +1314,7 @@
     moduleId: "m5",
     unitId: "m5-u2",
     question: "What does E5 add over E3 that's relevant to AB-900?",
-    answer: "Defender for Office 365 **Plan 2** · eDiscovery **Premium** · full **Purview** suite.",
+    answer: "Defender for Office 365 Plan 2 · eDiscovery Premium · full Purview suite.",
     reference: "Learning Path 2, Module 5 — Admin tasks for M365 Copilot",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/perform-admin-tasks-microsoft-365-copilot/",
     explanation: null
@@ -1336,7 +1336,7 @@
     moduleId: "m5",
     unitId: "m5-u2",
     question: "Are Copilot for personal/family and M365 Copilot the same?",
-    answer: "No. Personal/family Copilot is **in-app agents** in consumer apps — **not work-grounded**.",
+    answer: "No. Personal/family Copilot is in-app agents in consumer apps — not work-grounded.",
     reference: "Learning Path 2, Module 5 — Admin tasks for M365 Copilot",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/perform-admin-tasks-microsoft-365-copilot/",
     explanation: null
@@ -1369,7 +1369,7 @@
     moduleId: "m5",
     unitId: "m5-u6",
     question: "What is the recommended Copilot rollout sequence?",
-    answer: "**Pilot → Evaluate → Expand → Optimize.**",
+    answer: "Pilot → Evaluate → Expand → Optimize.",
     reference: "Learning Path 2, Module 5 — Admin tasks for M365 Copilot",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/perform-admin-tasks-microsoft-365-copilot/",
     explanation: null
@@ -1402,7 +1402,7 @@
     moduleId: "m4",
     unitId: "m4-u2",
     question: "Name the six Microsoft responsible AI principles.",
-    answer: "**Fairness · Reliability & Safety · Privacy & Security · Inclusiveness · Accountability · Transparency.**",
+    answer: "Fairness · Reliability & Safety · Privacy & Security · Inclusiveness · Accountability · Transparency.",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1424,7 +1424,7 @@
     moduleId: "m4",
     unitId: "m4-u2",
     question: "What does \"accountability\" mean in the context of Copilot?",
-    answer: "A **human** remains responsible for any AI-driven action — Copilot is a tool, not an autonomous legal actor.",
+    answer: "A human remains responsible for any AI-driven action — Copilot is a tool, not an autonomous legal actor.",
     reference: "Learning Path 2, Module 4 — Explore M365 Copilot and agents",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/",
     explanation: null
@@ -1435,7 +1435,7 @@
     moduleId: "m1",
     unitId: "m1-u7",
     question: "What does PHS do, and why is it preferred?",
-    answer: "Syncs a **hash of the password hash** to Entra. No on-prem dependency; supports leaked-credential checks.",
+    answer: "Syncs a hash of the password hash to Entra. No on-prem dependency; supports leaked-credential checks.",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -1446,7 +1446,7 @@
     moduleId: "m1",
     unitId: "m1-u7",
     question: "What does PTA require that PHS does not?",
-    answer: "An **on-prem authentication agent** on a domain-joinable server reachable from the internet. Supports AD-specific features.",
+    answer: "An on-prem authentication agent on a domain-joinable server reachable from the internet. Supports AD-specific features.",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -1468,7 +1468,7 @@
     moduleId: "m1",
     unitId: "m1-u7",
     question: "What is the difference between Entra Connect and Cloud Sync?",
-    answer: "**Entra Connect** = full single-server sync engine. **Cloud Sync** = lightweight agent-based, supports multiple agents for high availability.",
+    answer: "Entra Connect = full single-server sync engine. Cloud Sync = lightweight agent-based, supports multiple agents for high availability.",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -1490,7 +1490,7 @@
     moduleId: "m1",
     unitId: "m1-u2",
     question: "What is the difference between an Intune compliance policy and an app protection policy (MAM)?",
-    answer: "Compliance = device-level (requires enrollment). **MAM** = app-level data protection **without enrolling** the device (BYOD-friendly).",
+    answer: "Compliance = device-level (requires enrollment). MAM = app-level data protection without enrolling the device (BYOD-friendly).",
     reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
     learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
     explanation: null
@@ -1512,7 +1512,7 @@
     moduleId: "m5",
     unitId: "m5-u2",
     question: "What is the AB-900 passing score?",
-    answer: "**700.**",
+    answer: "700.",
     reference: "AB-900 certification page",
     learnLink: "https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/",
     explanation: null
@@ -1523,7 +1523,7 @@
     moduleId: "m5",
     unitId: "m5-u2",
     question: "What are the three AB-900 domain weightings?",
-    answer: "**30–35% / 35–40% / 25–30%** (Core M365 / Data protection / Copilot).",
+    answer: "30–35% / 35–40% / 25–30% (Core M365 / Data protection / Copilot).",
     reference: "AB-900 certification page",
     learnLink: "https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/",
     explanation: null
@@ -1534,7 +1534,7 @@
     moduleId: "m5",
     unitId: "m5-u2",
     question: "What is the per-user price of M365 Copilot?",
-    answer: "**~$30/user/month.**",
+    answer: "~$30/user/month.",
     reference: "AB-900 certification page",
     learnLink: "https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/",
     explanation: null
@@ -1545,7 +1545,7 @@
     moduleId: "m5",
     unitId: "m5-u2",
     question: "What is the user cap of Microsoft 365 Business plans?",
-    answer: "**300 users.**",
+    answer: "300 users.",
     reference: "AB-900 certification page",
     learnLink: "https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/",
     explanation: null
@@ -1556,7 +1556,7 @@
     moduleId: "m5",
     unitId: "m5-u2",
     question: "What is the default Unified Audit Log retention, and how does E5 change it?",
-    answer: "180 days default; **1 year (365 days) with E5**.",
+    answer: "180 days default; 1 year (365 days) with E5.",
     reference: "AB-900 certification page",
     learnLink: "https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/",
     explanation: null
@@ -1567,7 +1567,7 @@
     moduleId: "m5",
     unitId: "m5-u2",
     question: "What is the limit of Restricted SharePoint Search?",
-    answer: "Up to **100 sites**. Hub sites and their children don't count.",
+    answer: "Up to 100 sites. Hub sites and their children don't count.",
     reference: "AB-900 certification page",
     learnLink: "https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/",
     explanation: null
@@ -1578,7 +1578,7 @@
     moduleId: "m5",
     unitId: "m5-u2",
     question: "How much OneDrive storage does a user get?",
-    answer: "**1 TB+** (up to 5 TB).",
+    answer: "1 TB+ (up to 5 TB).",
     reference: "AB-900 certification page",
     learnLink: "https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/",
     explanation: null
@@ -1589,7 +1589,7 @@
     moduleId: "m5",
     unitId: "m5-u2",
     question: "What is the maximum number of knowledge sources per Copilot Studio agent?",
-    answer: "**20.**",
+    answer: "20.",
     reference: "AB-900 certification page",
     learnLink: "https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/",
     explanation: null
@@ -1600,7 +1600,7 @@
     moduleId: "m5",
     unitId: "m5-u2",
     question: "What is the maximum knowledge file size in Copilot Studio?",
-    answer: "**512 MB.**",
+    answer: "512 MB.",
     reference: "AB-900 certification page",
     learnLink: "https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/",
     explanation: null
@@ -1611,7 +1611,7 @@
     moduleId: "m5",
     unitId: "m5-u2",
     question: "How many Global Admins should a tenant have?",
-    answer: "Keep it **≤ 4** (and assign them as eligible in PIM, not permanent).",
+    answer: "Keep it ≤ 4 (and assign them as eligible in PIM, not permanent).",
     reference: "AB-900 certification page",
     learnLink: "https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/",
     explanation: null

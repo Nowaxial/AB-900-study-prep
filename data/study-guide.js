@@ -538,51 +538,52 @@ const studyGuideData = {
             {
               unitId: "m1-u4",
               unitTitle: "Examine threat protection and intelligence in Microsoft 365",
-              content: `<h4>Threat protection and intelligence (Module 1, Unit 4)</h4>
+              content: `
+<h4>Threat protection and intelligence (Module 1, Unit 4)</h4>
 <ul>
-  <li><strong>Threat intelligence</strong> \u2014 Microsoft Defender XDR correlates signals from identity, endpoints, email, and cloud apps to detect multi-stage attacks (kill-chain, MITRE ATT&amp;CK mapping).</li>
-  <li><strong>Threat protection</strong> \u2014 capabilities in Defender for Identity, Defender for Office 365 (Safe Links, Safe Attachments, anti-phishing), Defender for Endpoint, Defender for Cloud Apps.</li>
-  <li><strong>Identity threat detection</strong> \u2014 Entra ID Protection flags risky sign-ins (anonymous IP, atypical travel, leaked credentials, password spray) and risky users (leaked credentials, threat intelligence).</li>
-  <li><strong>Best practice</strong> \u2014 review incidents weekly, tune alert rules, run attack simulations, and track Secure Score trends.</li>
+  <li><strong>Threat intelligence</strong> — Microsoft Defender XDR correlates signals from identity, endpoints, email, and cloud apps to detect multi-stage attacks (kill-chain, MITRE ATT&amp;CK mapping).</li>
+  <li><strong>Threat protection</strong> — capabilities in Defender for Identity, Defender for Office 365 (Safe Links, Safe Attachments, anti-phishing), Defender for Endpoint, Defender for Cloud Apps.</li>
+  <li><strong>Identity threat detection</strong> — Entra ID Protection flags risky sign-ins (anonymous IP, atypical travel, leaked credentials, password spray) and risky users (leaked credentials, threat intelligence).</li>
+  <li><strong>Best practice</strong> — review incidents weekly, tune alert rules, run attack simulations, and track Secure Score trends.</li>
 </ul>
 <h4>Microsoft Defender XDR</h4>
 <p>The unified eXtended Detection &amp; Response suite that combines:</p>
 <ul>
-  <li><strong>Defender for Identity</strong> \u2014 on-premises AD signals (agents on DCs, AD FS, Connect servers)</li>
-  <li><strong>Defender for Office 365</strong> \u2014 email &amp; collaboration (anti-phish, anti-malware, Safe Links, Safe Attachments, <strong>Threat Explorer</strong>, <strong>Attack simulation training</strong>)</li>
-  <li><strong>Defender for Endpoint</strong> \u2014 devices (EDR, anti-malware, attack surface reduction, automated investigations, <strong>attack path tracking</strong>)</li>
-  <li><strong>Defender for Cloud Apps</strong> \u2014 SaaS/CASB, shadow IT discovery, session policies</li>
-  <li><strong>Defender for Cloud</strong> (Azure workloads) \u2014 optional</li>
-  <li><strong>Threat analytics</strong> \u2014 a curated library of threat intelligence reports written by Microsoft security researchers.</li>
+  <li><strong>Defender for Identity</strong> — on-premises AD signals (agents on DCs, AD FS, Connect servers)</li>
+  <li><strong>Defender for Office 365</strong> — email &amp; collaboration (anti-phish, anti-malware, Safe Links, Safe Attachments, <strong>Threat Explorer</strong>, <strong>Attack simulation training</strong>)</li>
+  <li><strong>Defender for Endpoint</strong> — devices (EDR, anti-malware, attack surface reduction, automated investigations, <strong>attack path tracking</strong>)</li>
+  <li><strong>Defender for Cloud Apps</strong> — SaaS/CASB, shadow IT discovery, session policies</li>
+  <li><strong>Defender for Cloud</strong> (Azure workloads) — optional</li>
+  <li><strong>Threat analytics</strong> — a curated library of threat intelligence reports written by Microsoft security researchers.</li>
   <li>Unified portal at <strong>https://security.microsoft.com</strong> with <strong>Incidents</strong>, <strong>Hunting</strong>, <strong>Action center</strong>, <strong>Secure Score</strong>.</li>
 </ul>
 <h4>Exam-relevant Defender for Office 365 details</h4>
 <ul>
-  <li><strong>Plan 1</strong> vs <strong>Plan 2</strong> \u2014 Plan 2 is the version bundled in <strong>M365 E5</strong> and adds <strong>Threat Explorer</strong>, <strong>Attack simulation training</strong>, automated investigation &amp; response (AIR), and campaign views.</li>
-  <li><strong>Attack simulation training</strong> \u2014 let admins run realistic phishing campaigns against users and turn failed clicks into instant training.</li>
+  <li><strong>Plan 1</strong> vs <strong>Plan 2</strong> — Plan 2 is the version bundled in <strong>M365 E5</strong> and adds <strong>Threat Explorer</strong>, <strong>Attack simulation training</strong>, automated investigation &amp; response (AIR), and campaign views.</li>
+  <li><strong>Attack simulation training</strong> — let admins run realistic phishing campaigns against users and turn failed clicks into instant training.</li>
   <li><strong>Specific capabilities the exam tests</strong>:
     <ul>
-      <li><strong>Spoof intelligence</strong> \u2014 detects fake / impersonated senders (DMARC failures, lookalike domains).</li>
-      <li><strong>Impersonation protection</strong> \u2014 flags lookalike senders targeting executives (e.g., "ce0@" instead of "ceo@").</li>
-      <li><strong>Safe Links</strong> \u2014 rewrites URLs in incoming messages and <strong>rescans them at click time</strong> (not just delivery).</li>
-      <li><strong>Anti-malware</strong> \u2014 multi-engine scanning across Exchange, SharePoint, OneDrive, Teams.</li>
-      <li><strong>Zero-hour Auto Purge (ZAP)</strong> \u2014 <strong>retroactively removes</strong> malicious messages that already landed in mailboxes once a verdict changes.</li>
-      <li><strong>Attachment filtering</strong> \u2014 blocks risky file types (<code>.exe</code>, <code>.js</code>, <code>.vbs</code>, \u2026).</li>
-      <li><strong>Anti-spam &amp; transport rules</strong> \u2014 ML-based spam filtering, <strong>custom mail flow rules</strong> (e.g., block external mail with certain keywords), <strong>quarantine policies</strong>, connection filtering.</li>
+      <li><strong>Spoof intelligence</strong> — detects fake / impersonated senders (DMARC failures, lookalike domains).</li>
+      <li><strong>Impersonation protection</strong> — flags lookalike senders targeting executives (e.g., "ce0@" instead of "ceo@").</li>
+      <li><strong>Safe Links</strong> — rewrites URLs in incoming messages and <strong>rescans them at click time</strong> (not just delivery).</li>
+      <li><strong>Anti-malware</strong> — multi-engine scanning across Exchange, SharePoint, OneDrive, Teams.</li>
+      <li><strong>Zero-hour Auto Purge (ZAP)</strong> — <strong>retroactively removes</strong> malicious messages that already landed in mailboxes once a verdict changes.</li>
+      <li><strong>Attachment filtering</strong> — blocks risky file types (<code>.exe</code>, <code>.js</code>, <code>.vbs</code>, …).</li>
+      <li><strong>Anti-spam &amp; transport rules</strong> — ML-based spam filtering, <strong>custom mail flow rules</strong> (e.g., block external mail with certain keywords), <strong>quarantine policies</strong>, connection filtering.</li>
     </ul>
   </li>
 </ul>
 <h4>Exam-relevant Defender for Endpoint details</h4>
 <ul>
-  <li><strong>Attack path tracking</strong> \u2014 visualizes the chain <em>email \u2192 attachment \u2192 process \u2192 network \u2192 lateral movement \u2192 credentials on another machine</em>. Helps you understand how an incident actually unfolded.</li>
+  <li><strong>Attack path tracking</strong> — visualizes the chain <em>email → attachment → process → network → lateral movement → credentials on another machine</em>. Helps you understand how an incident actually unfolded.</li>
   <li><strong>EDR + antivirus + attack surface reduction + automated investigations</strong> in one product.</li>
-  <li><strong>Device isolation</strong> \u2014 admins can remotely cut a compromised device off the network.</li>
+  <li><strong>Device isolation</strong> — admins can remotely cut a compromised device off the network.</li>
 </ul>
 <h4>Defender for Cloud Apps (CASB)</h4>
 <ul>
   <li>Discovers <strong>shadow IT</strong> (which SaaS apps employees are actually using).</li>
-  <li><strong>Session policies</strong> \u2014 control what users can do inside a sanctioned app (block downloads, monitor activity).</li>
-  <li>App governance \u2014 sanction / unsanction apps tenant-wide.</li>
+  <li><strong>Session policies</strong> — control what users can do inside a sanctioned app (block downloads, monitor activity).</li>
+  <li>App governance — sanction / unsanction apps tenant-wide.</li>
 </ul>
 <h4>Microsoft Sentinel</h4>
 <ul>
@@ -592,7 +593,7 @@ const studyGuideData = {
 </ul>
 <h4>Microsoft Threat Intelligence Center (MSTIC)</h4>
 <ul>
-  <li>The team behind Microsoft's threat telemetry \u2014 <strong>65+ trillion signals/day</strong>, tracks nation-state actors, dark-web activity, and global campaigns.</li>
+  <li>The team behind Microsoft's threat telemetry — <strong>65+ trillion signals/day</strong>, tracks nation-state actors, dark-web activity, and global campaigns.</li>
   <li>Feeds intelligence into Defender products in near real time.</li>
 </ul>
 <h4>Defender for Cloud (Infrastructure pillar)</h4>
@@ -600,25 +601,46 @@ const studyGuideData = {
   <li>Assesses security posture across <strong>Azure, AWS, and GCP</strong> subscriptions.</li>
   <li><strong>Secure Score</strong> recommendations across all three clouds.</li>
   <li><strong>Defender plans</strong> (pay-per-resource) for servers, containers, storage, SQL, App Service, etc.</li>
-</ul>`,
+</ul>
+
+<h4>Microsoft Threat Intelligence Center (MSTIC)</h4>
+<ul>
+  <li><strong>MSTIC</strong> analyzes 65+ trillion signals daily from across Microsoft's cloud, endpoint, and identity ecosystem.</li>
+  <li>Tracks nation-state actors, ransomware groups, dark web activity, and global attack campaigns.</li>
+  <li>Intel feeds directly into Defender XDR products for real-time blocking and detection.</li>
+</ul>
+<h4>Threat Explorer</h4>
+<ul>
+  <li><strong>Real-time investigation tool</strong> for email and collaboration threats within Defender for Office 365.</li>
+  <li>Pivot investigations by sender, recipient, URL, file hash, or campaign ID.</li>
+  <li>Supports immediate remediation: soft-delete messages, block senders/URLs, submit to Microsoft for analysis.</li>
+</ul>
+<h4>Threat Analytics</h4>
+<ul>
+  <li><strong>Researcher-written reports</strong> on emerging threats, active adversary campaigns, and attacker techniques (TTPs).</li>
+  <li>Each report includes MITRE ATT&amp;CK mappings and recommended mitigations (config changes, enable features).</li>
+  <li>Helps organizations stay ahead of evolving attack trends by applying proactive defenses.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m1-u5",
               unitTitle: "Explore identity and authentication in Microsoft 365",
-              content: `<h4>Authentication methods</h4>
+              content: `
+<h4>Authentication methods</h4>
 <ul>
-  <li><strong>MFA (Multi-Factor Authentication)</strong> \u2014 at least two of: <em>something you know</em> (password), <em>something you have</em> (phone, token, passkey), <em>something you are</em> (biometric).</li>
+  <li><strong>MFA (Multi-Factor Authentication)</strong> — at least two of: <em>something you know</em> (password), <em>something you have</em> (phone, token, passkey), <em>something you are</em> (biometric).</li>
   <li><strong>Phishing-resistant</strong> methods (preferred, mandatory for admins):
     <ul>
-      <li><strong>Passkeys (FIDO2 / WebAuthn)</strong> \u2014 bound to a device or hardware key; the private key never leaves the device, so they cannot be phished.</li>
-      <li><strong>Windows Hello for Business</strong> \u2014 replaces passwords with a PIN + biometric (face/fingerprint) tied to the device's TPM.</li>
+      <li><strong>Passkeys (FIDO2 / WebAuthn)</strong> — bound to a device or hardware key; the private key never leaves the device, so they cannot be phished.</li>
+      <li><strong>Windows Hello for Business</strong> — replaces passwords with a PIN + biometric (face/fingerprint) tied to the device's TPM.</li>
       <li><strong>Certificate-based authentication</strong>.</li>
     </ul>
   </li>
-  <li><strong>Passwordless</strong> \u2014 Authenticator app passwordless, Windows Hello, Passkeys.</li>
-  <li><strong>Password</strong> \u2014 only as a last resort, and <strong>never</strong> the only factor for admins.</li>
+  <li><strong>Passwordless</strong> — Authenticator app passwordless, Windows Hello, Passkeys.</li>
+  <li><strong>Password</strong> — only as a last resort, and <strong>never</strong> the only factor for admins.</li>
 </ul>
 <h4>Conditional Access policies</h4>
 <ul>
@@ -628,17 +650,35 @@ const studyGuideData = {
 </ul>
 <h4>Single Sign-On (SSO)</h4>
 <ul>
-  <li><strong>Purpose</strong> \u2014 one set of credentials gives access to many apps; fewer passwords = lower phishing risk, fewer resets.</li>
-  <li><strong>Benefits</strong> \u2014 improved user experience, centralized access control, consistent MFA enforcement, easier offboarding.</li>
-  <li><strong>Methods supported</strong> \u2014 password-based SSO (seamless SSO), SAML, OpenID Connect/OAuth, header-based, linked.</li>
+  <li><strong>Purpose</strong> — one set of credentials gives access to many apps; fewer passwords = lower phishing risk, fewer resets.</li>
+  <li><strong>Benefits</strong> — improved user experience, centralized access control, consistent MFA enforcement, easier offboarding.</li>
+  <li><strong>Methods supported</strong> — password-based SSO (seamless SSO), SAML, OpenID Connect/OAuth, header-based, linked.</li>
   <li><strong>Client-side brokers</strong>:
     <ul>
       <li>On Windows: <strong>Windows Hello for Business</strong> transparently brokers SSO tokens to apps.</li>
       <li>On phones: <strong>Microsoft Authenticator app</strong> acts as a <strong>token broker</strong> using the <strong>Microsoft Authentication Library (MSAL)</strong>, getting tokens for all the apps on the device seamlessly.</li>
     </ul>
   </li>
-  <li><strong>Federation-era best practice</strong> \u2014 today, instead of deploying your own ADFS to federate third-party SaaS apps, <strong>configure those apps to federate with Entra ID</strong> and let Entra do the work.</li>
-</ul>`,
+  <li><strong>Federation-era best practice</strong> — today, instead of deploying your own ADFS to federate third-party SaaS apps, <strong>configure those apps to federate with Entra ID</strong> and let Entra do the work.</li>
+</ul>
+
+<h4>Authentication in Hybrid Environments</h4>
+<table>
+  <thead>
+    <tr><th>Method</th><th>How it works</th><th>Best for</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Password Hash Sync (PHS)</strong></td><td>Password hashes synced from on-prem AD to Entra ID; user signs in against the cloud</td><td>Most organizations — no on-prem dependency, includes Identity Protection and leak detection</td></tr>
+    <tr><td><strong>Pass-Through Authentication (PTA)</strong></td><td>Password validated in real-time against on-prem AD via an agent on domain-joined servers</td><td>Orgs that require immediate on-prem password policy enforcement or disabled-account lockout</td></tr>
+    <tr><td><strong>Federation (AD FS)</strong></td><td>Authentication handled by on-prem identity provider; user redirected to AD FS</td><td>Legacy or complex scenarios requiring custom auth, third-party MFA, or smart-card integration</td></tr>
+  </tbody>
+</table>
+<ul>
+  <li><strong>Microsoft recommends PHS or PTA</strong> for most organizations. Federation is considered legacy and adds complexity.</li>
+  <li><strong>Seamless SSO</strong> available with both PHS and PTA — users see no sign-in prompt on domain-joined devices.</li>
+  <li><strong>Password Writeback</strong> (requires PHS + Entra Connect) enables hybrid SSPR — password changes in cloud sync back to on-prem.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
@@ -671,54 +711,66 @@ const studyGuideData = {
             {
               unitId: "m1-u7",
               unitTitle: "Explore identity and access management in Microsoft Entra",
-              content: `<h4>Microsoft Entra (formerly Azure Active Directory)</h4>
+              content: `
+<h4>Microsoft Entra (formerly Azure Active Directory)</h4>
 <p>The identity plane for all M365 services.</p>
 <ul>
-  <li><strong>Entra ID</strong> \u2014 cloud directory of users, groups, applications, service principals.</li>
-  <li><strong>App registrations</strong> \u2014 applications you build/own; you define the app's identity, secrets, and API permissions.</li>
-  <li><strong>Enterprise applications</strong> \u2014 applications integrated into your tenant (SaaS apps, custom apps, Microsoft-published apps) \u2014 you manage user assignments, SSO, and provisioning.</li>
-  <li><strong>External Identities</strong> \u2014 B2B guest access, B2C for customer-facing apps.</li>
+  <li><strong>Entra ID</strong> — cloud directory of users, groups, applications, service principals.</li>
+  <li><strong>App registrations</strong> — applications you build/own; you define the app's identity, secrets, and API permissions.</li>
+  <li><strong>Enterprise applications</strong> — applications integrated into your tenant (SaaS apps, custom apps, Microsoft-published apps) — you manage user assignments, SSO, and provisioning.</li>
+  <li><strong>External Identities</strong> — B2B guest access, B2C for customer-facing apps.</li>
 </ul>
 <h4>Identity types in Entra</h4>
 <ul>
-  <li><strong>Person</strong> \u2014 user identity (a digital persona for a human).</li>
-  <li><strong>Application</strong> \u2014 service principal, app registration, managed identity.</li>
-  <li><strong>AI agent</strong> \u2014 <strong>Entra Agent ID</strong> (preview) gives agents their own identity so they can be governed, audited, and assigned their own permissions.</li>
+  <li><strong>Person</strong> — user identity (a digital persona for a human).</li>
+  <li><strong>Application</strong> — service principal, app registration, managed identity.</li>
+  <li><strong>AI agent</strong> — <strong>Entra Agent ID</strong> (preview) gives agents their own identity so they can be governed, audited, and assigned their own permissions.</li>
 </ul>
 <h4>Hybrid identity authentication methods</h4>
 <ul>
-  <li><strong>Password Hash Sync (PHS)</strong> \u2014 <em>preferred</em>; no on-prem dependency; supports leaked-credential detection.</li>
-  <li><strong>Pass-Through Authentication (PTA)</strong> \u2014 forwards auth to an agent on a DC; requires on-prem AD reachable.</li>
-  <li><strong>Federation (AD FS)</strong> \u2014 heavy on-prem footprint; today, <strong>federate cloud services with Entra</strong> instead.</li>
+  <li><strong>Password Hash Sync (PHS)</strong> — <em>preferred</em>; no on-prem dependency; supports leaked-credential detection.</li>
+  <li><strong>Pass-Through Authentication (PTA)</strong> — forwards auth to an agent on a DC; requires on-prem AD reachable.</li>
+  <li><strong>Federation (AD FS)</strong> — heavy on-prem footprint; today, <strong>federate cloud services with Entra</strong> instead.</li>
 </ul>
 <h4>Groups types</h4>
 <ul>
-  <li><strong>Security group</strong> \u2014 assign access to resources; managed in Entra admin center.</li>
-  <li><strong>Microsoft 365 group</strong> \u2014 collaboration (shared mailbox, calendar, SharePoint site, Planner, Teams).</li>
-  <li><strong>Mail-enabled security group</strong> \u2014 security + email distribution.</li>
-  <li><strong>Distribution list</strong> \u2014 email only; can ONLY be created in M365 admin center (not Entra).</li>
-  <li><strong>Dynamic group</strong> \u2014 membership updates automatically based on user attributes (e.g., <code>department = Sales</code>).</li>
-</ul>`,
+  <li><strong>Security group</strong> — assign access to resources; managed in Entra admin center.</li>
+  <li><strong>Microsoft 365 group</strong> — collaboration (shared mailbox, calendar, SharePoint site, Planner, Teams).</li>
+  <li><strong>Mail-enabled security group</strong> — security + email distribution.</li>
+  <li><strong>Distribution list</strong> — email only; can ONLY be created in M365 admin center (not Entra).</li>
+  <li><strong>Dynamic group</strong> — membership updates automatically based on user attributes (e.g., <code>department = Sales</code>).</li>
+</ul>
+
+<h4>Access Packages (Entra Identity Governance)</h4>
+<ul>
+  <li><strong>Access Packages</strong> bundle permissions across multiple resources (groups, apps, SharePoint sites) into a single requestable catalog.</li>
+  <li><strong>Features</strong>: approval workflows, expiration policies (time-bound access), access reviews, automated onboarding/offboarding.</li>
+  <li>Managed via <strong>Entra admin center → Identity Governance → Access Packages</strong> within a Catalog.</li>
+  <li>Use cases: new employee onboarding (grants all required apps/sites), external collaborator access (time-limited, reviewed, auto-expires).</li>
+  <li><strong>Exam tip</strong>: Access Packages are the recommended approach for granting time-limited, auditable access compared to manual group membership assignments.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m1-u8",
               unitTitle: "Troubleshoot and monitor identity security",
-              content: `<h4>Tools to troubleshoot common sign-in issues</h4>
+              content: `
+<h4>Tools to troubleshoot common sign-in issues</h4>
 <ul>
-  <li><strong>MFA issues</strong> \u2014 Microsoft Authenticator app, SSPR (self-service password reset), tenant MFA settings.</li>
-  <li><strong>Conditional Access</strong> \u2014 sign-in logs, <strong>"What If" tool</strong> to test a policy before applying it, Conditional Access Insights &amp; Reporting workbook.</li>
-  <li><strong>Risky sign-ins</strong> \u2014 Entra ID Protection risk report, risky sign-ins blade, risk remediation (block / require MFA / require password change).</li>
-  <li><strong>Other</strong> \u2014 Self-Service Password Reset (SSPR), Azure AD sign-in logs (interactive + non-interactive), passwordless diagnostic.</li>
+  <li><strong>MFA issues</strong> — Microsoft Authenticator app, SSPR (self-service password reset), tenant MFA settings.</li>
+  <li><strong>Conditional Access</strong> — sign-in logs, <strong>"What If" tool</strong> to test a policy before applying it, Conditional Access Insights &amp; Reporting workbook.</li>
+  <li><strong>Risky sign-ins</strong> — Entra ID Protection risk report, risky sign-ins blade, risk remediation (block / require MFA / require password change).</li>
+  <li><strong>Other</strong> — Self-Service Password Reset (SSPR), Azure AD sign-in logs (interactive + non-interactive), passwordless diagnostic.</li>
 </ul>
-<h4>Common sign-in problem \u2192 fix matrix</h4>
+<h4>Common sign-in problem → fix matrix</h4>
 <table>
   <thead>
     <tr><th>Symptom</th><th>First check</th><th>Resolution</th></tr>
   </thead>
   <tbody>
-    <tr><td>MFA failure (Authenticator)</td><td>Sign-in logs \u2192 exact failure reason</td><td>Re-register Authenticator; <strong>fix device time drift</strong> for TOTP codes</td></tr>
+    <tr><td>MFA failure (Authenticator)</td><td>Sign-in logs → exact failure reason</td><td>Re-register Authenticator; <strong>fix device time drift</strong> for TOTP codes</td></tr>
     <tr><td>MFA failure (FIDO2)</td><td>Sign-in logs</td><td>Re-register the FIDO2 security key</td></tr>
     <tr><td>Conditional Access denial</td><td><strong>What If</strong> tool</td><td>Identify the blocking policy; confirm device compliance in Intune; remediate or update the device</td></tr>
     <tr><td>Risky sign-in</td><td>Identity Protection risk log</td><td>Reset password, force MFA, or block access</td></tr>
@@ -737,14 +789,29 @@ const studyGuideData = {
 <ul>
   <li>A <strong>percentage score</strong> showing how well your Entra ID tenant is configured against Microsoft's security best practices.</li>
   <li>Each <strong>improvement action</strong> has an impact score; the total achievable = 100%.</li>
-  <li><strong>Interpret</strong> \u2014 aim for the recommended target; high score = better identity posture; investigate regressions in score history.</li>
+  <li><strong>Interpret</strong> — aim for the recommended target; high score = better identity posture; investigate regressions in score history.</li>
 </ul>
 <h4>Audit logs</h4>
 <ul>
-  <li><strong>Entra ID audit logs</strong> \u2014 every directory change (user created, role assigned, app registered).</li>
-  <li><strong>Unified Audit Log (Microsoft Purview)</strong> \u2014 every action across M365 workloads; default retention <strong>180 days</strong>; <strong>Premium</strong> = 1 year (requires E5).</li>
-  <li>Tools: <strong>Microsoft Purview \u2192 Audit</strong>, <strong>Entra admin center \u2192 Audit logs</strong>, <strong>M365 Admin Center \u2192 Audit logs</strong>, <strong>Microsoft 365 Defender \u2192 Hunting</strong>.</li>
-</ul>`,
+  <li><strong>Entra ID audit logs</strong> — every directory change (user created, role assigned, app registered).</li>
+  <li><strong>Unified Audit Log (Microsoft Purview)</strong> — every action across M365 workloads; default retention <strong>180 days</strong>; <strong>Premium</strong> = 1 year (requires E5).</li>
+  <li>Tools: <strong>Microsoft Purview → Audit</strong>, <strong>Entra admin center → Audit logs</strong>, <strong>M365 Admin Center → Audit logs</strong>, <strong>Microsoft 365 Defender → Hunting</strong>.</li>
+</ul>
+
+<h4>Common Scenario Walkthroughs</h4>
+<table>
+  <thead>
+    <tr><th>Scenario</th><th>Troubleshooting Steps</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>MFA prompt not appearing</strong></td><td>Check user MFA registration status in Entra admin center; verify Authenticator app is up-to-date; re-register device if needed; fix device time drift for TOTP codes</td></tr>
+    <tr><td><strong>Conditional Access denying access</strong></td><td>Use the <strong>What If</strong> tool to simulate the exact sign-in (user, app, location, device) and identify which policy blocks; check Intune device compliance status; review Defender for Endpoint device risk score</td></tr>
+    <tr><td><strong>Risky sign-in flagged</strong></td><td>Review risk level (Low/Medium/High) in Entra → Identity Protection → Risky sign-ins; investigate event details (anonymous IP, unfamiliar location, leaked credentials); dismiss if false positive, force password reset if confirmed</td></tr>
+    <tr><td><strong>Location/IP-based block while traveling</strong></td><td>Review sign-in logs for named location mismatch; add a temporary exclusion in the Conditional Access policy (compliance grace period) or guide user through registered-location MFA prompt</td></tr>
+    <tr><td><strong>Legacy authentication failure</strong></td><td>Identify the client (Exchange ActiveSync, legacy IMAP/POP, older Office); enable modern auth for that protocol; upgrade Office client; create a Conditional Access policy to block legacy auth entirely</td></tr>
+  </tbody>
+</table>
+`,
               examTips: [],
               keyConcepts: []
             },
@@ -758,7 +825,22 @@ const studyGuideData = {
             {
               unitId: "m1-u10",
               unitTitle: "Summary",
-              content: `<p>Module 1 covered the Microsoft 365 security foundations including Zero Trust principles, layered security strategy, threat protection with Defender XDR, identity and authentication methods, Conditional Access, SSO, access management with RBAC/PIM/JIT/JEA, Microsoft Entra identity and access management, and troubleshooting identity security.</p>`,
+              content: `
+<h4>Module 1 Summary — Microsoft 365 Security Foundations</h4>
+<p>Module 1 covered the foundational security concepts every Microsoft 365 administrator needs. Key takeaways:</p>
+<ul>
+  <li><strong>Zero Trust</strong> is a security model, not a product. Three principles: verify explicitly, least privilege, assume breach. Six pillars: Identity, Endpoints, Applications, Data, Infrastructure, Network.</li>
+  <li><strong>Microsoft Defender XDR</strong> unifies Identity, Office 365, Endpoint, and Cloud Apps into a single incident view at security.microsoft.com. Key components: Defender for Identity (AD signals), Defender for Office 365 (Safe Links, Safe Attachments, ZAP, Threat Explorer), Defender for Endpoint (EDR, AV, attack surface reduction), Defender for Cloud Apps (CASB, shadow IT).</li>
+  <li><strong>Microsoft Sentinel</strong> is a cloud-native SIEM+SOAR with KQL hunting and Logic Apps playbooks. Defender for Cloud provides multicloud posture across Azure, AWS, GCP.</li>
+  <li><strong>Identity and authentication</strong>: phishing-resistant MFA (passkeys, Windows Hello, certificate-based) is mandatory for admins. Passwords alone are the least-preferred method. MFA uses at least two of: know (password), have (phone/FIDO key), are (biometric).</li>
+  <li><strong>Entra ID</strong> is the identity plane for all M365 workloads. Supports cloud-only, hybrid (PHS preferred, PTA, Federation legacy), and dynamic groups for auto-cleanup.</li>
+  <li><strong>Authorization</strong>: RBAC with built-in roles (Global Admin, Exchange Admin, etc.) and custom roles. PIM provides JIT activation with approval, time-bound access, and full audit. Access Reviews prevent privilege creep.</li>
+  <li><strong>Conditional Access</strong> is the if/then policy engine targeting users, apps, and conditions (risk, device, location, client app). Session controls include sign-in frequency, persistent browser, and continuous access evaluation.</li>
+  <li><strong>Monitoring</strong>: Identity Secure Score, Unified Audit Log (180 days default, 1 year E5), Entra ID audit and sign-in logs.</li>
+  <li><strong>Hybrid identity</strong>: PHS preferred for no on-prem dependency, PTA for AD-specific features, Federation legacy. Seamless SSO available with PHS/PTA. Password Writeback required for hybrid SSPR.</li>
+  <li><strong>Intune</strong>: compliance policies (encryption, OS, AV), MAM app protection for BYOD, Windows Autopilot enrollment, update rings, co-management with ConfigMgr.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             }
@@ -778,122 +860,284 @@ const studyGuideData = {
             {
               unitId: "m2-u2",
               unitTitle: "Explore the Microsoft 365 ecosystem and core service components",
-              content: `<h4>The Microsoft 365 ecosystem</h4>
-<p>Microsoft 365 brings together major productivity and collaboration workloads under one secure, cloud-connected environment:</p>
+              content: `
+<h4>Microsoft 365 ecosystem overview</h4>
+<p>Microsoft 365 is a subscription-based platform that integrates productivity apps, identity management, security, and compliance into a unified cloud environment. All workloads share a common identity plane through <strong>Microsoft Entra ID</strong>.</p>
+<h4>Core service components</h4>
+<table>
+  <thead>
+    <tr><th>Service</th><th>Function</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Microsoft Entra ID</strong></td><td>Identity and access management — authentication, authorization, Conditional Access</td></tr>
+    <tr><td><strong>Exchange Online</strong></td><td>Email hosting, calendar, contacts, mail flow rules, anti-spam/anti-malware</td></tr>
+    <tr><td><strong>SharePoint Online</strong></td><td>Site and content management, document libraries, intranet portals</td></tr>
+    <tr><td><strong>OneDrive for Business</strong></td><td>Personal cloud storage (1 TB+ per user); backed by SharePoint storage infrastructure</td></tr>
+    <tr><td><strong>Microsoft Teams</strong></td><td>Chat, meetings, calling, app integration, channels (Standard/Private/Shared)</td></tr>
+    <tr><td><strong>Microsoft 365 Apps</strong></td><td>Desktop and web versions of Word, Excel, PowerPoint, Outlook, OneNote</td></tr>
+    <tr><td><strong>Power Platform</strong></td><td>Power Apps, Power Automate, Power BI, Power Pages, Copilot Studio</td></tr>
+    <tr><td><strong>Microsoft 365 Copilot</strong></td><td>AI assistant grounded in Microsoft Graph; requires prerequisite license (E3/E5/Business)</td></tr>
+    <tr><td><strong>Microsoft Purview</strong></td><td>Unified compliance portal for data governance, protection, and risk management</td></tr>
+    <tr><td><strong>Microsoft Defender XDR</strong></td><td>Unified security suite — Defender for Identity, Office 365, Endpoint, Cloud Apps</td></tr>
+  </tbody>
+</table>
+<h4>License plan families</h4>
 <ul>
-  <li><strong>Identity (Entra ID)</strong> \u2014 common identity layer for all workloads.</li>
-  <li><strong>Exchange Online</strong> \u2014 mail, calendar, mail flow rules.</li>
-  <li><strong>SharePoint</strong> \u2014 sites, libraries, content management.</li>
-  <li><strong>OneDrive</strong> \u2014 personal storage.</li>
-  <li><strong>Teams</strong> \u2014 chat, meetings, calling, app integrations.</li>
-  <li><strong>Power Platform</strong> \u2014 Power Apps, Automate, BI, Copilot Studio.</li>
-  <li><strong>Microsoft 365 Apps</strong> \u2014 Office desktop and web apps.</li>
-  <li><strong>Microsoft 365 Copilot</strong> \u2014 AI assistant.</li>
+  <li><strong>M365 Business</strong> (Basic, Standard, Premium) — up to <strong>300 users</strong>; no Purview or Insider Risk Management</li>
+  <li><strong>M365 Enterprise E3</strong> — full productivity suite + core security/compliance; eDiscovery Standard</li>
+  <li><strong>M365 Enterprise E5</strong> — adds Defender for Office 365 Plan 2, advanced Purview compliance, eDiscovery Premium, advanced auditing (1-year retention)</li>
+  <li><strong>M365 F1/F3</strong> — front-line worker licenses (limited Office apps, web-only)</li>
+  <li><strong>Copilot prerequisites</strong> — requires E3, E5, or Business Standard/Premium as a baseline; <strong>~$30/user/month</strong> add-on</li>
+  <li><strong>E5 Compliance</strong> and <strong>E5 Security</strong> add-ons — stack on E3 for specific capabilities without full E5</li>
 </ul>
-<h4>How license types affect access</h4>
+<h4>License assignment and service plans</h4>
 <ul>
-  <li><strong>License assignment controls feature access.</strong> A user with an E3 license cannot use E5-only features.</li>
-  <li>Licenses are assigned to <strong>users</strong> or to <strong>groups</strong> (group-based licensing cascades to members).</li>
-  <li>Removing a license immediately revokes access; data is preserved for a grace period.</li>
-  <li>Service plans inside a license can be enabled/disabled individually.</li>
-</ul>`,
+  <li>Licenses can be assigned to <strong>individual users</strong> or <strong>groups</strong> (group-based licensing via Entra ID)</li>
+  <li>Each license contains <strong>service plans</strong> (e.g., Exchange Online, SharePoint, Teams, Power BI Pro) that can be toggled on/off individually</li>
+  <li>Removing a license immediately revokes access; <strong>data is preserved for a 30-day grace period</strong> (longer for suspended accounts)</li>
+  <li><strong>Multi-Geo</strong> — data residency feature; lets you specify data locations per user (requires a separate add-on)</li>
+</ul>
+<h4>How services interconnect (exam scenario)</h4>
+<ul>
+  <li>Teams relies on <strong>Exchange Online</strong> for meeting recordings, voicemail, and calendar integration</li>
+  <li>Teams relies on <strong>SharePoint</strong> for file sharing in channels; <strong>OneDrive</strong> for private chat file sharing</li>
+  <li>Microsoft 365 Groups unify a shared mailbox, calendar, SharePoint site, Planner, and Teams team</li>
+  <li>Copilot uses <strong>Microsoft Graph</strong> to retrieve permitted content from all workloads — it respects existing permissions</li>
+  <li><strong>Common exam scenario</strong>: "A user cannot access a file in Teams chat" → the file is stored in OneDrive, check OneDrive sharing permissions</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m2-u3",
               unitTitle: "Explore the Microsoft 365 admin center and key admin tools",
-              content: `<h4>Microsoft 365 admin center \u2014 organization configuration</h4>
+              content: `
+<h4>Microsoft 365 admin center (https://admin.microsoft.com)</h4>
+<p>The primary administration portal for managing users, groups, billing, service health, and tenant-wide settings. Key sections include:</p>
 <ul>
-  <li><strong>Domain names</strong> \u2014 add and verify custom domains before pointing MX/SPF/DKIM/DMARC records to M365.</li>
-  <li><strong>Org settings</strong> \u2014 release preferences, theme, contact info, privacy profile, customer lockbox, data location.</li>
+  <li><strong>Users → Active Users</strong> — create users, reset passwords, assign licenses, manage roles, block sign-in</li>
+  <li><strong>Groups</strong> — create and manage security groups, Microsoft 365 groups, distribution lists, mail-enabled security groups</li>
+  <li><strong>Billing</strong> — licenses, subscriptions, invoices, payment methods, third-party app purchases</li>
+  <li><strong>Service Health</strong> — tenant-wide incidents, planned maintenance, health history, RSS feeds, email notifications</li>
+  <li><strong>Message Center</strong> — official Microsoft communications about feature changes, deprecations, and updates; supports weekly digests and alert subscriptions</li>
+  <li><strong>Reports</strong> — adoption metrics, usage analytics, security & compliance score, Microsoft 365 usage analytics</li>
+  <li><strong>Org settings</strong> — release preferences (Standard/Targeted), organization profile (logo, theme, privacy, contact info), Customer Lockbox, data location</li>
+  <li><strong>Setup</strong> — guided checklists for first-time configuration, data migration, and security baselines</li>
+  <li><strong>Roles</strong> — assign Entra ID admin roles (Global Admin, Exchange Admin, SharePoint Admin, Teams Admin, etc.)</li>
+  <li><strong>Health → Service Health</strong> and <strong>Message Center</strong> — critical for monitoring tenant status</li>
 </ul>
-<h4>Key admin tools inside the M365 admin center</h4>
+<h4>Specialized admin centers (portal URLs)</h4>
+<table>
+  <thead>
+    <tr><th>Portal</th><th>URL</th><th>Primary Use</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Entra admin center</strong></td><td>entra.microsoft.com</td><td>Identity, Conditional Access, PIM, App registrations</td></tr>
+    <tr><td><strong>Exchange admin center</strong></td><td>admin.exchange.microsoft.com</td><td>Mailboxes, mail flow, anti-spam, connectors, accepted domains</td></tr>
+    <tr><td><strong>SharePoint admin center</strong></td><td>admin.microsoft.com/sharepoint</td><td>Sites, site collections, sharing settings, storage limits</td></tr>
+    <tr><td><strong>Teams admin center</strong></td><td>admin.teams.microsoft.com</td><td>Teams, policies, voice, apps, meeting settings, devices</td></tr>
+    <tr><td><strong>Microsoft 365 Defender</strong></td><td>security.microsoft.com</td><td>Security incidents, alerts, Secure Score, threat hunting</td></tr>
+    <tr><td><strong>Microsoft Purview</strong></td><td>purview.microsoft.com</td><td>Compliance, DLP, sensitivity labels, eDiscovery, IRM</td></tr>
+    <tr><td><strong>Power Platform admin center</strong></td><td>admin.powerplatform.microsoft.com</td><td>Power Apps, Power Automate, environments, DLP policies</td></tr>
+    <tr><td><strong>Copilot Studio</strong></td><td>copilotstudio.microsoft.com</td><td>Build custom agents and Copilots</td></tr>
+  </tbody>
+</table>
+<h4>PowerShell modules for administration</h4>
 <ul>
-  <li><strong>Users</strong> \u2014 create, manage, reset passwords, assign roles.</li>
-  <li><strong>Groups</strong> \u2014 security and Microsoft 365 groups, group-based licensing.</li>
-  <li><strong>Billing</strong> \u2014 licenses, subscriptions, invoices, payment methods.</li>
-  <li><strong>Support</strong> \u2014 open Microsoft tickets, see health advisories.</li>
-  <li><strong>Service Health</strong> \u2014 tenant-wide incidents, planned maintenance, health history.</li>
-  <li><strong>Message Center</strong> \u2014 official Microsoft communications, weekly digests, alert subscriptions.</li>
-  <li><strong>Reports</strong> \u2014 adoption, usage, security/compliance score.</li>
-  <li><strong>Settings</strong> \u2014 org-wide toggles (release preferences, marketplace, etc.).</li>
-  <li><strong>Setup</strong> \u2014 guided checklists for first-time admins.</li>
-  <li><strong>Roles</strong> \u2014 assign Entra ID admin roles (Global Admin, Exchange Admin, etc.).</li>
+  <li><strong>Exchange Online PowerShell</strong> — mailbox management, mail flow rules, anti-spam policies</li>
+  <li><strong>Microsoft Teams PowerShell</strong> — team creation, policies, voice configuration</li>
+  <li><strong>SharePoint Online Management Shell</strong> — site provisioning, permissions, storage limits</li>
+  <li><strong>Microsoft Graph PowerShell SDK</strong> — unified API for all M365 workloads; <strong>preferred modern approach</strong></li>
 </ul>
-<h4>PowerShell modules for M365 admin</h4>
+<h4>Delegated administration</h4>
 <ul>
-  <li><strong>Exchange Online PowerShell</strong></li>
-  <li><strong>Microsoft Teams PowerShell</strong></li>
-  <li><strong>SharePoint Online Management Shell</strong></li>
-  <li><strong>Microsoft Graph PowerShell SDK</strong> (the new way \u2014 covers most workloads)</li>
-</ul>`,
+  <li><strong>DAP (Delegated Admin Privileges)</strong> — legacy partner delegation; grants Global Admin privileges</li>
+  <li><strong>GDAP (Granular Delegated Admin Privileges)</strong> — modern replacement; time-bound, scoped roles for partners</li>
+  <li><strong>Exam scenario</strong>: "Partner needs temporary mailbox management" → <strong>GDAP</strong> with Exchange Admin role assignment</li>
+</ul>
+<h4>Service Health and Message Center (exam details)</h4>
+<ul>
+  <li><strong>Service Health</strong> shows current and past incidents with status (Service degraded, Restoring service, Extended recovery, Post-incident report)</li>
+  <li><strong>Message Center</strong> posts are organized by category (Plan for change, Stay informed, Action required) with a default <strong>30-day retention</strong></li>
+  <li>Message Center supports <strong>send to email</strong>, <strong>weekly digest</strong>, <strong>API access</strong>, and <strong>preferences</strong></li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m2-u4",
               unitTitle: "Examine Microsoft Exchange, Teams, and SharePoint",
-              content: `<h4>Exchange Online admin center \u2014 objects</h4>
+              content: `
+<h4>Exchange Online — key objects and admin tasks</h4>
 <ul>
-  <li><strong>Mailboxes</strong> \u2014 user mailboxes, shared mailboxes, resource mailboxes (rooms, equipment), Microsoft 365 group mailboxes.</li>
-  <li><strong>Distribution lists</strong> \u2014 email groups for sending to many recipients.</li>
-  <li>Mail flow rules (transport rules), accepted domains, connectors, anti-spam, anti-malware, DLP.</li>
+  <li><strong>Mailbox types</strong>: User mailbox (primary per person), Shared mailbox (multiple users, no license needed if <50 GB), Resource mailbox (Room/Equipment for scheduling), Microsoft 365 Group mailbox, Discovery mailbox (for eDiscovery searches)</li>
+  <li><strong>Mail flow</strong> — inbound/outbound connectors, accepted domains (authoritative/internal relay/external relay), mail flow rules (transport rules) for routing, compliance, or security</li>
+  <li><strong>Exchange admin center (EAC)</strong> — admin.exchange.microsoft.com</li>
+  <li><strong>Key admin tasks</strong>: create shared mailboxes, configure mail forwarding, set mailbox delegation (Send As, Send on Behalf, Full Access), manage retention policies</li>
+  <li><strong>Distribution groups</strong> vs <strong>Mail-enabled security groups</strong> vs <strong>Microsoft 365 groups</strong> — distribution lists are created only in Exchange admin center or M365 admin center (not Entra)</li>
+  <li><strong>Defender for Office 365</strong>: anti-phishing, anti-malware, Safe Links, Safe Attachments, anti-spam, quarantine policies, spoof intelligence, impersonation protection</li>
+  <li><strong>Exam fact</strong>: Shared mailboxes with less than 50 GB do NOT require a license</li>
 </ul>
-<h4>SharePoint in Microsoft 365 admin center \u2014 objects</h4>
+<h4>SharePoint Online — key objects and admin tasks</h4>
 <ul>
-  <li><strong>Sites</strong> \u2014 communication sites (broadcast) and team sites (collaboration, tied to Microsoft 365 groups).</li>
-  <li><strong>Libraries</strong> \u2014 document libraries with versioning, metadata, columns, views.</li>
-  <li><strong>Folders</strong> \u2014 sub-containers for organizing content with unique permissions.</li>
+  <li><strong>Site types</strong>: <strong>Communication sites</strong> (broadcast, news, reports) and <strong>Team sites</strong> (collaboration, tied to Microsoft 365 groups)</li>
+  <li><strong>Hub sites</strong> — group related sites together for unified navigation and search scope</li>
+  <li><strong>Document libraries</strong> — versioning (major/minor), metadata, columns, content types, co-authoring, check-in/check-out</li>
+  <li><strong>SharePoint groups</strong>: Owners (full control), Members (contribute), Visitors (read)</li>
+  <li><strong>Permission levels</strong>: Full Control, Design, Edit, Contribute, Read, Limited Access, Approve</li>
+  <li><strong>Permission inheritance</strong> — child objects (folders, files) inherit from parent by default; breaking inheritance gives granular control but is a <strong>major source of oversharing</strong></li>
+  <li><strong>Sharing settings</strong> (external): <strong>Anyone</strong> (anonymous links), <strong>New and existing guests</strong> (guest accounts), <strong>Existing guests</strong>, <strong>Only people in your organization</strong></li>
+  <li><strong>File storage limits</strong>: 1 TB + 10 GB per licensed user across the tenant; max file size 250 GB (in SharePoint/OneDrive); 2 TB default per site collection</li>
+  <li><strong>Key admin tools</strong>: SharePoint admin center, SharePoint Migration Tool (SPMT), SharePoint PowerShell, SharePoint Online Management Shell</li>
+  <li><strong>SharePoint Advanced Management</strong> (E5 add-on): Restricted Site Access, Data Access Governance reports, site ownership policy (minimum 2 owners), inactive site lifecycle, Restricted SharePoint Search (limit Copilot grounding to 100 sites)</li>
 </ul>
-<h4>SharePoint roles and permissions</h4>
+<h4>Microsoft Teams — key objects and admin tasks</h4>
 <ul>
-  <li><strong>SharePoint Groups</strong>: <strong>Owners</strong> (full control), <strong>Members</strong> (contribute), <strong>Visitors</strong> (read).</li>
-  <li><strong>Permission levels</strong> \u2014 Full Control, Design, Edit, Contribute, Read, Limited Access.</li>
-  <li><strong>Sharing settings</strong> \u2014 Anyone, New and existing guests, Existing guests, Only people in your organization.</li>
-  <li>Permission inheritance can be broken for granular control (main source of oversharing).</li>
+  <li><strong>Team types</strong>: Every team is backed by a Microsoft 365 Group (shared mailbox, calendar, SharePoint site, OneNote, Planner)</li>
+  <li><strong>Channel types</strong>: <strong>Standard</strong> (open to all team members), <strong>Private</strong> (invitation-only, separate SharePoint site), <strong>Shared</strong> (cross-team/cross-tenant collaboration)</li>
+  <li><strong>Policies</strong> (applied per-user or per-group): Messaging policies, Meeting policies, Live Event policies, Calling policies, App permission policies, App setup policies, Teams Phone policies, Update management policies</li>
+  <li><strong>Guest access</strong> — enabled tenant-wide via Entra B2B; controlled per-team by team owners</li>
+  <li><strong>Meeting roles</strong>: Organizer, Presenter (can share content, mute others), Attendee (view-only unless promoted)</li>
+  <li><strong>Teams admin center</strong> — admin.teams.microsoft.com for managing teams, policies, devices, users, and phone system</li>
+  <li><strong>Exam scenario</strong>: "A file shared in Teams channel can't be found" → check the SharePoint site backing the channel. Files in private chats are in the user's OneDrive, not SharePoint.</li>
 </ul>
-<h4>Teams admin center \u2014 objects</h4>
-<ul>
-  <li><strong>Teams</strong> \u2014 tied to a Microsoft 365 group.</li>
-  <li><strong>Channels</strong> \u2014 <strong>Standard</strong> (open to all), <strong>Private</strong> (invitation-only), <strong>Shared</strong> (cross-team).</li>
-  <li><strong>Policies</strong> \u2014 Messaging, Meeting, Live Event, Calling, App permission, App setup, Teams Phone, Teams Update management.</li>
-  <li><strong>OneDrive</strong> \u2014 1 TB+ per user; uses SharePoint storage; <strong>Known Folder Move</strong> = Desktop/Documents/Pictures.</li>
-</ul>`,
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m2-u5",
               unitTitle: "Establish security, identity, and compliance foundations",
-              content: `<h4>Security, identity, and compliance foundations</h4>
+              content: `
+
+<h4>Security foundations</h4>
 <ul>
-  <li><strong>Security foundations</strong> \u2014 Zero Trust principles (verify explicitly, least privilege, assume breach), layered security strategy (assessment, identity, endpoint, data, threat monitoring, user education).</li>
-  <li><strong>Identity foundations</strong> \u2014 Entra ID as the identity plane; authentication (MFA, passkeys, Windows Hello, certificate-based); Conditional Access as the policy engine; SSO for seamless access.</li>
-  <li><strong>Authorization foundations</strong> \u2014 RBAC with built-in and custom roles; JIT/JEA with PIM; Access Reviews for periodic re-attestation.</li>
-  <li><strong>Compliance foundations</strong> \u2014 Microsoft Purview as the compliance portal; Sensitivity Labels for information protection; DLP for data loss prevention; retention policies and labels for data lifecycle management.</li>
-  <li><strong>Monitoring foundations</strong> \u2014 Identity Secure Score, Unified Audit Log (180 days default, 1 year with E5), Entra ID audit logs, sign-in logs.</li>
-</ul>`,
+  <li><strong>Zero Trust</strong> — three core principles: <strong>Verify explicitly</strong> (authenticate using all signals), <strong>Least privilege</strong> (JIT/JEA), <strong>Assume breach</strong> (segment, monitor, encrypt)</li>
+  <li><strong>Six layered defense strategy</strong>: Assessment (Secure Score), Identity protection (MFA, Conditional Access, PIM), Endpoint compliance (Intune), Data classification (Sensitivity Labels), Threat monitoring (Defender XDR), User education (Attack simulation training)</li>
+  <li><strong>Microsoft Secure Score</strong> — measures tenant security posture against Microsoft best practices (0-100%); each improvement action has an impact score; found at <strong>security.microsoft.com</strong></li>
+  <li><strong>Attack simulation training</strong> — run realistic phishing campaigns against users; integrated into Defender for Office 365 Plan 2</li>
+  <li><strong>Defender for Office 365</strong>: Plan 1 (baseline) vs Plan 2 (adds Threat Explorer, Attack simulation training, AIR, campaign views — bundled in E5)</li>
+</ul>
+<h4>Identity foundations</h4>
+<ul>
+  <li><strong>Microsoft Entra ID</strong> — the identity plane for all M365 services; Free tier included with all M365 subscriptions, Premium P1/P2 add-ons available</li>
+  <li><strong>Authentication methods</strong>: Password, MFA (at least 2 factors), Passwordless (Windows Hello, Authenticator app, Passkeys/FIDO2), Certificate-based</li>
+  <li><strong>Phishing-resistant MFA mandatory for admins</strong> — Microsoft position; passkeys/FIDO2 preferred</li>
+  <li><strong>Conditional Access</strong> — the policy engine: <em>if</em> sign-in conditions <em>then</em> grant/block/session controls. Key: sign-in risk, user risk, device platforms, locations, client apps</li>
+  <li><strong>Single Sign-On (SSO)</strong> — one credential access across all apps; brokered by Entra ID; supports SAML, OIDC/OAuth, password-based SSO</li>
+  <li><strong>Hybrid identity options</strong>: <strong>Password Hash Sync (PHS)</strong> — preferred, no on-prem dependency; <strong>Pass-Through Authentication (PTA)</strong> — agents on DCs; <strong>Federation</strong> — legacy, AD FS</li>
+  <li><strong>Self-Service Password Reset (SSPR)</strong> — user-resets; works for cloud-only accounts; hybrid accounts need <strong>Password Writeback</strong> enabled in Entra Connect</li>
+</ul>
+<h4>Authorization foundations</h4>
+<ul>
+  <li><strong>RBAC</strong> — built-in roles (Global Admin, Exchange Admin, SharePoint Admin, Teams Admin, Security Admin, Compliance Admin, Global Reader, etc.) or custom roles</li>
+  <li><strong>PIM (Privileged Identity Management)</strong> — JIT role activation (eligible assignment), requires approval + justification, time-bound, full audit trail. <strong>Active assignment</strong> = always-on (use sparingly)</li>
+  <li><strong>Access Reviews</strong> — periodic re-attestation of role assignments; prevents privilege creep</li>
+  <li><strong>Entitlement Management / Access Packages</strong> — bundle groups, sites, apps, roles with approval workflow and expiration</li>
+</ul>
+<h4>Compliance foundations</h4>
+<ul>
+  <li><strong>Microsoft Purview</strong> — unified compliance portal at <strong>purview.microsoft.com</strong></li>
+  <li><strong>Sensitivity Labels</strong> — classify and protect content; travel with the file (encryption, watermark, access control). <strong>Auto-labeling</strong> via content inspection (SITs, trainable classifiers, EDM)</li>
+  <li><strong>DLP (Data Loss Prevention)</strong> — detect and prevent accidental sharing of sensitive data across Exchange, SharePoint, OneDrive, Teams, endpoints, and cloud apps</li>
+  <li><strong>Retention policies</strong> (tenant-level) vs <strong>Retention labels</strong> (content-level) — govern data lifecycle; disposition review for controlled deletion</li>
+  <li><strong>Records management</strong> — declare content as immutable records (cannot be edited/deleted)</li>
+  <li><strong>Unified Audit Log</strong> — default retention <strong>180 days</strong>; <strong>1 year with E5</strong> (Premium Audit)</li>
+</ul>
+
+
+<h4>Intune Device Compliance Policies — What They Check</h4>
+<ul>
+  <li><strong>Encryption</strong> — BitLocker (Windows), FileVault (macOS), device encryption (mobile)</li>
+  <li><strong>OS version</strong> — minimum and maximum allowed versions; blocks outdated, vulnerable devices</li>
+  <li><strong>Antivirus</strong> — Windows Defender or third-party AV must be active and up-to-date (Windows 10/11)</li>
+  <li><strong>Firewall</strong> — must be enabled with approved config</li>
+  <li><strong>Password/PIN</strong> — minimum length, complexity, max inactivity lock, history requirements</li>
+  <li><strong>Jailbroken/rooted detection</strong> — mobile devices with root access are blocked immediately</li>
+  <li>Devices that fail compliance are <strong>blocked</strong> by Conditional Access unless granted a grace period for remediation</li>
+</ul>
+<h4>App Protection Policies (MAM) for BYOD</h4>
+<ul>
+  <li>Protect corporate data inside approved apps <strong>without enrolling the device</strong> (no MDM). Ideal for BYOD scenarios.</li>
+  <li><strong>Common controls</strong>: block copy/paste between work and personal apps, prevent "Save As" to local storage, require PIN/biometric to open work apps, block screenshots, restrict data transfer to unmanaged apps.</li>
+  <li>Configured in <strong>Microsoft Intune → App protection policies</strong>. Target specific apps (Outlook, Teams, OneDrive) and data types.</li>
+  <li><strong>Selective wipe</strong>: remove corporate data without affecting personal data on the device — important for offboarding.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m2-u6",
               unitTitle: "Assign admin roles using RBAC",
-              content: `<h4>RBAC (Role-Based Access Control)</h4>
+              content: `
+<h4>RBAC in Microsoft 365 — role types and scope</h4>
 <ul>
-  <li><strong>Roles</strong> \u2014 built-in (Global Admin, Exchange Admin, SharePoint Admin, Teams Admin, Security Admin, Compliance Admin, Global Reader, \u2026) and custom.</li>
-  <li>Roles are bound to a <strong>scope</strong> (tenant-wide or specific administrative unit).</li>
-  <li><strong>Global Admin</strong> \u2014 god role; <strong>minimize</strong> (target \u2264 4); must be <strong>eligible in PIM</strong>, not permanent.</li>
-  <li><strong>Delegation best practice</strong> \u2014 assign the least-privilege role that can do the job.</li>
+  <li><strong>Role-Based Access Control</strong> governs what administrators can do across M365 services. Roles are assigned to users with a defined <strong>scope</strong>: tenant-wide or administrative unit (scoped to a subset of users/devices)</li>
+  <li>Roles are managed through <strong>Entra ID</strong> (entra.microsoft.com → Identity → Roles & admins) or <strong>M365 admin center</strong> → <strong>Roles</strong></li>
 </ul>
-<h4>Privileged Identity Management (PIM)</h4>
+<h4>Key built-in roles (exam-critical)</h4>
+<table>
+  <thead>
+    <tr><th>Role</th><th>Capabilities</th><th>Who should hold it</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Global Administrator</strong></td><td>Full access to ALL admin features; can reset all admin passwords</td><td><strong>Minimize</strong> (≤4), must use PIM, never permanent</td></tr>
+    <tr><td><strong>Global Reader</strong></td><td>Read-only view of all admin centers</td><td>Auditors, monitoring staff</td></tr>
+    <tr><td><strong>Exchange Administrator</strong></td><td>Manage mailboxes, mail flow, anti-spam, connectors</td><td>Email team</td></tr>
+    <tr><td><strong>SharePoint Administrator</strong></td><td>Manage sites, sharing settings, storage limits</td><td>Content/infra team</td></tr>
+    <tr><td><strong>Teams Administrator</strong></td><td>Manage teams, policies, voice, devices</td><td>Collaboration team</td></tr>
+    <tr><td><strong>Security Administrator</strong></td><td>Manage security policies, view security reports and incidents</td><td>Security operations</td></tr>
+    <tr><td><strong>Security Reader</strong></td><td>Read-only access to security center</td><td>Auditors, SOC analysts (read-only)</td></tr>
+    <tr><td><strong>Compliance Administrator</strong></td><td>Manage compliance policies, DLP, retention, eDiscovery</td><td>Compliance/legal team</td></tr>
+    <tr><td><strong>Billing Administrator</strong></td><td>Manage subscriptions, licenses, invoices, support tickets</td><td>Finance/procurement team</td></tr>
+    <tr><td><strong>User Administrator</strong></td><td>Create/manage users and groups, reset passwords (non-admin)</td><td>Helpdesk (first-line support)</td></tr>
+    <tr><td><strong>Helpdesk Administrator</strong></td><td>Reset passwords (non-admin), manage service requests</td><td>Level 1 IT support</td></tr>
+    <tr><td><strong>Authentication Administrator</strong></td><td>Manage authentication methods and MFA settings</td><td>Identity team</td></tr>
+    <tr><td><strong>Privileged Role Administrator</strong></td><td>Manage role assignments in Entra ID and PIM</td><td>Identity governance team</td></tr>
+    <tr><td><strong>Application Administrator</strong></td><td>Manage app registrations and enterprise apps</td><td>App/DevOps team</td></tr>
+    <tr><td><strong>Cloud Device Administrator</strong></td><td>Manage Intune device enrollment and compliance</td><td>Endpoint management team</td></tr>
+  </tbody>
+</table>
+<h4>Custom roles</h4>
 <ul>
-  <li><strong>Eligible assignment</strong> \u2014 user must activate the role when needed (time-bound, requires approval, full audit trail).</li>
-  <li><strong>Active assignment</strong> \u2014 always-on (use sparingly, audit heavily).</li>
-  <li><strong>Access Reviews</strong> \u2014 periodic re-attestation of role assignments; kills privilege creep.</li>
-  <li><strong>Entitlement Management / Access Packages</strong> \u2014 bundle groups, sites, apps, roles with approval + expiration.</li>
-</ul>`,
+  <li>Create custom roles when built-in roles are too broad or too narrow</li>
+  <li>Define by <strong>permissions</strong> (specific API actions) and <strong>scope</strong> (tenant-wide or administrative unit)</li>
+  <li>Example: "Helpdesk for EMEA only" — custom role scoped to an administrative unit containing EMEA users</li>
+</ul>
+<h4>Privileged Identity Management (PIM) — detailed flow</h4>
+<ol>
+  <li><strong>Eligible assignment</strong> — user is added to a role as "eligible" (not active)</li>
+  <li><strong>Activation</strong> — user requests activation in the PIM portal; provides justification + duration</li>
+  <li><strong>Approval</strong> — if approval is required, designated approvers review and approve/deny</li>
+  <li><strong>Time-bound</strong> — role activates for a configurable duration (default 1-8 hours), then auto-expires</li>
+  <li><strong>Audit</strong> — every activation is logged with user, time, justification, approval, and actions taken</li>
+  <li><strong>Alerts</strong> — PIM alerts for unusual activations, permanent assignments, or role escalations</li>
+</ol>
+<h4>Access Reviews (exam fact)</h4>
+<ul>
+  <li>Periodic reviews where group owners or designated reviewers confirm whether users still need their role assignments</li>
+  <li>Can be <strong>self-review</strong> (users confirm their own access) or <strong>manager review</strong></li>
+  <li>Results: <strong>Approve</strong>, <strong>Deny</strong>, or <strong>Don't know</strong>; Deny auto-removes the assignment</li>
+  <li>Creates a full audit trail for compliance requirements (SOX, GDPR, ISO 27001)</li>
+</ul>
+<h4>Entitlement Management (Access Packages)</h4>
+<ul>
+  <li>Bundle one or more <strong>resources</strong> (groups, sites, apps, roles) into an <strong>access package</strong></li>
+  <li>Internal/external users can <strong>request</strong> the package; optional approval workflow + expiration</li>
+  <li>Managed in <strong>Entra ID → Identity Governance → Entitlement Management</strong></li>
+</ul>
+<h4>Delegation best practices (exam scenarios)</h4>
+<ul>
+  <li><strong>Least privilege</strong> — assign the role that can perform the task and nothing more</li>
+  <li><strong>Global Admin minimization</strong> — limit to ≤4 users, always via PIM (eligible, not active)</li>
+  <li><strong>Administrative units</strong> — scope role to a region or department (e.g., "Exchange Admin for EU users only")</li>
+  <li><strong>Break-glass accounts</strong> — 2 emergency Global Admin accounts excluded from Conditional Access; long passwords, heavily monitored</li>
+  <li><strong>Permanent vs eligible</strong> — permanent Global Admin is a security risk; always use eligible assignments with PIM</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
@@ -907,7 +1151,22 @@ const studyGuideData = {
             {
               unitId: "m2-u8",
               unitTitle: "Summary",
-              content: `<p>Module 2 covered the Microsoft 365 ecosystem and core service components, the Microsoft 365 admin center and key admin tools, Exchange/Teams/SharePoint admin objects and configuration, security/identity/compliance foundations, and assigning admin roles using RBAC with PIM and Access Reviews.</p>`,
+              content: `
+<h4>Module 2 Summary — Microsoft 365 Core Services and Admin Controls</h4>
+<p>Module 2 covered the core M365 services and how to administer them. Key takeaways:</p>
+<ul>
+  <li><strong>M365 ecosystem</strong> includes Entra ID, Exchange Online, SharePoint, OneDrive, Teams, Power Platform, M365 Apps, Copilot, Purview, and Defender XDR. All share a common identity plane through Entra ID.</li>
+  <li><strong>License plans</strong>: Business (up to 300 users, no Purview), E3 (full productivity + core security), E5 (adds full Purview, Defender Plan 2, eDiscovery Premium). Copilot is a $30/user/month add-on requiring E3/Business Premium baseline.</li>
+  <li><strong>M365 admin center</strong> (admin.microsoft.com) handles users, groups, billing, service health, message center, reports, roles, and settings. Service Health monitors incidents; Message Center communicates planned changes.</li>
+  <li><strong>Specialized admin centers</strong>: Entra (entra.microsoft.com), Exchange (admin.exchange.microsoft.com), SharePoint (admin.microsoft.com/sharepoint), Teams (admin.teams.microsoft.com), Defender (security.microsoft.com), Purview (purview.microsoft.com).</li>
+  <li><strong>Exchange Online</strong> manages mailboxes (user, shared, resource, group), mail flow (connectors, accepted domains, transport rules), and anti-spam/anti-malware via Defender for Office 365. Shared mailboxes under 50 GB need no license.</li>
+  <li><strong>SharePoint Online</strong>: communication and team sites, hub sites, document libraries with versioning, permission levels (Full Control through Read), sharing settings (Anyone to Only org), file storage limits (1 TB + 10 GB/licensed user). SharePoint Advanced Management adds DAG reports, site ownership policies, and Restricted SharePoint Search.</li>
+  <li><strong>Teams</strong>: built on M365 Groups; channel types (Standard, Private, Shared); policies for messaging, meetings, calling, apps. Guest access via Entra B2B. Files in channels stored in SharePoint, files in private chats in OneDrive.</li>
+  <li><strong>PowerShell modules</strong>: Exchange Online, Teams, SharePoint Online Management Shell, and Microsoft Graph PowerShell SDK (preferred modern approach).</li>
+  <li><strong>RBAC and PIM</strong>: built-in roles scoped tenant-wide or by administrative unit. Global Admin minimized to 4 users, always via PIM. Access Reviews for periodic re-attestation. Break-glass accounts excluded from CA.</li>
+  <li><strong>Delegated administration</strong>: DAP (legacy, Global Admin) vs GDAP (modern, time-bound scoped roles for partners).</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             }
@@ -1159,21 +1418,22 @@ const studyGuideData = {
             {
               unitId: "m3-u5",
               unitTitle: "Explore oversharing and data access governance in SharePoint",
-              content: `<h3>SharePoint Oversharing Overview</h3>
+              content: `
+<h3>SharePoint Oversharing Overview</h3>
 <p>Oversharing occurs when content is shared more broadly than necessary. This is one of the most common data protection risks in Microsoft 365. SharePoint Advanced Management provides a suite of tools to identify, monitor, and remediate oversharing.</p>
 
 <h3>Tools to Troubleshoot Oversharing</h3>
 <ul>
-  <li><strong>SharePoint Advanced Management</strong> \u2014 the umbrella capability that includes all the tools below.</li>
-  <li><strong>Data access governance reports</strong> \u2014 surface sites, libraries, and files that are broadly shared.</li>
-  <li><strong>Microsoft Purview DSPM for AI</strong> \u2014 flags sites feeding too much data into Copilot without restriction.</li>
-  <li><strong>SharePoint admin center \u2192 Reports</strong> \u2014 sharing summary, file activity, sharing links inventory.</li>
+  <li><strong>SharePoint Advanced Management</strong> — the umbrella capability that includes all the tools below.</li>
+  <li><strong>Data access governance reports</strong> — surface sites, libraries, and files that are broadly shared.</li>
+  <li><strong>Microsoft Purview DSPM for AI</strong> — flags sites feeding too much data into Copilot without restriction.</li>
+  <li><strong>SharePoint admin center → Reports</strong> — sharing summary, file activity, sharing links inventory.</li>
 </ul>
 
 <h3>Run a Data Access Governance Report</h3>
 <ol>
   <li>Go to <strong>SharePoint admin center</strong> (or <strong>https://aka.ms/spoda</strong>).</li>
-  <li>Open <strong>Reports</strong> \u2192 <strong>Data access governance</strong>.</li>
+  <li>Open <strong>Reports</strong> → <strong>Data access governance</strong>.</li>
   <li>Select a site or run across all sites.</li>
   <li>The report shows: <strong>broken inheritance</strong>, <strong>access requests</strong>, <strong>external sharing</strong>, <strong>Anyone links</strong>, <strong>label distribution</strong>, <strong>sensitivity label violations</strong>.</li>
   <li>Use the report to drive remediation: tighten sharing, apply labels, restrict access, or move content to a private channel.</li>
@@ -1198,11 +1458,31 @@ const studyGuideData = {
 
 <h3>Common Oversharing Scenarios</h3>
 <ul>
-  <li>Sharing with <strong>"Everyone"</strong> or <strong>"Anyone with the link"</strong> \u2014 these links bypass authentication requirements.</li>
+  <li>Sharing with <strong>"Everyone"</strong> or <strong>"Anyone with the link"</strong> — these links bypass authentication requirements.</li>
   <li>Granting <strong>Edit</strong> permissions when <strong>View only</strong> was intended.</li>
   <li>Granting <strong>external guests full site access</strong> when they only needed a single file.</li>
   <li>Data Access Governance (DAG) reports flag sites with: sensitive content, excessive sharing, inactive owners, missing sensitivity labels.</li>
-</ul>`,
+</ul>
+
+<h4>SharePoint Advanced Management (SAM) — Full Feature Breakdown</h4>
+<table>
+  <thead>
+    <tr><th>Feature</th><th>What it does</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Data access governance (DAG) reports</strong></td><td>Identify overshared sites, sites with sensitive content and excessive external access, sites with no owners or inactive owners, sites missing sensitivity labels. Guides remediation actions.</td></tr>
+    <tr><td><strong>Restricted SharePoint Search</strong></td><td>Limits Copilot grounding to up to 100 explicitly allowed sites. All other sites are invisible to Copilot. Hub sites excluded from the restriction automatically. Key control to reduce Copilot oversharing risk.</td></tr>
+    <tr><td><strong>Restricted site access</strong></td><td>Limit site access to an Entra ID security group; users outside the group cannot access the site even with a direct link. Applies at the site level, not content level.</td></tr>
+    <tr><td><strong>Site ownership policies</strong></td><td>Require ≥ 2 owners per site. Alerts when a site has only one owner or no owners. Prevents orphaned sites and reduces risk from ungoverned content.</td></tr>
+  </tbody>
+</table>
+<h4>Conditional Access Integration</h4>
+<ul>
+  <li>SAM integrates with <strong>Conditional Access</strong> to require MFA or block unmanaged devices from accessing sensitive sites.</li>
+  <li><strong>Inactivity alerts</strong> flag unused sites (no recent activity) to reduce risk from abandoned content.</li>
+  <li><strong>Site access reviews</strong> prompt site owners to periodically confirm the access list is correct.</li>
+</ul>
+`,
               examTips: [
                 "SharePoint admin center shortcut URL: https://aka.ms/spoda",
                 "Restricted SharePoint Search limits Copilot grounding to up to 100 sites (hub sites + children not counted)",
@@ -1321,15 +1601,25 @@ const studyGuideData = {
             {
               unitId: "m3-u8",
               unitTitle: "Summary",
-              content: `<p>Module 3 covered the full breadth of Domain 2 (35\u201340% of the exam). Key takeaways:</p>
+              content: `
+<h4>Module 3 Summary — Protect and Govern Microsoft 365 Data</h4>
+<p>Module 3 covered the largest exam domain (35–40%). This is the deepest module with the most exam-critical detail. Key takeaways:</p>
 <ul>
-  <li><strong>Microsoft Purview</strong> is the unified compliance portal at <strong>https://purview.microsoft.com</strong> with 11 core capabilities spanning Information Protection, DLP, Insider Risk Management, Communication Compliance, DSPM for AI, Data Lifecycle Management, eDiscovery, Compliance Manager, Data Explorer, Activity Explorer, and Adaptive Protection.</li>
-  <li><strong>Sensitivity labels</strong> travel with content and can encrypt, watermark, and restrict access. Auto-labeling uses content inspection to apply labels automatically.</li>
-  <li><strong>Data classification</strong> uses trainable classifiers (ML), Sensitive Information Types (regex/checksum), and Exact Data Match (structured database).</li>
-  <li><strong>Risk identification</strong> tools include Compliance Manager (compliance posture), DLP alerts (policy violations), Insider Risk Management (user behavior), Communication Compliance (message violations), Activity Explorer (label activity), Data Explorer (metadata), and the Unified Audit Log (all actions).</li>
-  <li><strong>SharePoint Advanced Management</strong> provides data access governance reports, Restricted Site Access, Conditional Access for sites, site ownership policies, and Restricted SharePoint Search (up to 100 sites).</li>
-  <li><strong>Copilot data protection</strong> relies on Microsoft Graph for permission-aware grounding, honors all M365 and Purview controls (Sensitivity Labels, DLP, DSPM for AI), and follows six Responsible AI principles.</li>
-</ul>`,
+  <li><strong>Microsoft Purview</strong> (purview.microsoft.com) is the unified compliance portal with capabilities spanning Information Protection, DLP, Insider Risk Management, Communication Compliance, DSPM for AI, Data Lifecycle Management, eDiscovery, Compliance Manager, Data Explorer, Activity Explorer, Audit, and Adaptive Protection.</li>
+  <li><strong>Sensitivity Labels</strong> classify and protect content with encryption, watermarking, and access restrictions. Labels travel with the file. Auto-labeling uses content inspection (SITs, trainable classifiers, EDM). Published via label policies; can be mandatory or optional with override justification.</li>
+  <li><strong>Data Loss Prevention (DLP)</strong> detects and blocks sensitive data across Exchange, SharePoint, OneDrive, Teams, endpoints, and cloud apps. Can target Copilot interactions. Policy tips educate users inline.</li>
+  <li><strong>Insider Risk Management</strong> correlates signals (departure + download, off-hours, mass copy) into risk scores. Can feed Conditional Access via Adaptive Protection (strictest DLP applies as risk rises).</li>
+  <li><strong>Communication Compliance</strong> monitors Teams, Exchange, Viva Engage, and 3rd-party connectors for harassment, regulatory violations, and conflicts of interest.</li>
+  <li><strong>DSPM for AI</strong> (Data Security Posture Management) monitors Copilot and agent interactions for shadow AI, risky prompts, prompt-injection, and sensitive data exposure. Captures 30 days of interaction history.</li>
+  <li><strong>Data Lifecycle Management</strong>: retention policies (location-wide) vs retention labels (item-level). Disposition reviews for controlled deletion. Records management declares immutable records.</li>
+  <li><strong>eDiscovery</strong>: Standard (E3, search/hold/export) vs Premium (E5, legal-hold workflows, review sets, redaction, analytics).</li>
+  <li><strong>Compliance Manager</strong> tracks Microsoft-managed + customer-managed controls with Compliance Score and improvement actions.</li>
+  <li><strong>SharePoint Advanced Management</strong> provides DAG reports (overshared sites), Restricted Site Access (limit to Entra group), site ownership policies (2+ owners), and Restricted SharePoint Search (up to 100 sites, hub sites excluded). Oversharing is Copilot's top risk because Semantic Index finds data hidden by obscurity.</li>
+  <li><strong>Audit</strong>: Standard (180 days) vs Premium (1 year with E5, high-value events like mailbox access). Data connectors ingest 3rd-party data for eDiscovery and IRM.</li>
+  <li><strong>Sensitive Information Types (SITs)</strong> are built-in (credit card, SSN) or custom regex patterns used by DLP, autolabeling, and IRM. Trainable classifiers use AI for content classification.</li>
+  <li><strong>Customer Key</strong> and <strong>Customer Lockbox</strong> provide customer-managed encryption and explicit consent for Microsoft engineer access.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             }
@@ -1355,155 +1645,354 @@ const studyGuideData = {
             {
               unitId: "m4-u2",
               unitTitle: "Introduction to Microsoft 365 Copilot",
-              content: `<h4>Microsoft 365 Copilot architecture</h4>
+              content: `
+<h4>Microsoft 365 Copilot architecture</h4>
+<p>Microsoft 365 Copilot integrates large language models (LLMs) with your Microsoft 365 data through Microsoft Graph and the Semantic Index. The architecture consists of several layers that work together to produce grounded, safe responses.</p>
+<table>
+  <thead>
+    <tr><th>Component</th><th>Role</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Orchestrator</strong></td><td>Coordinates the prompt, retrieval, and response pipeline; adds the system prompt and manages grounding.</td></tr>
+    <tr><td><strong>Microsoft Graph</strong></td><td>Retrieves permitted content using the signed-in user's identity and permissions via Graph API.</td></tr>
+    <tr><td><strong>Semantic Index</strong></td><td>Pre-computed relationships across users, content, and concepts for faster, more relevant retrieval.</td></tr>
+    <tr><td><strong>LLM</strong></td><td>Generates natural language responses conditioned on the grounding data and system prompt.</td></tr>
+    <tr><td><strong>Content Safety</strong></td><td>Filters both prompt and response for harmful, offensive, or policy-violating content.</td></tr>
+    <tr><td><strong>Groundedness Detection</strong></td><td>Flags answers not supported by the retrieved grounding data (hallucination prevention).</td></tr>
+  </tbody>
+</table>
+<h4>Copilot across Microsoft 365 apps</h4>
 <ul>
-  <li><strong>LLM</strong> \u2014 the model that produces natural language by predicting the next most probable token.</li>
-  <li><strong>Microsoft Graph</strong> \u2014 the data + permissions layer (retrieves permitted content via Microsoft Graph APIs).</li>
-  <li><strong>Semantic Index</strong> \u2014 pre-computed relationships across users, content, and concepts.</li>
-  <li><strong>Orchestrator / Copilot system</strong> \u2014 coordinates the prompt, retrieval, and response. Adds a <strong>system prompt</strong> to instruct the LLM.</li>
-  <li><strong>Content safety</strong> \u2014 filters both prompt and response for harmful or offensive content.</li>
-  <li><strong>Groundedness detection</strong> \u2014 flags answers not supported by the retrieved grounding data (hallucination control).</li>
-  <li><strong>Apps</strong> \u2014 Word, Excel, PowerPoint, Outlook, OneNote, Teams, Business Chat (now <strong>Microsoft 365 Copilot Chat</strong>).</li>
-  <li><strong>Microsoft 365 Copilot Chat</strong> \u2014 the free/built-in chat surface (web-grounded only); <strong>Microsoft 365 Copilot</strong> is the paid licensed version with work-grounded answers.</li>
+  <li><strong>Word</strong> — draft, summarize, rewrite, and format documents.</li>
+  <li><strong>Excel</strong> — analyze data, create formulas, generate charts, identify trends.</li>
+  <li><strong>PowerPoint</strong> — create presentations from prompts or existing documents, add slides.</li>
+  <li><strong>Outlook</strong> — summarize email threads, draft replies, coach writing tone.</li>
+  <li><strong>Teams</strong> — recap meetings, suggest action items, answer questions about missed conversations.</li>
+  <li><strong>OneNote</strong> — draft notes, organize content, summarize pages.</li>
+  <li><strong>Business Chat (Copilot Chat)</strong> — the unified chat surface across all M365 data.</li>
 </ul>
-<p><strong>No training on your data</strong>: prompts, responses, and tenant data are never used to train the foundation LLMs.</p>
-<h4>Which Copilot features can be enabled or disabled</h4>
+<h4>Access tiers (important exam distinction)</h4>
+<table>
+  <thead>
+    <tr><th>Tier</th><th>Grounding</th><th>License required</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Microsoft 365 Copilot Chat (free)</strong></td><td>Web-grounded only (Bing); no work data access</td><td>Any M365 license</td></tr>
+    <tr><td><strong>Microsoft 365 Copilot Chat (paid)</strong></td><td>Web + work-grounded (Microsoft Graph)</td><td>Add-on license</td></tr>
+    <tr><td><strong>Microsoft 365 Copilot (licensed)</strong></td><td>Full app integration + Graph + Semantic Index</td><td>$30/user/month add-on</td></tr>
+  </tbody>
+</table>
+<h4>Admin controls for Copilot</h4>
 <ul>
-  <li><strong>Web content access</strong> \u2014 Off / On (with or without Bing grounding).</li>
-  <li><strong>Plugin / connector controls</strong> \u2014 block or allow specific plugins tenant-wide.</li>
-  <li><strong>Per-app enablement</strong> \u2014 disable Copilot in specific apps (Word, Excel, Outlook, Teams, etc.).</li>
-  <li><strong>Per-user</strong> \u2014 controlled by license assignment.</li>
-  <li><strong>Per-content</strong> \u2014 Sensitivity Labels can prevent Copilot from using labeled content.</li>
-</ul>`,
+  <li><strong>Web content access</strong> — toggle Bing grounding on/off tenant-wide.</li>
+  <li><strong>Plugin/connector controls</strong> — block or allow specific plugins.</li>
+  <li><strong>Per-app enablement</strong> — disable Copilot in specific applications (Word, Excel, Teams, etc.).</li>
+  <li><strong>Per-user</strong> — controlled through license assignment in M365 admin center.</li>
+  <li><strong>Per-content</strong> — Sensitivity Labels can prevent Copilot from using labeled content for grounding.</li>
+  <li><strong>Data loss prevention (DLP)</strong> — DLP policies can block Copilot from processing sensitive data.</li>
+  <li><strong>Restricted SharePoint Search</strong> — limit Copilot grounding to a maximum of 100 SharePoint sites.</li>
+</ul>
+<h4>Key exam facts about Copilot architecture</h4>
+<ul>
+  <li>Prompts, responses, and tenant data are <strong>never used to train foundation LLMs</strong>.</li>
+  <li>Copilot is <strong>permission-aware</strong> — it cannot access content the signed-in user cannot directly access.</li>
+  <li>The <strong>system prompt</strong> includes context such as the user's role, recent activity, and selected app.</li>
+  <li><strong>Groundedness detection</strong> runs post-generation to catch hallucinations before the user sees them.</li>
+  <li><strong>Content safety</strong> filters run on both the inbound prompt and the outbound response.</li>
+  <li>All Copilot interactions are <strong>auditable</strong> via Purview Activity Explorer (30-day Copilot interaction history).</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m4-u3",
               unitTitle: "What are agents?",
-              content: `<h4>What are agents?</h4>
+              content: `
+<h4>Definition of agents</h4>
+<p>Agents are specialized AI assistants built on top of Microsoft 365 Copilot that perform a specific job or role. Unlike general-purpose Copilot, agents are scoped to a <strong>specific task</strong>, <strong>knowledge domain</strong>, or <strong>business process</strong>, and can operate autonomously with or without human interaction.</p>
+<h4>Agent types</h4>
+<table>
+  <thead>
+    <tr><th>Type</th><th>Description</th><th>Example</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Prebuilt agents</strong></td><td>Microsoft-authored agents available in the Agent Store</td><td>Researcher, Analyst, Writing Coach, Prompt Coach</td></tr>
+    <tr><td><strong>Custom agents</strong></td><td>Built by users in Copilot Studio or via declarative manifest</td><td>HR FAQ agent, IT helpdesk agent</td></tr>
+    <tr><td><strong>SharePoint agents</strong></td><td>Scoped to a single SharePoint site; auto-inherit permissions</td><td>Project "ask me anything" agent</td></tr>
+    <tr><td><strong>Advanced/custom engine agents</strong></td><td>Full control via Azure AI Foundry + Teams</td><td>Complex autonomous workflow agents</td></tr>
+  </tbody>
+</table>
+<h4>Prebuilt agents in detail</h4>
 <ul>
-  <li>Specialized AI assistants built on top of Copilot that perform a specific job.</li>
-  <li><strong>Types</strong>:
-    <ul>
-      <li><strong>Prebuilt agents</strong> \u2014 Researcher, Analyst, Writing Coach, Prompt Coach, plus Microsoft-authored agents in the Agent Store.</li>
-      <li><strong>Custom agents</strong> \u2014 built in Copilot Studio or via declarative manifest.</li>
-      <li><strong>SharePoint agents</strong> \u2014 scoped to a single site, no authoring required.</li>
-      <li><strong>Advanced / custom engine agents</strong> \u2014 full control via <strong>Azure AI Foundry</strong> + Teams.</li>
-    </ul>
-  </li>
+  <li><strong>Researcher</strong> — multi-step research across web and work data; produces cited reports, market analyses, and competitive landscapes.</li>
+  <li><strong>Analyst</strong> — data analysis using Python-style reasoning; summarizes tables, forecasts trends, finds anomalies in structured data (Excel, CSV).</li>
+  <li><strong>Writing Coach</strong> — helps improve writing tone, clarity, and style across M365 apps.</li>
+  <li><strong>Prompt Coach</strong> — guides users in crafting effective prompts for better Copilot results.</li>
+  <li><strong>SharePoint site agent</strong> — automatically created for each SharePoint site; answers questions from site content.</li>
 </ul>
-<h4>Agent identity</h4>
+<h4>Agent identity and governance</h4>
 <ul>
-  <li>Agents typically need <strong>their own identity</strong> because they often operate across data the calling user may not see.</li>
-  <li><strong>Entra Agent ID</strong> (preview) \u2014 agents get their own first-class identity in Entra for governance and audit.</li>
+  <li>Agents may need <strong>their own identity</strong> because they often operate across data the calling user may not see or act independently on triggers.</li>
+  <li><strong>Entra Agent ID</strong> (preview) — gives agents a first-class identity in Microsoft Entra for governance, auditing, and permission assignment.</li>
+  <li>With a dedicated identity, agents can be assigned granular permissions, audited independently, and governed like any other security principal.</li>
 </ul>
-<h4>MCP (Model Context Protocol)</h4>
+<h4>Model Context Protocol (MCP)</h4>
 <ul>
-  <li>An open standard for AI apps to talk to <strong>additional knowledge</strong> and <strong>tools</strong>.</li>
-  <li><strong>Prefer APIs and MCP servers</strong> over <strong>computer-use / GUI scripting</strong> \u2014 UIs change, APIs/MCPs are stable and auditable.</li>
-</ul>`,
+  <li><strong>MCP</strong> is an open standard for AI applications to connect with <strong>additional knowledge sources</strong> and <strong>tools</strong>.</li>
+  <li>Rather than using <strong>computer-use or GUI scripting</strong> (which breaks when UIs change), agents should use <strong>APIs and MCP servers</strong> — these are stable, auditable, and secure.</li>
+  <li>MCP allows agents to interact with databases, file systems, external APIs, and third-party services in a standardized way.</li>
+</ul>
+<h4>Key exam facts about agents</h4>
+<ul>
+  <li>Custom agents are built in <strong>Copilot Studio</strong> (low-code) or via <strong>declarative manifest</strong> (pro-code).</li>
+  <li>Knowledge sources per agent: up to <strong>20 sources</strong> (public websites, SharePoint, Dataverse, Dynamics 365, Fabric, uploaded files).</li>
+  <li>Uploaded file size limit: <strong>512 MB per file</strong>.</li>
+  <li><strong>Autonomous agents</strong> require a <strong>trigger</strong> (event or schedule) and can execute without user interaction.</li>
+  <li>Agents can be published to <strong>Microsoft 365 Copilot</strong>, <strong>Teams</strong>, or a <strong>custom website</strong>.</li>
+  <li>Prebuilt agents are available in the <strong>Agent Store</strong> and can be enabled/disabled by admins.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m4-u4",
               unitTitle: "Compare Microsoft 365 Copilot and agents",
-              content: `<h4>Compare the built-in capabilities of Copilot and agents</h4>
+              content: `
+<h4>Built-in capabilities comparison</h4>
 <table>
   <thead>
     <tr><th>Capability</th><th>Microsoft 365 Copilot</th><th>Agents</th></tr>
   </thead>
   <tbody>
-    <tr><td><strong>Scope</strong></td><td>General assistant across M365</td><td>Scoped to a specific role/task</td></tr>
-    <tr><td><strong>Built-in</strong></td><td>Yes (Word, Excel, PPT, Outlook, Teams, \u2026)</td><td><strong>Pre-built</strong> (Researcher, Analyst) or <strong>Custom</strong></td></tr>
-    <tr><td><strong>Grounding</strong></td><td>Microsoft Graph + Semantic Index</td><td>Same, plus knowledge sources you specify</td></tr>
-    <tr><td><strong>Autonomy</strong></td><td>Reactive to user prompts</td><td>Can run <strong>autonomously</strong>, multi-step, on a schedule or trigger</td></tr>
-    <tr><td><strong>Customization</strong></td><td>Limited (prompts only)</td><td>Configurable in Copilot Studio: knowledge, actions, instructions, rules</td></tr>
+    <tr><td><strong>Scope</strong></td><td>General assistant across all M365 apps and data</td><td>Scoped to a specific role, task, or knowledge domain</td></tr>
+    <tr><td><strong>Built-in availability</strong></td><td>Integrated in Word, Excel, PowerPoint, Outlook, Teams, OneNote, Business Chat</td><td>Pre-built (Researcher, Analyst) or custom-built</td></tr>
+    <tr><td><strong>Grounding</strong></td><td>Microsoft Graph + Semantic Index (tenant-wide)</td><td>Same, plus specific knowledge sources you define</td></tr>
+    <tr><td><strong>Autonomy</strong></td><td>Reactive — responds to user prompts only</td><td>Can run autonomously with triggers, schedules, and multi-step workflows</td></tr>
+    <tr><td><strong>Customization</strong></td><td>Limited — users write natural-language prompts</td><td>Full customization via Copilot Studio: instructions, rules, knowledge, topics, actions, tone</td></tr>
+    <tr><td><strong>Data scope</strong></td><td>All content the user has permission to see</td><td>Can be restricted to specific knowledge sources or SharePoint sites</td></tr>
+    <tr><td><strong>Identity</strong></td><td>User's identity (delegated permissions)</td><td>Can have its own Entra Agent ID for independent permissions</td></tr>
+    <tr><td><strong>Publishing</strong></td><td>Available tenant-wide via license assignment</td><td>Published to specific users, groups, channels, or everyone</td></tr>
   </tbody>
 </table>
-<h4>Use cases for Researcher</h4>
+<h4>When to use Copilot vs agents</h4>
 <ul>
-  <li><strong>Deep research</strong> \u2014 multi-step web + work research, planning, citations.</li>
-  <li>Tasks: compile a market analysis with citations from files and the web, draft a competitive landscape report.</li>
+  <li>Use <strong>Microsoft 365 Copilot</strong> for open-ended productivity assistance across all M365 apps — drafting, summarizing, analyzing, and creating.</li>
+  <li>Use <strong>agents</strong> when you need a specialized, repeatable, and governed assistant for a <strong>specific business process</strong> — such as HR support, IT troubleshooting, or sales deal summaries.</li>
+  <li>Use <strong>autonomous agents</strong> when the task should run on a schedule or trigger without user intervention.</li>
+  <li>Agents <strong>complement</strong> Copilot — users can invoke agents from within Copilot Chat.</li>
 </ul>
-<h4>Use cases for Analyst</h4>
+<h4>Researcher agent — detailed use cases</h4>
 <ul>
-  <li><strong>Data analysis</strong> \u2014 turns raw data (Excel, tables, CSVs) into insights; runs Python-style reasoning.</li>
-  <li>Tasks: summarize sales table by region, forecast quarterly revenue, find anomalies in logs.</li>
-</ul>`,
+  <li><strong>Deep research</strong> — multi-step research across web + work data with planning and citation generation.</li>
+  <li><strong>Market analysis</strong> — compile competitive landscape reports from internal files and external web sources.</li>
+  <li><strong>Due diligence</strong> — gather and summarize information from multiple sources into a structured report.</li>
+  <li>The Researcher agent produces <strong>cited outputs</strong> with source links for transparency.</li>
+</ul>
+<h4>Analyst agent — detailed use cases</h4>
+<ul>
+  <li><strong>Data analysis</strong> — turn raw data (Excel tables, CSVs) into visual insights using Python-style reasoning.</li>
+  <li><strong>Sales summary</strong> — summarize sales data by region, product, or time period with trend identification.</li>
+  <li><strong>Forecasting</strong> — project quarterly revenue based on historical data patterns.</li>
+  <li><strong>Anomaly detection</strong> — find outliers, errors, or unusual patterns in structured datasets.</li>
+  <li>The Analyst agent can output <strong>tables, charts, and summaries</strong> grounded in the provided data.</li>
+</ul>
+<h4>Key exam facts</h4>
+<ul>
+  <li>Both Copilot and agents are <strong>permission-aware</strong> — they respect existing M365 permissions, Sensitivity Labels, and DLP policies.</li>
+  <li>Agents can be <strong>discovered and invoked</strong> from within the Copilot Chat interface.</li>
+  <li>Prebuilt agents (Researcher, Analyst) are free with a qualifying Copilot license but may have <strong>message limits</strong> under PAYG.</li>
+  <li>Both Copilot and agents support <strong>web grounding</strong> (Bing search) as an optional toggle.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m4-u5",
               unitTitle: "Compare Microsoft 365 Copilot licensing models",
-              content: `<h4>License model: monthly vs pay-as-you-go</h4>
+              content: `
+<h4>Licensing models overview</h4>
+<table>
+  <thead>
+    <tr><th>Model</th><th>How it works</th><th>Best for</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Per-user (monthly)</strong></td><td>Predictable $30/user/month add-on license</td><td>High and predictable usage across many users</td></tr>
+    <tr><td><strong>Pay-as-you-go (PAYG)</strong></td><td>Metered consumption billed through an Azure subscription</td><td>Variable, spiky, or pilot usage</td></tr>
+    <tr><td><strong>Copilot Credit Packs</strong></td><td>Pre-paid Copilot Studio message bundles</td><td>Burst capacity for Copilot Studio agents</td></tr>
+    <tr><td><strong>Copilot Chat (free)</strong></td><td>Web-grounded only; included with any M365 license</td><td>Users who need AI assistance but not work-data grounding</td></tr>
+    <tr><td><strong>Copilot Chat (paid)</strong></td><td>Adds work-grounded answers via Microsoft Graph</td><td>Users who need work-data access but not full app integration</td></tr>
+  </tbody>
+</table>
+<h4>Per-user licensing details</h4>
 <ul>
-  <li><strong>Microsoft 365 Copilot monthly license</strong> \u2014 <strong>per-user</strong>, predictable, ~<strong>$30 USD/user/month</strong>.</li>
-  <li><strong>Pay-as-you-go</strong> \u2014 metered consumption billed through an <strong>Azure subscription</strong>; available for Copilot Studio messages and SharePoint.</li>
-  <li>Choose <strong>PAYG</strong> when usage is variable; choose <strong>per-user</strong> when usage is high and predictable.</li>
-  <li><strong>Copilot Credit Packs</strong> \u2014 pre-paid Copilot Studio message bundles for burst capacity.</li>
-  <li><strong>Copilot Chat (free)</strong> \u2014 web-grounded only, no Microsoft Graph / work data.</li>
-  <li><strong>M365 Copilot Chat (paid)</strong> \u2014 adds work-grounded answers on top of Copilot Chat.</li>
-  <li><strong>Copilot Studio</strong> \u2014 separate licensing; credit packs or PAYG.</li>
+  <li>Microsoft 365 Copilot add-on is approximately <strong>$30 USD per user per month</strong>.</li>
+  <li>Requires a <strong>qualifying base license</strong> (M365 E3, E5, Business Standard, Business Premium, etc.).</li>
+  <li>Per-user prerequisites: active <strong>Exchange Online mailbox</strong>, provisioned <strong>OneDrive for Business</strong>, and <strong>Microsoft Search</strong> healthy.</li>
+  <li>Licenses assigned via M365 admin center → Billing → Licenses.</li>
+  <li><strong>Group-based licensing</strong> supported for bulk assignment.</li>
 </ul>
-<h4>Plan family notes</h4>
+<h4>Pay-as-you-go (PAYG) billing</h4>
 <ul>
-  <li><strong>M365 Business</strong> plans (Basic, Standard, Premium) \u2014 capped at <strong>300 users</strong>, lack <strong>Purview</strong> and <strong>Insider Risk Management</strong>.</li>
-  <li><strong>M365 E3 / E5</strong> \u2014 enterprise plans; E5 unlocks Plan 2 Defender for Office 365 and full Purview.</li>
-  <li><strong>M365 E5 Compliance</strong> and <strong>E5 Security</strong> add-ons \u2014 stack on E3 for just compliance or security pieces.</li>
+  <li>Metered consumption billed through an <strong>Azure subscription</strong>.</li>
+  <li>Available for <strong>Copilot Studio messages</strong> and <strong>SharePoint</strong> scenarios.</li>
+  <li>The PAYG resource is <strong>hidden in Azure portal by default</strong> — admins must toggle "show hidden resources".</li>
+  <li>Apply <strong>Azure budgets</strong>, <strong>cost alerts</strong>, and <strong>spend thresholds</strong> to control costs.</li>
+  <li><strong>Cost analysis</strong> in Azure portal shows per-workload consumption.</li>
+  <li>Switch users from PAYG to per-user licenses when usage becomes consistently high.</li>
+  <li>Switch from PAYG to <strong>Credit Packs</strong> when usage is very spiky.</li>
 </ul>
-<h4>PAYG billing in Azure</h4>
+<h4>Copilot Credit Packs</h4>
 <ul>
-  <li>PAYG resource is hidden in Azure portal by default \u2014 switch to "show hidden" to find it.</li>
-  <li>Apply <strong>Azure budgets</strong>, <strong>cost analysis</strong>, <strong>cost alerts</strong>, and <strong>spend thresholds</strong>.</li>
-</ul>`,
+  <li>Pre-paid message bundles for Copilot Studio agents.</li>
+  <li>Useful for <strong>burst capacity</strong> when agents experience heavy but short-lived demand.</li>
+  <li>Available in different sizes; managed in the Azure portal.</li>
+</ul>
+<h4>Plan family considerations</h4>
+<ul>
+  <li><strong>M365 Business plans</strong> (Basic, Standard, Premium) — capped at <strong>300 users</strong>; lack <strong>Microsoft Purview</strong> and <strong>Insider Risk Management</strong>.</li>
+  <li><strong>M365 E3</strong> — enterprise features, up to unlimited users; includes eDiscovery Standard.</li>
+  <li><strong>M365 E5</strong> — highest tier; includes eDiscovery Premium, Defender for Office 365 Plan 2, full Purview suite, and advanced compliance features.</li>
+  <li><strong>M365 E5 Compliance</strong> and <strong>E5 Security</strong> add-ons — stack on E3 for specific compliance or security capabilities.</li>
+  <li><strong>Copilot Studio</strong> has separate licensing — either Credit Packs or PAYG; no per-user option.</li>
+</ul>
+<h4>Key exam facts</h4>
+<ul>
+  <li>The exam tests the distinction between <strong>Copilot Chat (free, web-only)</strong>, <strong>Copilot Chat (paid, work-grounded)</strong>, and <strong>M365 Copilot (full app integration)</strong>.</li>
+  <li><strong>PAYG</strong> requires an <strong>Azure subscription</strong> — this is the only way to enable PAYG consumption.</li>
+  <li>Business plan <strong>300-user cap</strong> is a frequent exam point.</li>
+  <li>Choose <strong>per-user</strong> for predictable, high usage; <strong>PAYG</strong> for variable or pilot usage.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m4-u6",
               unitTitle: "Plan and deploy Microsoft 365 Copilot and agents",
-              content: `<h4>Readiness checklist</h4>
-<ul>
-  <li><strong>Identity &amp; access</strong> \u2014 Entra ID healthy; Conditional Access + phishing-resistant MFA for admins.</li>
-  <li><strong>Content</strong> \u2014 run oversharing reports; clean up broad links; apply Sensitivity Labels.</li>
-  <li><strong>Licenses</strong> \u2014 Copilot licenses purchased; Power Platform / Azure subscription for PAYG.</li>
-  <li><strong>Data security</strong> \u2014 Purview DLP and DSPM for AI enabled; Customer Lockbox configured.</li>
-  <li><strong>Adoption strategy</strong> \u2014 pilot group, training, champion network, feedback channel, exec sponsorship.</li>
-  <li><strong>Connectors</strong> \u2014 approve Graph connectors you intend to ground against.</li>
-  <li><strong>Network</strong> \u2014 Copilot endpoints reachable; no proxy blocks for required APIs.</li>
-  <li><strong>Change management</strong> \u2014 user comms plan, champion network, training schedule, feedback channel.</li>
-</ul>
-<h4>Phased rollout</h4>
-<ul>
-  <li><strong>Pilot</strong> \u2014 10\u201320 power users, IT team, a single workload.</li>
-  <li><strong>Evaluate</strong> \u2014 Copilot Analytics, Adoption Score, feedback survey, sensitive data exposure.</li>
-  <li><strong>Expand</strong> \u2014 broader business unit, more workloads, more agents.</li>
-  <li><strong>Optimize</strong> \u2014 tune policies, retire blockers, share best prompts.</li>
-</ul>
+              content: `
+<h4>Prerequisites and readiness checklist</h4>
+<p>Before deploying Microsoft 365 Copilot and agents, organizations must ensure readiness across several domains. The exam tests your ability to identify missing prerequisites in scenario-based questions.</p>
+<table>
+  <thead>
+    <tr><th>Domain</th><th>Checks</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Identity & access</strong></td><td>Entra ID healthy, Conditional Access policies in place, phishing-resistant MFA for admins, PIM configured for privileged roles</td></tr>
+    <tr><td><strong>Content readiness</strong></td><td>Run oversharing reports, clean up broad "Anyone" links, apply Sensitivity Labels, review SharePoint permissions</td></tr>
+    <tr><td><strong>Licensing</strong></td><td>Copilot licenses purchased and assigned, Power Platform or Azure subscription for PAYG, Credit Packs available if needed</td></tr>
+    <tr><td><strong>Data security</strong></td><td>Purview DLP enabled, DSPM for AI activated, Customer Lockbox configured, Customer Key if required</td></tr>
+    <tr><td><strong>Network</strong></td><td>Copilot endpoints reachable, no proxy blocks for required APIs, Microsoft 365 network connectivity optimized</td></tr>
+    <tr><td><strong>Search</strong></td><td>Microsoft Search healthy and indexed, Semantic Index populated, SharePoint Search configured</td></tr>
+    <tr><td><strong>Connectors</strong></td><td>Approve Graph connectors that should be available for grounding (ServiceNow, Confluence, Salesforce, etc.)</td></tr>
+    <tr><td><strong>Change management</strong></td><td>User communications plan drafted, champion network identified, training schedule created, feedback channel established</td></tr>
+  </tbody>
+</table>
+<h4>Phased rollout strategy</h4>
+<ol>
+  <li><strong>Pilot</strong> — start with 10–20 power users, IT team, and a single workload (e.g., Teams or Outlook). Enable Copilot via <strong>group-level settings</strong>, not tenant-wide.</li>
+  <li><strong>Evaluate</strong> — use <strong>Copilot Analytics</strong>, <strong>Adoption Score</strong>, and user feedback surveys. Check for sensitive data exposure and oversharing in the pilot group. Review cost under PAYG.</li>
+  <li><strong>Expand</strong> — roll out to broader business units. Add more workloads (Word, Excel, PowerPoint). Deploy prebuilt agents (Researcher, Analyst) and build custom agents for identified use cases.</li>
+  <li><strong>Optimize</strong> — tune DLP policies based on observed usage. Retire blockers. Share best practices and prompt libraries. Reclaim underused licenses. Expand agent deployment.</li>
+</ol>
 <h4>Group-level vs tenant-level enablement</h4>
 <ul>
-  <li>Tenant-level toggles are blunt \u2014 <strong>prefer group-level enablement</strong> to run a clean pilot first.</li>
-</ul>`,
+  <li><strong>Tenant-level toggles</strong> are blunt — they enable or disable features for every user at once. Use only when you are ready for full deployment.</li>
+  <li><strong>Group-level enablement</strong> is preferred for controlled rollouts — assign Copilot licenses to specific security groups, enable features for pilot groups first.</li>
+  <li>In the M365 admin center, Copilot settings can be scoped to specific <strong>Entra ID groups</strong> for granular control.</li>
+  <li>Per-app enablement can also be scoped to groups (e.g., enable Copilot in Teams for the Sales group but not Finance).</li>
+</ul>
+<h4>Pre-deployment content preparation</h4>
+<ul>
+  <li>Run <strong>Data Access Governance reports</strong> in SharePoint admin center to identify overshared sites and content.</li>
+  <li>Apply <strong>Sensitivity Labels</strong> to sensitive content to prevent Copilot from using it in responses.</li>
+  <li>Configure <strong>Restricted SharePoint Search</strong> (limit to up to 100 sites) to control Copilot's content scope during the pilot.</li>
+  <li>Review <strong>external sharing settings</strong> and tighten where needed.</li>
+  <li>Enable <strong>DSPM for AI</strong> to monitor Copilot activity from day one.</li>
+</ul>
+<h4>Key exam facts</h4>
+<ul>
+  <li><strong>Prerequisites:</strong> active Exchange Online mailbox + provisioned OneDrive + healthy Microsoft Search per user.</li>
+  <li><strong>Phased rollout order:</strong> Pilot → Evaluate → Expand → Optimize (memorize this sequence).</li>
+  <li><strong>Group-level settings</strong> are preferred for controlled rollouts — tenant-level is for full production.</li>
+  <li>Adoption strategy must include: <strong>champion network</strong>, <strong>training</strong>, <strong>feedback channel</strong>, and <strong>executive sponsorship</strong>.</li>
+  <li>Monitor sensitive data exposure during the evaluation phase using Purview DSPM for AI.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m4-u7",
               unitTitle: "Explore real-world use cases for Copilot and agents",
-              content: `<h4>Real-world use cases</h4>
+              content: `
+
+<h4>Real-world use case categories</h4>
+<p>Microsoft 365 Copilot and agents can be applied across every business function. The exam tests scenario-based understanding of which tool and approach fits a given business problem.</p>
+<h4>Research and analysis use cases</h4>
 <ul>
-  <li><strong>Researcher agent</strong> \u2014 multi-step research with citations across the web and your tenant.</li>
-  <li><strong>Analyst agent</strong> \u2014 turn raw data (Excel, CSVs) into insights, run Python-style reasoning.</li>
-  <li><strong>HR FAQ agent</strong> (SharePoint agent) \u2014 answers employee questions from the HR handbook.</li>
-  <li><strong>IT helpdesk agent</strong> \u2014 triages tickets, suggests known solutions.</li>
-  <li><strong>Sales deal-summary agent</strong> \u2014 pulls the latest CRM + email + meeting notes into a one-pager.</li>
-  <li><strong>Customer service copilot</strong> \u2014 drafts replies grounded by knowledge base + ticket history.</li>
-  <li><strong>Onboarding agent</strong> \u2014 creates accounts, sends welcome emails, schedules orientation.</li>
-  <li><strong>Project "ask me anything" agent</strong> \u2014 scoped to a single SharePoint project site.</li>
-</ul>`,
+  <li><strong>Researcher agent</strong> — multi-step deep research across web and tenant data with citation generation. <em>Scenario:</em> A product manager needs a competitive landscape report with sources from internal files and industry websites. The Researcher agent compiles the report with citations in minutes.</li>
+  <li><strong>Analyst agent</strong> — data analysis using Python-style reasoning on structured data (Excel, CSVs, tables). <em>Scenario:</em> A sales director uploads a quarterly sales spreadsheet and asks the Analyst agent to show revenue by region, highlight top performers, and forecast next quarter. The agent returns a summary table with trend analysis.</li>
+</ul>
+<h4>Human Resources use cases</h4>
+<ul>
+  <li><strong>HR FAQ agent</strong> (SharePoint agent) — answers employee questions grounded in the HR policy handbook stored in SharePoint. <em>Scenario:</em> An employee asks "How many sick days do I have?" The agent retrieves the answer from the HR policies document. Automatically inherits SharePoint permissions — only relevant employees can access sensitive policies.</li>
+  <li><strong>Onboarding agent</strong> — automates new-hire setup. <em>Scenario:</em> When triggered by a new user creation event, the onboarding agent creates accounts, sends welcome emails, schedules orientation, and assigns training.</li>
+</ul>
+<h4>IT and support use cases</h4>
+<ul>
+  <li><strong>IT helpdesk agent</strong> — triages tickets and suggests known solutions from the IT knowledge base. <em>Scenario:</em> A user reports "My Outlook won't connect." The agent checks known issues, runs diagnostic steps, and either resolves or escalates with full context.</li>
+  <li><strong>Customer service copilot</strong> — drafts replies grounded in the knowledge base and ticket history. <em>Scenario:</em> A support agent asks "What's our return policy for electronics?" Copilot drafts a response with the correct policy and links to supporting docs.</li>
+</ul>
+<h4>Sales and business development use cases</h4>
+<ul>
+  <li><strong>Sales deal-summary agent</strong> — pulls CRM data, email threads, and meeting notes into a one-page briefing. <em>Scenario:</em> Before a client meeting, a salesperson asks the agent to prepare a briefing on Acme Corp's open opportunities, recent communications, and next steps. The agent synthesizes data from Dynamics 365, Exchange, and Teams.</li>
+  <li><strong>Project ask me anything agent</strong> — scoped to a single SharePoint project site. <em>Scenario:</em> A team member asks "What's our Q3 deliverable timeline?" The agent answers based solely on the project site content, respecting all site permissions.</li>
+</ul>
+<h4>How to choose the right approach</h4>
+<table>
+  <thead>
+    <tr><th>If you need...</th><th>Choose...</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Open-ended productivity across all M365 apps</td><td>Microsoft 365 Copilot</td></tr>
+    <tr><td>Deep research with citations from web + work</td><td>Researcher agent (prebuilt)</td></tr>
+    <tr><td>Structured data analysis and visualization</td><td>Analyst agent (prebuilt)</td></tr>
+    <tr><td>FAQ-style Q&A from a single SharePoint site</td><td>SharePoint agent</td></tr>
+    <tr><td>A custom business process with specific instructions and knowledge</td><td>Custom Copilot Studio agent</td></tr>
+    <tr><td>Automated workflow without user interaction</td><td>Autonomous agent (Copilot Studio with trigger)</td></tr>
+  </tbody>
+</table>
+<h4>Measuring success of use cases</h4>
+<ul>
+  <li><strong>Copilot Analytics</strong> — adoption rate, active users, top prompts, usage by workload.</li>
+  <li><strong>Viva Insights</strong> — deeper workplace analytics including Copilot usage patterns.</li>
+  <li><strong>Feedback surveys</strong> — user satisfaction, time saved, quality of responses.</li>
+  <li><strong>Agent analytics</strong> in Copilot Studio — per-agent usage, success rate, escalation rate, session transcripts.</li>
+  <li><strong>Start small</strong> — pick one high-impact, low-risk use case for the pilot, prove value, then expand.</li>
+</ul>
+<h4>Key exam facts</h4>
+<ul>
+  <li>The exam presents <strong>scenario-based questions</strong> asking "which agent or approach would you use?" — memorize the matching table above.</li>
+  <li><strong>SharePoint agents</strong> are the fastest path to a working governed agent — no Copilot Studio required, permissions inherited automatically.</li>
+  <li><strong>Prebuilt agents</strong> (Researcher, Analyst) require a qualifying Copilot license and are available from the Agent Store.</li>
+  <li>Custom agents built in <strong>Copilot Studio</strong> can be published to <strong>M365 Copilot</strong>, <strong>Teams</strong>, or a <strong>custom website/channel</strong>.</li>
+  <li>All agents honor existing <strong>Sensitivity Labels</strong>, <strong>DLP policies</strong>, and <strong>SharePoint permissions</strong>.</li>
+</ul>
+
+
+<h4>Responsible AI Principles for Copilot</h4>
+<ul>
+  <li><strong>Data minimization</strong> — Copilot only retrieves the data needed to answer the query, not the entire user mailbox or tenant.</li>
+  <li><strong>Transparency</strong> — Copilot cites its sources (document names, URLs) so users can verify responses. If it cannot find information, it says so rather than inventing data.</li>
+  <li><strong>Content filtering</strong> — Harmful, offensive, or inappropriate content is blocked at both input (prompt) and output (response) stages.</li>
+  <li><strong>Accountability</strong> — All Copilot interactions are logged to Microsoft Purview Audit (Standard or Premium). Admins can review prompts, responses, and source documents for compliance.</li>
+  <li><strong>Fairness &amp; reliability</strong> — LLM models are tested to reduce bias and produce grounded, factual responses based on tenant data (RAG).</li>
+  <li><strong>No LLM training on tenant data</strong> — Your organization's data is never used to train or retrain the underlying AI models. Tenant data remains within your compliance boundary.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
@@ -1517,7 +2006,20 @@ const studyGuideData = {
             {
               unitId: "m4-u9",
               unitTitle: "Summary",
-              content: `<p>Module 4 covered the Microsoft 365 Copilot and agents architecture, comparing Copilot and agents, licensing models (per-user, PAYG, Credit Packs), planning and deployment readiness, and real-world use cases for Copilot and agents including Researcher, Analyst, and custom agents.</p>`,
+              content: `
+<h4>Module 4 Summary — Explore Microsoft 365 Copilot and Agents</h4>
+<p>Module 4 introduced Microsoft 365 Copilot and agents. Key takeaways:</p>
+<ul>
+  <li><strong>Copilot architecture</strong>: prompt → orchestrator → Graph + Semantic Index (RAG) → LLM → content safety + groundedness → response. Permission-aware — uses the user's OAuth token. No LLM training on tenant data.</li>
+  <li><strong>Three access tiers</strong>: Copilot Chat free (web-only), Copilot Chat paid (adds work-grounding), M365 Copilot (full app integration + $30/user/month).</li>
+  <li><strong>Admin controls</strong>: web content toggle, plugin/connector controls, per-app enablement, per-user via license, per-content via Sensitivity Labels, DLP policies, Restricted SharePoint Search (100 sites).</li>
+  <li><strong>Agents</strong>: specialized AI assistants scoped to a task/domain. Types: prebuilt (Researcher, Analyst, Writing Coach, Prompt Coach), custom (Copilot Studio), SharePoint agents (site-scoped, permissions inherited).</li>
+  <li><strong>Copilot vs agents</strong>: Copilot is a general reactive assistant; agents can be autonomous, have custom knowledge sources (up to 20, 512 MB each), their own Entra Agent ID, and specific instructions/rules.</li>
+  <li><strong>Licensing models</strong>: per-user (predictable, ~$30), PAYG (metered via Azure subscription), Credit Packs (pre-paid message bundles). Business plans capped at 300 users.</li>
+  <li><strong>Deployment readiness</strong>: prerequisites (Exchange mailbox, OneDrive, healthy Search), phased rollout (Pilot → Evaluate → Expand → Optimize), group-level settings preferred over tenant-level toggles.</li>
+  <li><strong>Real-world use cases</strong>: Researcher (market analysis), Analyst (data trends), HR FAQ (SharePoint agent), IT helpdesk (custom agent), Sales deal-summary (cross-data synthesis). Choose the approach based on scope, autonomy need, and data sources.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             }
@@ -1537,89 +2039,202 @@ const studyGuideData = {
             {
               unitId: "m5-u2",
               unitTitle: "Manage Copilot licenses and pay-as-you-go billing",
-              content: `<h4>Manage Copilot licenses and PAYG billing</h4>
+              content: `
+<h4>License Assignment Methods</h4>
+<p>Copilot licenses are managed in the <strong>Microsoft 365 admin center</strong> under <strong>Billing → Licenses</strong>. You can assign licenses to individual users or use <strong>group-based licensing</strong> to assign via Entra ID security groups (membership cascades automatically).</p>
+<h4>Prerequisites Per User</h4>
+<p>Before a user can use Microsoft 365 Copilot, verify these prerequisites:</p>
 <ul>
-  <li>Microsoft 365 admin center \u2192 <strong>Billing \u2192 Licenses</strong> \u2192 assign <strong>Microsoft 365 Copilot</strong> to users or groups.</li>
-  <li>Verify prerequisites per user: <strong>Copilot license + active Exchange mailbox + OneDrive provisioned + Microsoft Search healthy</strong>.</li>
-  <li>For <strong>PAYG</strong>: Microsoft 365 admin center \u2192 <strong>Copilot \u2192 Billing &amp; usage</strong> \u2192 select the <strong>Azure subscription</strong>.</li>
-  <li>Set <strong>budget limits</strong> to prevent runaway spend.</li>
-</ul>`,
+  <li><strong>Copilot license</strong> assigned to the user account</li>
+  <li><strong>Active Exchange Online mailbox</strong> (required for email grounding)</li>
+  <li><strong>OneDrive for Business provisioned</strong> (required for file grounding and storage)</li>
+  <li><strong>Microsoft Search healthy</strong> (the search index must be built and functional)</li>
+  <li>User must have a supported Microsoft 365 base license (E3, E5, Business Standard/Premium)</li>
+</ul>
+<h4>Per-User vs Pay-as-You-Go Licensing</h4>
+<table>
+  <thead>
+    <tr><th>Model</th><th>Best for</th><th>Billing</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Per-user (monthly)</strong></td><td>Consistent, predictable usage</td><td>~$30 USD/user/month billed monthly</td></tr>
+    <tr><td><strong>Pay-as-you-go (PAYG)</strong></td><td>Variable or pilot usage</td><td>Metered consumption via Azure subscription</td></tr>
+    <tr><td><strong>Credit Packs</strong></td><td>Burst / spiky Copilot Studio usage</td><td>Pre-paid message bundles</td></tr>
+  </tbody>
+</table>
+<h4>PAYG Configuration</h4>
+<ul>
+  <li>Navigate to <strong>Microsoft 365 admin center → Copilot → Billing & usage</strong> to select the Azure subscription for PAYG billing.</li>
+  <li>The PAYG resource is hidden in the Azure portal by default — toggle <strong>"Show hidden"</strong> to see it.</li>
+  <li>Apply <strong>Azure budgets</strong>, <strong>cost analysis</strong>, and <strong>spend thresholds</strong> to prevent runaway spending.</li>
+  <li>Set up <strong>cost alerts</strong> that notify admins when usage approaches budget limits.</li>
+</ul>
+<h4>Exam Scenarios</h4>
+<ul>
+  <li>A pilot group of 15 users expects variable Copilot usage → assign PAYG via Azure subscription.</li>
+  <li>An entire department of 200 users needs Copilot daily → assign per-user licenses for predictable cost.</li>
+  <li>Audit licenses regularly to identify unassigned or underused Copilot seats → reassign to active users.</li>
+  <li><strong>Business plans</strong> (Basic, Standard, Premium) are capped at <strong>300 users</strong> and lack Purview + Insider Risk Management.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m5-u3",
               unitTitle: "Monitor and adjust pay-as-you-go Copilot usage",
-              content: `<h4>Monitor and adjust PAYG usage</h4>
+              content: `
+<h4>Monitoring PAYG Consumption</h4>
+<p>Open the <strong>Microsoft 365 admin center → Copilot → Billing & usage</strong> dashboard to inspect metered consumption. This view breaks down usage by workload:</p>
 <ul>
-  <li>Open <strong>Copilot \u2192 Billing &amp; usage</strong> in the admin center.</li>
-  <li>Inspect <strong>metered consumption</strong> by workload (Copilot Studio, SharePoint, etc.).</li>
-  <li><strong>Adjust</strong> by:
+  <li><strong>Copilot Studio</strong> — agent message consumption</li>
+  <li><strong>SharePoint</strong> — Copilot interactions grounded in SharePoint content</li>
+  <li><strong>Microsoft 365 Copilot</strong> — general Copilot usage metering</li>
+</ul>
+<h4>Adjustment Strategies</h4>
+<p>When metered consumption exceeds expectations, admins can adjust by:</p>
+<ul>
+  <li><strong>Switching users to per-user licenses</strong> — cost-effective when an individual's usage is consistently high and predictable.</li>
+  <li><strong>Tightening DLP policies on connectors</strong> — reduces high-risk usage and associated costs.</li>
+  <li><strong>Moving from PAYG to Credit Packs</strong> — pre-paid Copilot Studio message bundles for burst or spiky usage patterns.</li>
+  <li><strong>Disabling specific Copilot features</strong> that drive cost:
     <ul>
-      <li>Switching users from PAYG to per-user licenses (when usage is consistently high).</li>
-      <li>Tightening DLP policies on connectors (when usage is high-risk).</li>
-      <li>Switching from PAYG to <strong>Credit Packs</strong> (when usage is spiky).</li>
-      <li>Disabling specific Copilot features that drive cost (web grounding, plugins).</li>
+      <li>Web content grounding (Bing search integration)</li>
+      <li>Third-party plugins and Graph connectors</li>
+      <li>Per-app Copilot toggles (e.g., disable in Excel for cost-sensitive workloads)</li>
     </ul>
   </li>
-</ul>`,
+</ul>
+<h4>Azure Cost Controls</h4>
+<ul>
+  <li><strong>Azure budgets</strong> — set monetary caps on the Copilot PAYG resource.</li>
+  <li><strong>Cost alerts</strong> — notify admins at configurable thresholds (e.g., 50%, 80%, 100% of budget).</li>
+  <li><strong>Cost analysis</strong> — drill into daily/hourly spend by meter category.</li>
+  <li><strong>Budget actions</strong> — optionally trigger automation (e.g., disable Copilot for a group) when budget is exceeded.</li>
+</ul>
+<h4>Exam Scenarios</h4>
+<ul>
+  <li>A department's PAYG Copilot usage doubled in one month → inspect Billing & usage to identify which workload drove the increase.</li>
+  <li>Users in the legal department should not use web-grounding in Copilot → disable web content access per group through Copilot settings.</li>
+  <li>An organization wants to migrate from PAYG to per-user → identify high-usage users, convert them to per-user licenses, leave low-usage users on PAYG.</li>
+  <li>Cost alerts at 80% and 100% of monthly Copilot budget → configure in Azure Cost Management for the Copilot PAYG resource.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m5-u4",
               unitTitle: "Monitor Microsoft 365 Copilot usage and adoption",
-              content: `<h4>Monitor Microsoft 365 Copilot usage and adoption</h4>
+              content: `
+<h4>Admin Center Reports</h4>
+<p>Three primary dashboards monitor Copilot usage and adoption across the tenant:</p>
 <ul>
-  <li><strong>Microsoft 365 admin center \u2192 Reports \u2192 Copilot dashboard</strong> \u2014 license utilization, active users, top prompts, top apps used.</li>
-  <li><strong>Copilot Analytics</strong> (under Reports) \u2014 adoption score, prompt quality, prompt-injection attempts surfaced by DSPM for AI.</li>
-  <li><strong>Viva Insights</strong> \u2014 workplace analytics view including Copilot usage.</li>
-  <li><strong>Microsoft Purview \u2192 Activity Explorer</strong> \u2014 per-user AI activity on labeled content.</li>
-  <li><strong>Adoption strategy</strong>: identify champions, share prompt libraries, track department-level adoption, run lunch-and-learns.</li>
-</ul>`,
+  <li><strong>Microsoft 365 admin center → Reports → Copilot dashboard</strong> — shows license utilization, active users, top prompts, and top apps used (Word, Excel, Outlook, Teams, etc.).</li>
+  <li><strong>Copilot Analytics</strong> (under Reports) — deeper insights including adoption score trends, prompt quality metrics, and prompt-injection attempts surfaced by DSPM for AI.</li>
+  <li><strong>Viva Insights → Copilot Analytics</strong> — workplace analytics view of Copilot usage, showing how Copilot affects meeting habits, email volume, and collaboration patterns.</li>
+</ul>
+<h4>Activity Explorer for AI Audit</h4>
+<ul>
+  <li><strong>Microsoft Purview → Activity Explorer</strong> — captures per-user AI activity on labeled content, including every Copilot action for audit trails.</li>
+  <li>Filter by date range, user, sensitivity label, or activity type to investigate specific Copilot interactions.</li>
+  <li>Core signal for DSPM for AI investigations and Insider Risk Management cases involving Copilot.</li>
+</ul>
+<h4>Adoption Strategy</h4>
+<ul>
+  <li><strong>Identify champions</strong> — power users who demonstrate effective Copilot usage and can coach peers.</li>
+  <li><strong>Share prompt libraries</strong> — curate and distribute reusable prompts through Teams, SharePoint, or the admin-published prompt library.</li>
+  <li><strong>Track department-level adoption</strong> — monitor which departments have the highest/lowest active usage and target training accordingly.</li>
+  <li><strong>Run lunch-and-learns</strong> — informal training sessions demonstrating real-world Copilot workflows.</li>
+  <li><strong>Feedback channel</strong> — collect user feedback via Forms or Teams channel and feed it back into Copilot Analytics for continuous improvement.</li>
+</ul>
+<h4>License Reclamation</h4>
+<ul>
+  <li>Use Copilot Analytics to identify users who have a Copilot license but <strong>low or zero activity</strong> over 30–60 days.</li>
+  <li><strong>Reclaim underused licenses</strong> by unassigning from inactive users and reassigning to active users who don't yet have a license.</li>
+  <li>This is a key operational best practice for controlling Copilot costs.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m5-u5",
               unitTitle: "Manage and govern Microsoft 365 Copilot prompts",
-              content: `<h4>Manage and govern prompts</h4>
-<p>Prompts in Copilot can be:</p>
+              content: `
+<h4>Prompt Lifecycle</h4>
+<p>Prompts are the user's instruction to Copilot. Users can manage their own prompts through the Copilot chat interface, while admins can govern prompts at the tenant level.</p>
 <ul>
-  <li><strong>Saved</strong> \u2014 bookmark useful prompts for reuse (per user, in the Copilot chat panel).</li>
-  <li><strong>Shared</strong> \u2014 distribute a prompt template to teammates.</li>
-  <li><strong>Scheduled</strong> \u2014 trigger a prompt on a schedule (e.g., daily summary email).</li>
-  <li><strong>Deleted</strong> \u2014 remove a saved prompt from the user's library.</li>
-  <li><strong>Governed</strong> \u2014 admin-published shared prompt libraries appear alongside user prompts.</li>
+  <li><strong>Saved</strong> — users bookmark useful prompts for reuse in the Copilot chat panel. Saved prompts are per-user and not visible to others by default.</li>
+  <li><strong>Shared</strong> — users can share a prompt template with teammates via a link. Admins can publish shared prompt libraries tenant-wide through channels or SharePoint.</li>
+  <li><strong>Scheduled</strong> — prompts can be configured to run on a schedule (e.g., a daily summary email or weekly status report). Requires a trigger configuration.</li>
+  <li><strong>Deleted</strong> — users remove prompts from their personal library. Admins can delete user-level prompts in some workloads but cannot directly edit a user's saved prompts.</li>
 </ul>
-<p>Prompts are tied to the user; admins do not directly edit a user's saved prompts but can delete user-level prompts in some workloads and publish shared prompt templates via channels.</p>`,
+<h4>Admin Governance of Prompts</h4>
+<ul>
+  <li><strong>Admin-published shared prompt libraries</strong> — appear alongside user prompts in the Copilot interface; curated by admins for approved use cases.</li>
+  <li><strong>DSPM for AI</strong> — monitors prompts for risky content, sensitive data leakage, and prompt-injection patterns. Captures Copilot interactions for the last 30 days.</li>
+  <li><strong>DLP policies</strong> — can block Copilot from processing prompts that contain sensitive data (PII, financial, PHI).</li>
+  <li><strong>Activity Explorer</strong> — provides the audit trail for all Copilot prompt and response activity.</li>
+</ul>
+<h4>Prompt Engineering Best Practices</h4>
+<ul>
+  <li><strong>Be specific</strong> — "Summarize the Q3 financial report in this SharePoint library" is better than "Summarize the report."</li>
+  <li><strong>Provide context</strong> — include relevant documents, files, or people in the prompt.</li>
+  <li><strong>Iterate</strong> — refine the prompt based on Copilot's responses; save effective versions.</li>
+  <li><strong>Use system instructions</strong> — in agents, define tone, scope, rules, and guardrails in the Instructions field.</li>
+</ul>
+<h4>Exam Scenarios</h4>
+<ul>
+  <li>A user wants to reuse a complex prompt daily → save the prompt in the Copilot chat panel and optionally schedule it.</li>
+  <li>An admin wants all sales users to have access to a "Weekly pipeline summary" prompt → publish it as an admin-shared prompt template.</li>
+  <li>A prompt-injection attempt is detected → investigate via DSPM for AI and tighten DLP policies for Copilot.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m5-u6",
               unitTitle: "Apply operational best practices for Microsoft 365 Copilot",
-              content: `<h4>Troubleshoot common issues</h4>
+              content: `
+<h4>Troubleshooting Common Issues</h4>
+<table>
+  <thead>
+    <tr><th>Symptom</th><th>Check</th><th>Resolution</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>User can't see Copilot</td><td>License assignment, app enablement, region rollout, Microsoft 365 app version</td><td>Assign license, enable per-app, update Office build</td></tr>
+    <tr><td>Copilot returns no content</td><td>Graph permissions, Sensitivity Label encryption, Search index, restricted content discovery, restricted SharePoint Search</td><td>Fix permissions, remove restrictive labels, rebuild search index</td></tr>
+    <tr><td>Slow responses</td><td>Tenant health, network egress, Microsoft 365 service health</td><td>Check service health dashboard, optimize network connectivity</td></tr>
+    <tr><td>Copilot surfaces incorrect data</td><td>Broken permission inheritance, overshared links, stale content</td><td>Run DAG reports, tighten SharePoint sharing settings</td></tr>
+  </tbody>
+</table>
+<h4>End-User Communication Plan</h4>
 <ul>
-  <li>User can't see Copilot \u2192 check license, app enablement, region rollout, Microsoft 365 app version.</li>
-  <li>Copilot returns no content \u2192 check Graph permissions, Sensitivity Label encryption, broken Search index, restricted content discovery, restricted SharePoint search.</li>
-  <li>Slow responses \u2192 check tenant health, network egress, Microsoft 365 service health.</li>
+  <li><strong>Pre-launch emails</strong> — "what to expect" with screenshots, example prompts, and training resources.</li>
+  <li><strong>Champion network</strong> — identify early adopters who provide peer support and share best practices.</li>
+  <li><strong>"Prompt of the week"</strong> communications via Teams, email, or Viva Connections.</li>
+  <li><strong>Feedback channel</strong> — Forms survey or Teams channel that feeds insights back into Copilot Analytics for continuous improvement.</li>
 </ul>
-<h4>Communicate changes to end users</h4>
+<h4>Ongoing Operational Excellence</h4>
 <ul>
-  <li>Pre-launch emails with "what to expect" + screenshots.</li>
-  <li>Champion network / early adopters for peer support.</li>
-  <li>"Prompt of the week" communications.</li>
-  <li>Feedback channel (Forms or Teams) feeding back into Copilot Analytics.</li>
+  <li><strong>Track Secure Score and Identity Secure Score</strong> trends — measure security posture improvements over time.</li>
+  <li><strong>Run Attack Simulator phishing campaigns</strong> quarterly — test user awareness and measure improvement.</li>
+  <li><strong>Review DLP and IRM alerts</strong> weekly — investigate and remediate data protection incidents.</li>
+  <li><strong>Audit admin role assignments</strong> regularly using <strong>Access Reviews</strong> in Entra ID — remove unused or excessive admin roles.</li>
+  <li><strong>Reclaim underused Copilot licenses</strong> — monitor Copilot Analytics for inactive licensed users and reassign seats.</li>
+  <li><strong>Review DSPM for AI reports</strong> — identify shadow AI usage, risky prompts, and overshared data sources.</li>
 </ul>
-<h4>Operational excellence</h4>
+<h4>Change Management for Copilot</h4>
 <ul>
-  <li>Track Secure Score and Identity Secure Score trends.</li>
-  <li>Run Attack Simulator phishing campaigns quarterly.</li>
-  <li>Review DLP and IRM alerts weekly.</li>
-  <li>Audit admin role assignments with <strong>Access Reviews</strong>.</li>
-  <li><strong>Reclaim underused Copilot licenses</strong> \u2014 identify users with a license but low usage in Copilot Analytics and reassign.</li>
-</ul>`,
+  <li><strong>Pilot</strong> — start with 10–20 power users in a single workload.</li>
+  <li><strong>Evaluate</strong> — measure adoption, satisfaction, and security impact before expanding.</li>
+  <li><strong>Expand</strong> — roll out to broader business units and additional workloads.</li>
+  <li><strong>Optimize</strong> — tune policies, retire blockers, share effective prompts, and iteratively improve the deployment.</li>
+  <li><strong>Tenant-level toggles</strong> are blunt instruments — <strong>prefer group-level enablement</strong> for measured, controlled rollout.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
@@ -1633,7 +2248,19 @@ const studyGuideData = {
             {
               unitId: "m5-u8",
               unitTitle: "Summary",
-              content: `<p>Module 5 covered administrative tasks for Microsoft 365 Copilot including managing licenses and PAYG billing, monitoring usage with Copilot Analytics and Viva Insights, managing and governing prompts (save/share/schedule/delete), troubleshooting common issues, end-user communication, and operational best practices including license reclamation.</p>`,
+              content: `
+<h4>Module 5 Summary — Basic Administrative Tasks for Copilot</h4>
+<p>Module 5 covered the hands-on admin tasks for managing Microsoft 365 Copilot. Key takeaways:</p>
+<ul>
+  <li><strong>License management</strong>: assign per-user licenses or PAYG via Azure subscription. Prerequisites per user: Copilot license + active Exchange mailbox + provisioned OneDrive + healthy Microsoft Search. Group-based licensing scales bulk assignments.</li>
+  <li><strong>PAYG monitoring</strong>: M365 admin center → Copilot → Billing & usage shows metered consumption by workload (Copilot Studio, SharePoint, M365 Copilot). Azure budgets, cost alerts, and spend thresholds control costs. Switch high-usage users to per-user licenses for predictable billing.</li>
+  <li><strong>Usage and adoption monitoring</strong>: Copilot dashboard (license utilization, active users, top prompts), Copilot Analytics (adoption score, prompt quality), Viva Insights (workplace analytics). Reclaim underused licenses from inactive users.</li>
+  <li><strong>Prompt governance</strong>: users can save, share, schedule, and delete prompts. Admins publish shared prompt libraries tenant-wide. DSPM for AI monitors prompts for risky content and prompt-injection (30-day retention). DLP policies can block Copilot from processing sensitive data.</li>
+  <li><strong>Operational excellence</strong>: track Secure Score, run quarterly Attack Simulation, review DLP/IRM alerts weekly, audit admin roles via Access Reviews, monitor DSPM for AI reports.</li>
+  <li><strong>Change management</strong>: Pilot → Evaluate → Expand → Optimize. Group-level enablement over tenant-level toggles. Champion network, training, feedback channels, and executive sponsorship.</li>
+  <li><strong>Troubleshooting</strong>: user can't see Copilot (check license, app enablement, region, app version), Copilot returns no content (check permissions, labels, Search index, restricted content discovery), slow responses (check tenant health, network, service health).</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             }
@@ -1653,141 +2280,357 @@ const studyGuideData = {
             {
               unitId: "m6-u2",
               unitTitle: "Create a Microsoft 365 Copilot Chat agent \u2014 Part 1",
-              content: `<h4>Create a Copilot Chat agent \u2014 Path A: from Copilot Studio</h4>
+              content: `
+<h4>Creating a Copilot Chat Agent — Prerequisites and Planning</h4>
+<p>Before creating an agent, verify prerequisites: a <strong>Copilot Studio license</strong> (per-user or PAYG), appropriate <strong>Power Platform environment</strong>, and <strong>knowledge source permissions</strong>. Agents can be created through <strong>two paths</strong>: Copilot Studio (full-featured) or directly from Microsoft 365 Copilot Chat (lightweight).</p>
+<h4>Path A: From Copilot Studio Step by Step</h4>
 <ol>
-  <li>Open <strong>https://copilotstudio.microsoft.com</strong>.</li>
-  <li><strong>Create \u2192 New agent</strong> (or start from a <strong>template</strong>).</li>
-  <li><strong>Describe mode</strong> \u2014 natural-language description: name, purpose, tone, audience. Copilot Studio works out the rest.</li>
-  <li><strong>Configure mode</strong> \u2014 set:
+  <li>Open <strong>https://copilotstudio.microsoft.com</strong> and sign in with admin credentials.</li>
+  <li>Select <strong>Create → New agent</strong> or start from a <strong>template</strong> (pre-built agent blueprints).</li>
+  <li><strong>Describe mode</strong> — enter a natural-language description: agent name, purpose, tone, target audience. Copilot Studio generates the initial configuration.</li>
+  <li><strong>Configure mode</strong> — fine-tune every aspect:
     <ul>
-      <li><strong>Icon, name, description</strong>.</li>
-      <li><strong>Instructions and Rules</strong> \u2014 system prompt with tone, what the agent should do, hard rules/guardrails.</li>
-      <li><strong>Knowledge sources</strong> \u2014 up to <strong>20</strong> sources (public websites, SharePoint, Dataverse, Dynamics 365, Fabric, uploaded files up to <strong>512 MB each</strong>).</li>
-      <li><strong>Web access toggle</strong> \u2014 whether the agent may use Bing.</li>
-      <li><strong>Suggested prompts</strong> \u2014 pre-built prompts surfaced to the user.</li>
-      <li><strong>Actions / Tools</strong> (Power Automate flows).</li>
-      <li><strong>Topics</strong> (intents the agent recognizes).</li>
-      <li><strong>Authentication</strong> (Entra ID, anonymous, or per-user).</li>
+      <li><strong>Icon, name, description</strong> — branding and discoverability.</li>
+      <li><strong>Instructions and Rules</strong> — the system prompt defining tone, scope, hard guardrails (e.g., "never share financial data").</li>
+      <li><strong>Knowledge sources</strong> — up to <strong>20 sources</strong> including public websites, SharePoint sites/libraries, Dataverse tables, Dynamics 365 data, Microsoft Fabric, and uploaded files (<strong>512 MB max per file</strong>).</li>
+      <li><strong>Web access toggle</strong> — enable or disable Bing grounding for real-time web data.</li>
+      <li><strong>Suggested prompts</strong> — pre-built starter questions displayed to users.</li>
+      <li><strong>Actions / Tools</strong> — Power Automate flows the agent can invoke.</li>
+      <li><strong>Topics</strong> — intents the agent recognizes with trigger phrases and conversation paths.</li>
+      <li><strong>Authentication</strong> — Entra ID (tenant users), anonymous (public), or per-user.</li>
     </ul>
   </li>
-  <li><strong>Test</strong> in the built-in chat panel at any time.</li>
-  <li><strong>Publish</strong> to Microsoft 365 Copilot, Teams, or a custom website.</li>
-</ol>`,
+  <li><strong>Test</strong> in the built-in test pane at any stage of configuration.</li>
+  <li><strong>Publish</strong> to Microsoft 365 Copilot, Teams, a custom website, or as an autonomous agent.</li>
+</ol>
+<h4>Key Configuration Details</h4>
+<ul>
+  <li><strong>Instructions</strong> are the most critical governance control — they define what the agent can and cannot do.</li>
+  <li><strong>Knowledge sources</strong> support full-text search, not just metadata; sources can be reordered by priority.</li>
+  <li><strong>Templates</strong> reduce setup time for common scenarios (HR FAQ, IT helpdesk, project assistant).</li>
+  <li><strong>Authentication</strong> determines who can invoke the agent: Entra ID respects user permissions, anonymous bypasses auth.</li>
+  <li>The agent can be saved as a <strong>draft</strong> and published later; version history is tracked.</li>
+</ul>
+<h4>Exam-Relevant Limits</h4>
+<table>
+  <thead>
+    <tr><th>Limit</th><th>Value</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Knowledge sources per agent</td><td><strong>20</strong></td></tr>
+    <tr><td>Max file size per uploaded knowledge source</td><td><strong>512 MB</strong></td></tr>
+    <tr><td>Authentication options</td><td>Entra ID, Anonymous, Per-user</td></tr>
+    <tr><td>Publishing targets</td><td>M365 Copilot, Teams, Web, Autonomous</td></tr>
+  </tbody>
+</table>
+<p><strong>Scenario</strong>: An HR manager wants an agent answering employee benefits questions. The admin creates the agent in Copilot Studio, adds the HR SharePoint site and a benefits PDF (under 512 MB) as knowledge sources, writes instructions to keep responses benefits-only, and publishes to M365 Copilot scoped to the HR security group.</p>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m6-u3",
               unitTitle: "Create a Microsoft 365 Copilot Chat agent \u2014 Part 2",
-              content: `<h4>Create a Copilot Chat agent \u2014 Path B: from Microsoft 365 Copilot Chat</h4>
+              content: `
+<h4>Path B: From Microsoft 365 Copilot Chat</h4>
+<p>The lightweight creation path lets users build agents without leaving the Copilot Chat interface.</p>
 <ol>
-  <li>Open <strong>https://copilot.cloud.microsoft</strong> or the Copilot Chat surface in Teams/Outlook.</li>
-  <li>Click the <strong>Create an agent</strong> / <strong>Copilot Studio</strong> entry point.</li>
-  <li>Walk through the same Describe/Configure flow inline.</li>
-  <li>Save as draft or publish.</li>
+  <li>Open <strong>https://copilot.cloud.microsoft.com</strong> or the Copilot Chat surface in Teams/Outlook.</li>
+  <li>Click the <strong>Create an agent</strong> entry point (may redirect to Copilot Studio inline).</li>
+  <li>Walk through the same <strong>Describe/Configure</strong> flow within the Copilot Chat pane.</li>
+  <li>Save as draft or publish directly to Microsoft 365 Copilot.</li>
 </ol>
-<h4>Autonomous agents</h4>
 <ul>
-  <li>Require a <strong>trigger</strong> (e.g., email received, schedule) and a clear set of instructions.</li>
-  <li>Execute without a user in the loop.</li>
-  <li>Can be created in Copilot Studio with trigger configuration.</li>
-</ul>`,
+  <li>This path is <strong>simpler but less configurable</strong> — suitable for quick agents with basic knowledge needs.</li>
+  <li>Agents created here appear in <strong>Copilot Studio</strong> for further editing by admins.</li>
+  <li>The agent inherits the <strong>user's permissions</strong> by default; admins can adjust sharing later.</li>
+</ul>
+<h4>Autonomous Agents</h4>
+<ul>
+  <li>Agents that <strong>execute without a user in the loop</strong> — triggered by events or schedules.</li>
+  <li>Require a <strong>trigger configuration</strong>: email received, new file in SharePoint, Dataverse change, or a recurring schedule.</li>
+  <li>Require a clear set of <strong>instructions</strong> defining the autonomous task scope and boundaries.</li>
+  <li>Can be created in <strong>Copilot Studio</strong> with trigger configuration — not available in the lightweight Copilot Chat path.</li>
+  <li><strong>Exam tip</strong>: Autonomous agents need a <strong>trigger</strong> (not just a prompt) and operate independently once activated.</li>
+</ul>
+<h4>Comparing Creation Paths</h4>
+<table>
+  <thead>
+    <tr><th>Feature</th><th>Copilot Studio (Path A)</th><th>Copilot Chat (Path B)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Full Configure mode</td><td>Yes</td><td>Limited</td></tr>
+    <tr><td>Autonomous triggers</td><td>Yes</td><td>No</td></tr>
+    <tr><td>Power Automate actions</td><td>Yes</td><td>No</td></tr>
+    <tr><td>Template support</td><td>Yes</td><td>No</td></tr>
+    <tr><td>Topic editing</td><td>Yes</td><td>No</td></tr>
+    <tr><td>Version history</td><td>Yes</td><td>Via Copilot Studio</td></tr>
+  </tbody>
+</table>
+<h4>Content Safety and Groundedness</h4>
+<ul>
+  <li><strong>Content safety filters</strong> applied to both prompt and response — block harmful, offensive, or policy-violating content.</li>
+  <li><strong>Groundedness detection</strong> flags responses not supported by retrieved knowledge — reduces hallucination risk.</li>
+  <li>Both are automatically enabled for all agents and <strong>cannot be disabled</strong>.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m6-u4",
               unitTitle: "Create a SharePoint agent",
-              content: `<h4>Create a SharePoint agent</h4>
+              content: `
+<h4>SharePoint Agents — Overview</h4>
+<p>SharePoint agents are the <strong>fastest path</strong> to a working, governed agent. They require <strong>no Copilot Studio license</strong>, inherit SharePoint permissions automatically, and are scoped to a single site. This makes them ideal for project-specific or team-specific Q&A scenarios.</p>
+<h4>Step-by-Step Creation</h4>
 <ol>
-  <li>Navigate to a <strong>SharePoint site</strong>.</li>
-  <li>Click <strong>New \u2192 Agent</strong> (or use the Copilot entry point in the site command bar).</li>
-  <li>The agent is <strong>scoped to one site or library</strong> (principle of least privilege).</li>
-  <li>Choose <strong>data sources</strong> (files, pages, lists within the site).</li>
-  <li>Set <strong>access permissions</strong> \u2014 inherit from SharePoint (the agent can only see what the user can see).</li>
-  <li><strong>Name</strong>, <strong>icon</strong>, and <strong>description</strong> the agent.</li>
-  <li><strong>Publish</strong> \u2014 the agent appears in SharePoint and in Microsoft 365 Copilot for users with access.</li>
+  <li>Navigate to a <strong>SharePoint site</strong> (team or communication site).</li>
+  <li>Click <strong>New → Agent</strong> or use the Copilot entry point in the site command bar.</li>
+  <li>The agent is automatically <strong>scoped to that site</strong> — principle of least privilege built in.</li>
+  <li>Choose <strong>data sources</strong>: files, pages, lists, and libraries within the site can be included or excluded.</li>
+  <li><strong>Access permissions</strong> inherit from SharePoint — the agent can only surface content the signed-in user can access. No separate permission configuration needed.</li>
+  <li>Set <strong>name</strong>, <strong>icon</strong>, and <strong>description</strong> for discoverability.</li>
+  <li>Optionally add <strong>instructions</strong> to refine the agent's tone and scope.</li>
+  <li><strong>Publish</strong> — the agent appears in SharePoint and in Microsoft 365 Copilot for authorized users.</li>
 </ol>
-<p><strong>Exam tip</strong>: A SharePoint agent is the <strong>fastest path</strong> to a working, governed agent \u2014 no Copilot Studio required, permissions inherited automatically.</p>`,
+<h4>Key Characteristics</h4>
+<ul>
+  <li><strong>No Copilot Studio required</strong> — created entirely within SharePoint.</li>
+  <li><strong>Permission inheritance</strong> is automatic and cannot be bypassed — eliminates oversharing risk.</li>
+  <li><strong>Site-scoped</strong> — the agent only knows about content in its host site. Cannot access other sites or tenant-wide data.</li>
+  <li><strong>SharePoint permissions only</strong> — respects site-level, library-level, folder-level, and item-level permissions.</li>
+  <li><strong>Sensitivity Labels</strong> are honored — encrypted content is only accessible to authorized users even through the agent.</li>
+</ul>
+<h4>When to Use SharePoint Agents vs Copilot Studio Agents</h4>
+<table>
+  <thead>
+    <tr><th>Scenario</th><th>Recommended Approach</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Single-project Q&A from a SharePoint site</td><td><strong>SharePoint agent</strong> — fastest, simplest</td></tr>
+    <tr><td>Multi-site or cross-data-source knowledge</td><td><strong>Copilot Studio agent</strong> — up to 20 sources</td></tr>
+    <tr><td>Autonomous, trigger-based operation</td><td><strong>Copilot Studio agent</strong></td></tr>
+    <tr><td>Custom Power Automate actions needed</td><td><strong>Copilot Studio agent</strong></td></tr>
+    <tr><td>Least-privilege, permissions-inherited agent</td><td><strong>SharePoint agent</strong> — automatic</td></tr>
+  </tbody>
+</table>
+<h4>Exam-Relevant Details</h4>
+<ul>
+  <li>SharePoint agents are <strong>not listed in Copilot Studio</strong> — they are managed from the SharePoint site.</li>
+  <li>SharePoint agents <strong>do not count toward</strong> Copilot Studio capacity or licensing.</li>
+  <li><strong>Restricted content discovery</strong> settings on the site are honored — if a site opts out of Copilot grounding, its agent is also restricted.</li>
+  <li>SharePoint agents can be <strong>deleted or unpublished</strong> from the site's settings panel.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m6-u5",
               unitTitle: "Test and edit your agents",
-              content: `<h4>Test and edit agents</h4>
+              content: `
+<h4>Testing Agents in Copilot Studio</h4>
 <ul>
-  <li><strong>Test in the Copilot Studio test pane</strong> \u2014 send prompts, validate responses, check knowledge retrieval and tool invocations.</li>
-  <li><strong>Trace</strong> \u2014 view the conversation transcript with reasoning steps and documents/tools used.</li>
-  <li><strong>Topic editing</strong> \u2014 adjust intents, trigger phrases, and fallback behavior.</li>
-  <li><strong>Knowledge tuning</strong> \u2014 add/remove sources, set per-source priority, filter by URL.</li>
-  <li><strong>Action editing</strong> \u2014 modify Power Automate flow parameters, error handling, and authentication.</li>
-  <li><strong>User simulator</strong> \u2014 run scripted test scenarios against the agent.</li>
-  <li><strong>Versioning</strong> \u2014 Copilot Studio keeps a version history; you can revert.</li>
-</ul>`,
+  <li><strong>Test pane</strong> — built-in chat panel in Copilot Studio where you send prompts and observe responses in real time.</li>
+  <li><strong>Trace view</strong> — shows the full conversation transcript including reasoning steps, retrieved knowledge sources, tool/action invocations, and the system prompt. Critical for debugging unexpected responses.</li>
+  <li><strong>User simulator</strong> — run <strong>scripted test scenarios</strong> against the agent to validate multi-turn conversations without manual input.</li>
+  <li>Testing can be done at <strong>any stage</strong> — even before publishing, while the agent is still in draft.</li>
+</ul>
+<h4>Editing Agent Configuration</h4>
+<h4>Topic Editing</h4>
+<ul>
+  <li><strong>Topics</strong> represent intents the agent recognizes — defined by trigger phrases and conversation paths.</li>
+  <li>Add, edit, or remove trigger phrases to improve intent recognition.</li>
+  <li>Adjust <strong>fallback behavior</strong> — what the agent says when it cannot match a user's intent.</li>
+  <li><strong>Escalation rules</strong> — hand off to a human when the agent cannot resolve the query.</li>
+</ul>
+<h4>Knowledge Tuning</h4>
+<ul>
+  <li>Add or remove <strong>knowledge sources</strong> (up to 20 total).</li>
+  <li>Set <strong>per-source priority</strong> — reorder sources so the most authoritative ones are consulted first.</li>
+  <li>Filter knowledge by <strong>URL patterns</strong> — include or exclude specific paths within a SharePoint site.</li>
+  <li>Update or replace <strong>uploaded files</strong> (up to 512 MB each).</li>
+</ul>
+<h4>Action Editing</h4>
+<ul>
+  <li>Modify <strong>Power Automate flow parameters</strong> that the agent calls.</li>
+  <li>Configure <strong>error handling</strong> — what the agent says when an action fails.</li>
+  <li>Update <strong>authentication</strong> for actions that call external APIs.</li>
+</ul>
+<h4>Instructions and Rules</h4>
+<ul>
+  <li>Refine the agent's <strong>system prompt</strong> to adjust tone, scope, and guardrails.</li>
+  <li>Add <strong>hard rules</strong> — e.g., "Never disclose employee salaries" or "Always cite your sources."</li>
+  <li><strong>Exam tip</strong>: Well-written instructions reduce the need for topic-based corrections.</li>
+</ul>
+<h4>Versioning and Rollback</h4>
+<ul>
+  <li>Copilot Studio maintains a <strong>version history</strong> of every published agent.</li>
+  <li>You can <strong>revert</strong> to any previous version if an edit introduces problems.</li>
+  <li>Each publish creates a new version; draft edits are not versioned until published.</li>
+</ul>
+<h4>Testing Best Practices</h4>
+<ul>
+  <li>Test with <strong>realistic user prompts</strong> — include edge cases, ambiguous phrasing, and out-of-scope requests.</li>
+  <li>Use <strong>trace view</strong> to verify the correct knowledge sources are being retrieved.</li>
+  <li>Run the <strong>user simulator</strong> with scripted scenarios before publishing to production.</li>
+  <li>Test with <strong>different user roles</strong> — verify permission enforcement works correctly for viewers vs editors.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m6-u6",
               unitTitle: "Manage user access and permissions for agents",
-              content: `<h4>Manage user access and permissions for agents</h4>
+              content: `
+<h4>Access Control Levels for Agents</h4>
+<p>Agent access is managed at multiple administrative levels. Understanding which console to use for each scenario is critical for the exam.</p>
+<h4>Tenant-Level Agent Settings</h4>
 <ul>
-  <li><strong>Tenant-level</strong> \u2014 Microsoft 365 admin center \u2192 <strong>Settings \u2192 Copilot \u2192 Agents</strong> (or Power Platform admin center for Copilot Studio agents).</li>
-  <li><strong>Per-agent</strong> \u2014 in <strong>Copilot Studio</strong>, share a published agent with:
+  <li><strong>Microsoft 365 admin center → Settings → Copilot → Agents</strong> — tenant-wide toggle to enable or disable custom agents.</li>
+  <li><strong>Power Platform admin center</strong> — environment-level controls for Copilot Studio agents, including DLP policies and environment security groups.</li>
+  <li>Disabling at tenant level <strong>blocks all agents</strong> across the organization regardless of individual sharing settings.</li>
+</ul>
+<h4>Per-Agent Sharing (Copilot Studio)</h4>
+<ul>
+  <li>In <strong>Copilot Studio → Publish → Share</strong>, share a published agent with:
     <ul>
-      <li><strong>Specific users / groups</strong> (Entra ID security groups or Microsoft 365 groups).</li>
-      <li><strong>Everyone in the organization</strong> (publish to the M365 Copilot agent store).</li>
-      <li><strong>External</strong> \u2014 public website, authenticated or anonymous.</li>
+      <li><strong>Specific users or Entra ID groups</strong> — fine-grained access for pilot or departmental agents.</li>
+      <li><strong>Everyone in the organization</strong> — publish to the M365 Copilot agent store for tenant-wide discovery.</li>
+      <li><strong>External users</strong> — via public website embed, with optional authentication (anonymous or Entra ID B2B).</li>
     </ul>
   </li>
-  <li><strong>Security roles in Copilot Studio</strong> \u2014 User (can chat), Owner (full control), Editor (modify without owning).</li>
-  <li><strong>Channel-by-channel</strong> \u2014 separate sharing for Teams, Microsoft 365 Copilot, and web embed.</li>
-  <li><strong>Power Platform</strong> \u2014 environment-level access controls (DLP policies, environment security groups).</li>
-</ul>`,
+  <li><strong>Channel-by-channel sharing</strong> — separate sharing for Microsoft 365 Copilot, Teams, and web embed. You might share an agent in Teams but not in M365 Copilot.</li>
+</ul>
+<h4>Security Roles in Copilot Studio</h4>
+<table>
+  <thead>
+    <tr><th>Role</th><th>Capabilities</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>User</strong></td><td>Can chat with the agent. No edit or share permissions.</td></tr>
+    <tr><td><strong>Editor</strong></td><td>Can modify the agent but cannot publish or share.</td></tr>
+    <tr><td><strong>Owner</strong></td><td>Full control — edit, publish, share, delete, transfer ownership.</td></tr>
+  </tbody>
+</table>
+<h4>Scenario-Based Exam Questions</h4>
+<ul>
+  <li><strong>Scenario</strong>: Deploy an agent to the sales team only → share with the "Sales" Entra ID security group in Copilot Studio.</li>
+  <li><strong>Scenario</strong>: Block all agents temporarily → disable agents tenant-wide in Microsoft 365 admin center → Settings → Copilot → Agents.</li>
+  <li><strong>Scenario</strong>: Allow editors but prevent publishing → assign the Editor security role, not Owner.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m6-u7",
               unitTitle: "Examine agent approval and governance",
-              content: `<h4>Agent approval and governance</h4>
+              content: `
+<h4>Agent Approval Workflows</h4>
 <ul>
-  <li><strong>Microsoft 365 admin center \u2192 Copilot \u2192 Agent inventory</strong> shows pending agents and the approval workflow.</li>
-  <li><strong>Power Platform admin center \u2192 Agents</strong> shows Copilot Studio agents and their distribution status.</li>
-  <li>When an agent uses a new <strong>connector</strong>, the connector may need classification (Business, Non-business, Blocked) and DLP-policy review.</li>
-  <li><strong>Governance policies</strong>:
+  <li><strong>Microsoft 365 admin center → Copilot → Agent inventory</strong> shows all agents with their status: Draft, Pending approval, Published, Disabled.</li>
+  <li>Admins can configure an <strong>approval workflow</strong> requiring new agents to be approved before publishing tenant-wide.</li>
+  <li><strong>Power Platform admin center → Agents</strong> shows Copilot Studio agents' distribution status and allows admin review.</li>
+  <li>Approval workflows prevent unauthorized agents from reaching users — a key governance control for the exam.</li>
+</ul>
+<h4>Connector Classification and DLP</h4>
+<ul>
+  <li>Agents use <strong>connectors</strong> to access external services — SharePoint, Dataverse, Dynamics 365, public websites, custom APIs.</li>
+  <li>When an agent uses a connector, the connector must be <strong>classified</strong>:
     <ul>
-      <li><strong>DLP for connectors</strong> \u2014 block or allow connectors per environment.</li>
-      <li><strong>Managed environment</strong> \u2014 restrict who can create apps/agents.</li>
-      <li><strong>Agent Store curation</strong> \u2014 admin controls which prebuilt agents are available.</li>
-      <li><strong>Sensitivity Label</strong> the agent's instructions/data.</li>
-      <li><strong>Customer Lockbox</strong> for Microsoft access to agent data.</li>
+      <li><strong>Business</strong> — approved for use.</li>
+      <li><strong>Non-business</strong> — permitted but not endorsed.</li>
+      <li><strong>Blocked</strong> — prohibited entirely.</li>
     </ul>
   </li>
-</ul>`,
+  <li><strong>DLP policies for connectors</strong> — block or allow connectors per Power Platform environment. An agent referencing a blocked connector will fail at runtime.</li>
+  <li>Connector classification and DLP are configured in the <strong>Power Platform admin center</strong>.</li>
+</ul>
+<h4>Governance Policies</h4>
+<table>
+  <thead>
+    <tr><th>Governance Tool</th><th>Where Configured</th><th>What It Controls</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>DLP for connectors</strong></td><td>Power Platform admin center</td><td>Which connectors agents can use per environment</td></tr>
+    <tr><td><strong>Managed Environments</strong></td><td>Power Platform admin center</td><td>Who can create agents, data policies, usage monitoring</td></tr>
+    <tr><td><strong>Agent Store curation</strong></td><td>M365 admin center</td><td>Which prebuilt agents are available to users</td></tr>
+    <tr><td><strong>Sensitivity Labels</strong></td><td>Microsoft Purview</td><td>Label agent instructions/data with encryption/restrictions</td></tr>
+    <tr><td><strong>Customer Lockbox</strong></td><td>M365 admin center</td><td>Require explicit tenant approval for Microsoft engineer access to agent data</td></tr>
+    <tr><td><strong>Approval workflow</strong></td><td>M365 admin center</td><td>Require admin approval before agent publishing</td></tr>
+  </tbody>
+</table>
+<h4>Prebuilt Agent Curation</h4>
+<ul>
+  <li>Microsoft provides prebuilt agents in the <strong>Agent Store</strong> (Researcher, Analyst, Writing Coach, Prompt Coach, etc.).</li>
+  <li>Admins can <strong>curate the Agent Store</strong> — show, hide, or block specific prebuilt agents tenant-wide.</li>
+  <li>This prevents users from accessing prebuilt agents that don't meet organizational compliance requirements.</li>
+</ul>
+<h4>Exam-Relevant Scenario</h4>
+<p><strong>Scenario</strong>: A developer creates an agent using a new custom connector for an external CRM. The admin must first classify the connector as "Business" in the Power Platform admin center and ensure the DLP policy permits it. Only then can the agent proceed through the approval workflow and be published. If the connector is blocked, the agent will fail regardless of approval status.</p>
+`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m6-u8",
               unitTitle: "Monitor and manage the agent lifecycle",
-              content: `<h4>Monitor and manage the agent lifecycle</h4>
+              content: `
+<h4>Agent Lifecycle Stages</h4>
+<ol>
+  <li><strong>Draft</strong> — authoring in Copilot Studio or SharePoint; agent is not accessible to users.</li>
+  <li><strong>Test</strong> — internal validation using the test pane, trace view, and user simulator.</li>
+  <li><strong>Publish</strong> — make available to target audience via sharing settings and approval workflow.</li>
+  <li><strong>Operate</strong> — live agent; monitor usage, errors, cost, user satisfaction, and security signals.</li>
+  <li><strong>Retire</strong> — disable, archive, or delete the agent; revoke user access; export conversation logs if needed.</li>
+</ol>
+<h4>Monitoring Tools</h4>
+<table>
+  <thead>
+    <tr><th>Tool</th><th>What It Shows</th><th>Access Path</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Agent inventory</strong></td><td>All agents, owner, usage stats, last activity, lifecycle status</td><td>M365 admin center → Copilot → Agent inventory</td></tr>
+    <tr><td><strong>Copilot Studio analytics</strong></td><td>Per-agent: session count, success rate, escalation rate, average session duration, top topics</td><td>Copilot Studio → Analytics</td></tr>
+    <tr><td><strong>Power Platform admin center</strong></td><td>Lifecycle (create/publish/disable/delete), environment-level operational insights</td><td>Power Platform admin center → Agents</td></tr>
+    <tr><td><strong>DSPM for AI (Purview)</strong></td><td>Risky prompts, sensitive data exposure, prompt-injection incidents involving agents</td><td>Microsoft Purview → DSPM for AI</td></tr>
+    <tr><td><strong>Activity Explorer (Purview)</strong></td><td>Per-user AI activity on labeled content — every Copilot and agent action audited</td><td>Microsoft Purview → Activity Explorer</td></tr>
+  </tbody>
+</table>
+<h4>Managing Agent Health</h4>
 <ul>
-  <li><strong>Microsoft 365 admin center \u2192 Copilot \u2192 Agent inventory</strong> \u2014 list of agents, owner, usage, last activity, lifecycle status.</li>
-  <li><strong>Copilot Studio analytics</strong> \u2014 per-agent usage, success rate, escalation rate, session transcripts.</li>
-  <li><strong>Power Platform admin center</strong> \u2014 agent lifecycle (create / publish / disable / delete), operational insights.</li>
-  <li><strong>Microsoft Purview \u2192 DSPM for AI</strong> \u2014 risky prompts, sensitive data exposure, prompt-injection incidents involving agents.</li>
-  <li><strong>Lifecycle stages</strong>:
-    <ol>
-      <li><strong>Draft</strong> \u2014 author in Copilot Studio.</li>
-      <li><strong>Test</strong> \u2014 internal validation with test pane and user simulator.</li>
-      <li><strong>Publish</strong> \u2014 make available to a target audience.</li>
-      <li><strong>Operate</strong> \u2014 monitor usage, errors, cost, satisfaction.</li>
-      <li><strong>Retire</strong> \u2014 disable, archive, or delete; revoke access; export conversation logs if needed.</li>
-    </ol>
-  </li>
-</ul>`,
+  <li><strong>Success rate</strong> — percentage of user queries the agent successfully resolved without escalation or error.</li>
+  <li><strong>Escalation rate</strong> — how often users needed a human handoff; high escalation indicates knowledge gaps.</li>
+  <li><strong>Session transcripts</strong> — review actual user conversations to identify patterns, misunderstandings, or policy violations.</li>
+  <li><strong>Cost tracking</strong> — for PAYG agents, monitor metered consumption in the Azure portal (Copilot → Billing & usage).</li>
+</ul>
+<h4>Retirement Process</h4>
+<ol>
+  <li><strong>Disable</strong> the agent — prevents new conversations; existing sessions may continue briefly.</li>
+  <li><strong>Notify users</strong> — communicate the retirement date and any replacement agent.</li>
+  <li><strong>Export data</strong> — download conversation logs for compliance or audit retention.</li>
+  <li><strong>Delete</strong> — permanently remove the agent and its configuration. Deletion is irreversible.</li>
+  <li><strong>Revoke sharing</strong> — remove sharing links and channel assignments.</li>
+</ol>
+<h4>Operational Best Practices</h4>
+<ul>
+  <li>Review <strong>agent analytics weekly</strong> — identify low-success-rate agents for retraining.</li>
+  <li>Use <strong>DSPM for AI</strong> to detect risky prompt patterns across all agents.</li>
+  <li>Set up <strong>Azure cost alerts</strong> on the PAYG subscription used by agent metering.</li>
+  <li><strong>Audit agent permissions quarterly</strong> — ensure only current team members have Owner/Editor roles.</li>
+  <li>Maintain a <strong>retirement schedule</strong> for agents replaced by newer versions.</li>
+</ul>
+<h4>Exam-Relevant Limits and Details</h4>
+<ul>
+  <li>Agent analytics data retention in Copilot Studio: <strong>30 days</strong> for detailed session data.</li>
+  <li>DSPM for AI captures the <strong>last 30 days</strong> of Copilot/agent interactions.</li>
+  <li>Agent inventory in M365 admin center shows agents from <strong>all sources</strong> — Copilot Studio, SharePoint, prebuilt.</li>
+  <li>Deleting a Power Platform environment <strong>also deletes all agents</strong> within it.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: [
                 "Microsoft 365 Copilot", "Microsoft 365 Copilot Chat", "Copilot Studio", "Pre-built Agent",
@@ -1813,7 +2656,21 @@ const studyGuideData = {
             {
               unitId: "m6-u10",
               unitTitle: "Summary",
-              content: `<p>Module 6 covered administrative tasks for Microsoft 365 Copilot agents including creating agents via Copilot Studio and SharePoint, testing and editing agents with the test pane and user simulator, managing user access with per-agent and tenant-level controls, agent approval workflows and governance policies (DLP for connectors, managed environments, Sensitivity Labels), and monitoring the agent lifecycle from draft through retirement.</p>`,
+              content: `
+<h4>Module 6 Summary — Basic Administrative Tasks for Copilot Agents</h4>
+<p>Module 6 covered creating, testing, managing, and governing agents. Key takeaways:</p>
+<ul>
+  <li><strong>Two creation paths</strong>: Copilot Studio (full-featured, templates, Describe/Configure modes, up to 20 knowledge sources, 512 MB per file, Power Automate actions, topics, authentication) and Copilot Chat (lightweight, less configurable, quick agents).</li>
+  <li><strong>SharePoint agents</strong> are the fastest path to a governed agent — no Copilot Studio license needed, site-scoped, permissions inherited automatically, cannot access other sites.</li>
+  <li><strong>Autonomous agents</strong> execute on triggers (events or schedules) without user intervention. Require trigger configuration and clear instructions. Only available in Copilot Studio, not the lightweight path.</li>
+  <li><strong>Testing</strong>: test pane for real-time chat, trace view for conversation transcript + reasoning steps, user simulator for scripted scenarios. Version history supports rollback to any previous published version.</li>
+  <li><strong>Access control</strong>: tenant-level toggle (M365 admin center → Settings → Copilot → Agents), per-agent sharing (specific users/groups, everyone, or external), Copilot Studio security roles (User, Editor, Owner). Power Platform admin center manages environments and DLP policies for connectors.</li>
+  <li><strong>Agent approval workflow</strong>: admins can require approval before agents publish tenant-wide. Agent inventory shows all agents with lifecycle status (Draft, Pending approval, Published, Disabled).</li>
+  <li><strong>Governance tools</strong>: DLP for connectors (Business/Non-business/Blocked classification per environment), Managed Environments, Sensitivity Labels on agent data, Customer Lockbox, Agent Store curation (show/hide prebuilt agents).</li>
+  <li><strong>Agent lifecycle</strong>: Draft → Test → Publish → Operate → Retire. Monitoring via agent inventory (M365 admin center), Copilot Studio analytics (success rate, escalation rate, session transcripts), DSPM for AI (risky prompts), Activity Explorer (audit trail).</li>
+  <li><strong>Retirement</strong>: disable → notify users → export data → delete (irreversible). Deleting a Power Platform environment also deletes all agents within it.</li>
+</ul>
+`,
               examTips: [],
               keyConcepts: []
             }

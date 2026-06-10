@@ -34,7 +34,15 @@ const keyPointerCategories = [
       "FIDO2 security keys = USB/NFC hardware keys, phishing-resistant.",
       "Windows Hello for Business = face/fingerprint/PIN tied to device TPM.",
       "SSPR: Cloud-only works out of the box. Hybrid needs Password Writeback in Entra Connect.",
-      "Verified ID / Verifiable Credentials (preview) = decentralized identity in a digital wallet."
+      "Verified ID / Verifiable Credentials (preview) = decentralized identity in a digital wallet.",
+      "Temporary Access Pass (TAP) = time-limited password for onboarding new users or recovery; phishing-resistant.",
+      "SMS and voice call = legacy MFA methods; Microsoft recommends migrating to Authenticator or passkeys.",
+      "Authentication methods policy in Entra = which methods are allowed and who can use them; per-method targeting.",
+      "Combined registration experience = users register MFA + SSPR in one wizard.",
+      "Per-user MFA (legacy) vs Conditional Access MFA: always use CA for granularity; per-user is deprecated in favor of CA.",
+      "Hardware OATH tokens = time-based codes; supported for high-security scenarios where phones are banned.",
+      "Passkeys in Entra ID = cross-device, phishing-resistant; stored in password manager, iCloud Keychain, or hardware key.",
+      "MFA registration campaign = admins can nudge non-compliant users to register MFA at sign-in."
     ]
   },
   {
@@ -68,9 +76,15 @@ const keyPointerCategories = [
     id: "identity-secure-score",
     pointers: [
       "Identity Secure Score = % of best practices applied; benchmarks against similar orgs; statuses = Completed / Planned / Risk Accepted / Not applied.",
-      "Microsoft Secure Score = same idea across the whole M365 tenant.",
+      "Microsoft Secure Score = same idea across the whole M365 tenant; categories: Identity, Device, Data, Apps, Infrastructure.",
       "Unified Audit Log (Purview) = who-did-what across M365; default 180 days, E5 = 1 year.",
-      "Entra ID audit log = directory changes; Entra sign-in log = sign-in events; What If = CA simulation."
+      "Entra ID audit log = directory changes; Entra sign-in log = sign-in events; What If = CA simulation.",
+      "Identity Protection = risk policies (user + sign-in), risk detections, confirmed compromised, MFA registration policy.",
+      "User risk policy = auto-remediate when leak-credential/unusual-behavior detected; sign-in risk policy = block low/medium/high risk.",
+      "Risk detection types: Atypical travel, anonymous IP, unfamiliar sign-in, malware-linked, password spray, credential leaks, brute force.",
+      "Identity Protection requires P2 license for automated risk-based policies.",
+      "Secure Score API: pull score and improvement actions programmatically via Microsoft Graph.",
+      "Improvement actions = specific steps with points, status, license requirement; some actions depend on E5/P2."
     ]
   },
   {
@@ -115,9 +129,15 @@ const keyPointerCategories = [
     id: "m365-admin-center",
     pointers: [
       "URL: https://admin.microsoft.com.",
-      "Tasks: users, bulk user create, group-based licensing, roles, billing, service health, message center, reports, settings.",
-      "Custom domains need DNS verification; can have multiple per tenant.",
-      "PowerShell modules: Exchange Online &middot; Microsoft Teams &middot; SharePoint Online Management Shell &middot; Microsoft Graph PowerShell SDK."
+      "Tasks: users, bulk user create (CSV), group-based licensing, admin roles, billing, service health, message center, reports, org settings, setup guides.",
+      "Custom domains need DNS verification (TXT or MX); can have multiple per tenant; primary domain cannot be removed.",
+      "PowerShell modules: Exchange Online &middot; Microsoft Teams &middot; SharePoint Online Management Shell &middot; Microsoft Graph PowerShell SDK.",
+      "Billing: subscriptions, invoices, payment methods (credit card/invoice), licenses (assign/unassign/reclaim).",
+      "Service Health = real-time status + incident/advisory history; Message Center = planned feature changes with timeline.",
+      "Reports dashboard = usage analytics for M365 apps, forms, email activity, Teams, OneDrive, SharePoint, and more.",
+      "Admin roles delegation: assign least-privilege roles (e.g. User Admin, Helpdesk Admin, Billing Admin) instead of Global Admin.",
+      "Partner relationships: add a CSP partner for delegated admin privileges (DAP) or granular delegated admin privileges (GDAP).",
+      "Setup page = guided wizards for initial tenant configuration, migration, and adoption scenarios."
     ]
   },
   {
@@ -136,7 +156,16 @@ const keyPointerCategories = [
       "eDiscovery Standard (E3) + Premium (E5) = search/hold/export for legal.",
       "Compliance Manager = Microsoft-managed + customer-managed controls; Compliance Score.",
       "Data Explorer = query sensitive-data locations; Activity Explorer = who viewed/modified/printed/emailed labeled content.",
-      "Customer Key = customer-managed encryption keys; Customer Lockbox = explicit consent for Microsoft engineer access."
+      "Customer Key = customer-managed encryption keys; Customer Lockbox = explicit consent for Microsoft engineer access.",
+      "Audit (Standard) = 180-day retention, basic events; Audit (Premium) = 1-10 year retention, high-value events (e.g. mailbox access), bandwidth export.",
+      "Data connectors = ingest data from 3rd-party sources (Slack, Zoom, Teams, Salesforce, Bloomberg, etc.) for eDiscovery and IRM.",
+      "Compliance boundaries = scoped search/hold/export for geographical or departmental data segmentation.",
+      "Retention policies (location-wide) vs Retention labels (item-level) = policies auto-apply, labels are published for users/admins.",
+      "Default retention label = auto-applied to all content in a library, folder, or document set.",
+      "Adaptive scopes = target policies based on attributes (department, geography, group membership) instead of static groups.",
+      "Records management = retention labels that declare content a record (locked, immutable) or regulatory record (even admins cannot delete).",
+      "Sensitive Information Types (SITs) = built-in (credit card, SSN, passport) + custom regex patterns; used by DLP, autolabeling, IRM.",
+      "Trainable classifiers = AI-based content classification; trained with seed content; used by DLP, autolabeling, IRM, Communication Compliance."
     ]
   },
   {
@@ -191,8 +220,13 @@ const keyPointerCategories = [
     id: "work-iq-safety",
     pointers: [
       "Work IQ (preview) = exposes the Semantic Index to your custom AI apps (not just Microsoft Copilot).",
-      "Content safety = filters prompt + response for harmful content.",
-      "Groundedness detection = flags hallucinated answers; check via Activity Explorer."
+      "Semantic Index indexes all user content in M365: emails, chats, docs, meetings, calendar, etc.",
+      "Groundedness detection = flags hallucinated answers; check via Activity Explorer.",
+      "Types of grounding: Microsoft Graph (user data), web content, uploaded files, custom connectors.",
+      "Content safety = filters prompt + response for harmful content; four categories: hate, sexual, violence, self-harm.",
+      "Content safety severity levels: Safe, Low, Medium, High; configurable per category.",
+      "Content safety can be configured at tenant level or per-app in Copilot Studio.",
+      "Groundedness detection is always on for M365 Copilot; cannot be turned off by tenant admins."
     ]
   },
   {
@@ -218,7 +252,13 @@ const keyPointerCategories = [
       "Group-level Copilot settings beat tenant-level toggles &mdash; easier to run a clean pilot.",
       "Phased rollout: Pilot &rarr; Evaluate &rarr; Expand &rarr; Optimize.",
       "Operational excellence = Secure Score trends, quarterly Attack Simulation, weekly DLP/IRM review, Access Reviews, license reclamation.",
-      "Disable Teams transcriptions = example of a tenant-level toggle."
+      "Disable Teams transcriptions = example of a tenant-level toggle.",
+      "Champion program = identify and enable early adopters with training and exclusive access.",
+      "Microsoft Adoption Score = organizational productivity and health metrics (content collaboration, mobility, etc.).",
+      "Change management: executive sponsorship, stakeholder mapping, feedback loops, and celebration of wins.",
+      "Training resources: Microsoft Learn, Viva Learning, custom Copilot prompts library.",
+      "Communication strategy: use Message Center, Viva Engage, Teams posts to announce new capabilities.",
+      "Pilot selection criteria: diverse roles, high willingness, deprioritize security-sensitive users initially."
     ]
   },
   {
@@ -227,26 +267,42 @@ const keyPointerCategories = [
     pointers: [
       "Six principles: Fairness &middot; Reliability &amp; Safety &middot; Privacy &amp; Security &middot; Inclusiveness &middot; Accountability &middot; Transparency.",
       "Transparency for Copilot = show source data, citations, prompt history, audit trail.",
-      "Accountability = a human remains responsible for AI-driven actions."
+      "Accountability = a human remains responsible for AI-driven actions.",
+      "Microsoft implements RA through content safety, groundedness detection, data residency controls, and abuse monitoring.",
+      "Fairness: LLM bias testing; Copilot uses system prompt + grounding to reduce biased outputs.",
+      "Inclusiveness: Universal Design for Copilot UI; supports screen readers, keyboard navigation, high contrast.",
+      "Privacy & Security: no training on tenant data; tenant boundary enforced by OAuth.",
+      "Reliability & Safety: Copilot disengages if confidence in grounding is low; fallback to search results."
     ]
   },
   {
     title: "Hybrid identity (the three methods)",
     id: "hybrid-identity",
     pointers: [
-      "PHS = hash of hash synced; preferred.",
-      "PTA = agent on DC; supports AD-specific features.",
-      "Federation = redirect to on-prem ADFS; legacy.",
-      "Entra Connect = sync tool; Cloud Sync = lighter alternative."
+      "PHS = hash of password hash synced; preferred by Microsoft; no on-prem dependency at sign-in.",
+      "PTA = agent on DC validates credentials; supports AD-specific features (e.g. smartcards, local policies); agent must be reachable.",
+      "Federation = redirect to on-prem ADFS or 3rd-party IdP; legacy; rich claims, immediate revocation.",
+      "Entra Connect = full sync tool (forests, writeback, device sync, custom rules); Cloud Sync = lightweight agent, good for MER (Mergers, Acquisitions, Divestitures).",
+      "Seamless SSO = transparent sign-in on domain-joined devices; works with PHS and PTA; no extra cost.",
+      "Staged rollout = migrate users from Fed to PHS/PTA progressively; test before full cutover.",
+      "Password Writeback = required for SSPR in hybrid; enables cloud password change to sync back to on-prem.",
+      "Device Writeback and Group Writeback are Entra Connect features, not available in Cloud Sync.",
+      "Entra Connect Health = monitoring dashboards for sync, AD FS, and AD domain controllers.",
+      "Multiple forests: Entra Connect can sync up to 500K objects across many forests into one tenant."
     ]
   },
   {
     title: "Intune (quick)",
     id: "intune",
     pointers: [
-      "Compliance policies = encryption, OS, AV, password.",
-      "App protection policies (MAM) = protect data in apps without enrolling the device (BYOD).",
-      "Endpoint Analytics = device-health visibility."
+      "Compliance policies = encryption, OS, AV, password, device health (e.g. jailbreak/root detected, TPM).",
+      "App protection policies (MAM) = protect data in apps without enrolling the device (BYOD); block copy/paste, force save-as OneDrive, require PIN.",
+      "Endpoint Analytics = device-health visibility with boot performance, app reliability, and Microsoft recommendation scores.",
+      "Enrollment methods: Windows Autopilot (zero-touch), BYOD (Company Portal), Corporate (DEM with ConfigMgr).",
+      "Configuration profiles = manage device settings (WiFi, VPN, email, restrictions, certificates, policies).",
+      "Update rings = control Windows Update deferral periods (quality, feature, driver); enable expedited updates.",
+      "Co-management with ConfigMgr = split workloads between Intune and on-prem; slider determines who manages which areas.",
+      "Conditional Access with Intune compliance = allow access only to compliant devices; block non-compliant or non-enrolled."
     ]
   },
   {
