@@ -87,26 +87,52 @@
       });
     });
 
-    keyPointerCategories.forEach(cat => {
-      const modId = getPointerModuleId(cat.id);
-      const group = document.createElement('div');
+    var domainAccentColors = { d1: '#4a90d9', d2: '#e67e22', d3: '#2ecc71' };
+
+    keyPointerCategories.forEach(function(cat) {
+      var modId = getPointerModuleId(cat.id);
+      var dom = null;
+      if (modId) dom = getDomainForModule(modId);
+      var accent = (dom && domainAccentColors[dom.id]) || '#2563eb';
+
+      var group = document.createElement('div');
       group.className = 'key-pointer-group searchable';
       if (modId) group.dataset.module = modId;
-      const h2 = document.createElement('h2');
+
+      var header = document.createElement('div');
+      header.className = 'key-pointer-group-header';
+      header.setAttribute('onclick', 'togglePointerGroup(this)');
+
+      var h2 = document.createElement('h2');
       h2.id = cat.id;
+      h2.style.borderLeft = '3px solid ' + accent;
+      h2.style.paddingLeft = '0.6rem';
       if (modId) {
         h2.innerHTML = getModuleBadgeHtml(modId) + ' ' + cat.title;
       } else {
         h2.innerHTML = cat.title;
       }
-      group.appendChild(h2);
-      const ul = document.createElement('ul');
-      cat.pointers.forEach(p => {
-        const li = document.createElement('li');
+
+      var chevron = document.createElement('span');
+      chevron.className = 'chevron open';
+      chevron.textContent = '\u25B6';
+
+      header.appendChild(h2);
+      header.appendChild(chevron);
+
+      var body = document.createElement('div');
+      body.className = 'key-pointer-group-body open';
+
+      var ul = document.createElement('ul');
+      cat.pointers.forEach(function(p) {
+        var li = document.createElement('li');
         li.innerHTML = p;
         ul.appendChild(li);
       });
-      group.appendChild(ul);
+      body.appendChild(ul);
+
+      group.appendChild(header);
+      group.appendChild(body);
       fragment.appendChild(group);
     });
 
@@ -130,6 +156,13 @@
         const textMatch = !q || group.textContent.toLowerCase().includes(q);
         group.style.display = (modMatch && textMatch) ? '' : 'none';
       });
+    }
+
+    function togglePointerGroup(el) {
+      var body = el.nextElementSibling;
+      var chevron = el.querySelector('.chevron');
+      body.classList.toggle('open');
+      chevron.classList.toggle('open');
     }
 
     moduleFilter.addEventListener('change', function() {
