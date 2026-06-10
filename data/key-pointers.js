@@ -165,7 +165,24 @@ const keyPointerCategories = [
       "Adaptive scopes = target policies based on attributes (department, geography, group membership) instead of static groups.",
       "Records management = retention labels that declare content a record (locked, immutable) or regulatory record (even admins cannot delete).",
       "Sensitive Information Types (SITs) = built-in (credit card, SSN, passport) + custom regex patterns; used by DLP, autolabeling, IRM.",
-      "Trainable classifiers = AI-based content classification; trained with seed content; used by DLP, autolabeling, IRM, Communication Compliance."
+      "Trainable classifiers = AI-based content classification; trained with seed content; used by DLP, autolabeling, IRM, Communication Compliance.",
+      "Auto-labeling = automatically applies sensitivity/retention labels based on SITs, trainable classifiers, or manual triggers.",
+      "Sublabels = parent-child label hierarchy (e.g. Confidential &rarr; Legal, HR); parent label can be disabled to force sublabel selection.",
+      "Double Key Encryption (DKE) = two keys needed to decrypt (one in Microsoft, one customer-held); for most sensitive data.",
+      "Mark content = headers, footers, or watermarks applied by Sensitivity Labels; follows the file wherever it goes.",
+      "DLP policy tips = notify users inline when they try to share sensitive data; allow override with business justification.",
+      "DLP for Teams = blocks sensitive data in Teams chat/channel messages; supports SITs and label-based conditions.",
+      "DLP for endpoints = monitors &amp; blocks sensitive data on Windows/macOS devices (USB copy, print, clipboard, cloud upload).",
+      "IRM risk indicators: data exfiltration (mass download, unusual SharePoint access), data theft (off-hours access, unusual deletion), security policy violations.",
+      "IRM forensic evidence = captures screen recordings of user activity when a risk threshold is triggered (requires E5).",
+      "Compliance Manager assessments = pre-built templates (ISO 27001, NIST, GDPR, FedRAMP, DORA) + custom assessments.",
+      "Compliance Manager improvement actions = actionable steps to improve score; can be assigned, tracked, tested.",
+      "Compliance Manager automated testing = Microsoft-managed controls auto-tested; customer-manual controls need evidence upload.",
+      "eDiscovery Premium workflow: holds &rarr; collections &rarr; review sets &rarr; tagging &rarr; analytics (email threading, themes, duplicate detection) &rarr; export.",
+      "Retention labels can auto-apply based on SITs or trainable classifiers (without manual user action).",
+      "Disposition reviews = periodic manual review of content before deletion; reviewers attest whether to keep or delete.",
+      "Adaptive scopes reduce administrative overhead by targeting policies dynamically &mdash; no need to update group memberships.",
+      "Service encryption with Customer Key = tenant-level encryption key you manage via Azure Key Vault."
     ]
   },
   {
@@ -179,7 +196,17 @@ const keyPointerCategories = [
       "Site access reviews = periodic owner confirmation of who should have access.",
       "Site ownership policy = e.g. require &ge; 2 owners per site.",
       "Restricted content discovery (site level) = opt a site out of Copilot grounding.",
-      "Restricted SharePoint Search (tenant level) = up to 100 sites; hub sites and children don't count."
+      "Restricted SharePoint Search (tenant level) = up to 100 sites; hub sites and children don't count.",
+      "Default sharing links = set to Specific People (not Everyone) to prevent oversharing by default.",
+      "External sharing = limit to authenticated users only or Specific People; block external sharing on sensitive sites via CA.",
+      "Sharing limits per site = cap external shares per site; block sharing to unauthorized domains.",
+      "Site lifecycle management = auto-delete inactive sites after a configurable inactivity period.",
+      "Inactivity alerts = notify admins/site owners when a site has no activity for X days.",
+      "Site policy validation at creation = enforce an approval workflow when a user creates a new communication site.",
+      "File request in OneDrive/SharePoint = collect files from others without granting them access to the folder.",
+      "SharePoint admin center reports = storage usage, active users, top content types, activity trends.",
+      "Web part security = allow/block specific SharePoint web parts across the tenant.",
+      "Information Rights Management (IRM) in SharePoint = apply IRM protection to items in a document library (separate from Sensitivity Labels)."
     ]
   },
   {
