@@ -102,6 +102,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    // Search key concepts
+    if (typeof keyConceptsByDomain !== 'undefined' && keyConceptsByDomain) {
+      keyConceptsByDomain.forEach(function(d) {
+        d.concepts.forEach(function(c) {
+          if (c.term.toLowerCase().indexOf(q) !== -1 || c.explanation.toLowerCase().indexOf(q) !== -1) {
+            results.push({ title: c.term + ' \u2014 ' + c.explanation.substring(0,60), source: 'Key Concepts', url: 'key-concepts.html#' + d.domain + '-' + encodeURIComponent(c.term), text: d.title });
+          }
+        });
+      });
+    }
+
     // Deduplicate (limit to 8 per source, 20 total)
     var seen = {}, filtered = [];
     results.forEach(function(r) {
@@ -120,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     var html = '';
-    var groups = { 'Study Guide': [], 'Flashcards': [], 'Key Pointers': [] };
+    var groups = { 'Study Guide': [], 'Flashcards': [], 'Key Pointers': [], 'Key Concepts': [] };
     results.forEach(function(r) {
       if (groups[r.source]) groups[r.source].push(r);
     });

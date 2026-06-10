@@ -302,3 +302,10 @@ tr:hover { background: var(--primary-light); }
 /* Section spacing on home */
 .domains-section, .materials-section, .quicklinks-section, .modules-section { margin-bottom: 2rem; }
 .domains-section h2, .materials-section h2, .quicklinks-section h2, .modules-section h2 { margin-bottom: 0; }
+
+/* Key Concepts page */
+.concept-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0.75rem; margin-top: 0.75rem; }
+.concept-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.75rem 1rem; transition: box-shadow 0.15s; }
+.concept-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.concept-term { font-weight: 600; font-size: 0.88rem; margin-bottom: 0.15rem; }
+.concept-expl { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45; }
