@@ -41,13 +41,17 @@
     (function() {
       var container = document.getElementById('conceptsContent');
       var domainColors = { d1: '#4a90d9', d2: '#e67e22', d3: '#2ecc71' };
-      var domainIcons = { d1: '🔐', d2: '🛡️', d3: '🤖' };
+      var domainIcons = { d1: '\uD83D\uDD10', d2: '\uD83D\uDEE1\uFE0F', d3: '\uD83E\uDD16' };
       var html = '';
 
       keyConceptsByDomain.forEach(function(d) {
         var color = domainColors[d.domain] || '#2563eb';
-        html += '<div class="concept-domain" style="margin-bottom:2rem;">';
-        html += '<h2 style="border-bottom:3px solid ' + color + ';padding-bottom:0.5rem;">' + domainIcons[d.domain] + ' ' + d.title + ' <span class="weight-badge">' + d.concepts.length + ' concepts</span></h2>';
+        html += '<div class="concept-domain" data-domain="' + d.domain + '">';
+        html += '<div class="concept-domain-header" onclick="toggleDomain(this)">';
+        html += '<h2 style="border-left:3px solid ' + color + ';padding-left:0.6rem;">' + domainIcons[d.domain] + ' ' + d.title + ' <span class="weight-badge">' + d.concepts.length + ' concepts</span></h2>';
+        html += '<span class="chevron">\u25B6</span>';
+        html += '</div>';
+        html += '<div class="concept-domain-body open">';
         html += '<div class="concept-grid">';
 
         d.concepts.forEach(function(c) {
@@ -57,11 +61,24 @@
           html += '</div>';
         });
 
-        html += '</div></div>';
+        html += '</div></div></div>';
       });
 
       container.innerHTML = html;
+
+      // Expand domain from URL hash
+      if (location.hash) {
+        var target = document.querySelector('[data-domain="' + location.hash.replace('#','') + '"]');
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     })();
+
+    function toggleDomain(el) {
+      var body = el.nextElementSibling;
+      var chevron = el.querySelector('.chevron');
+      body.classList.toggle('open');
+      chevron.classList.toggle('open');
+    }
   </script>
   <script src="script.js"></script>
 </body>

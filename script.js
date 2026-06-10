@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
       keyConceptsByDomain.forEach(function(d) {
         d.concepts.forEach(function(c) {
           if (c.term.toLowerCase().indexOf(q) !== -1 || c.explanation.toLowerCase().indexOf(q) !== -1) {
-            results.push({ title: c.term + ' \u2014 ' + c.explanation.substring(0,60), source: 'Key Concepts', url: 'key-concepts.html#' + d.domain + '-' + encodeURIComponent(c.term), text: d.title });
+            results.push({ title: c.term + ' \u2014 ' + c.explanation.substring(0,60), source: 'Key Concepts', url: 'key-concepts.html#' + d.domain, text: d.title });
           }
         });
       });
