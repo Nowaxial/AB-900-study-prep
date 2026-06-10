@@ -79,3 +79,6 @@ mempalace/
 brain/
 notes-private/
 *.mmd
+
+# Git worktrees (isolated dev workspaces)
+.worktrees/
