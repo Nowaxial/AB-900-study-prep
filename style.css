@@ -250,9 +250,39 @@ tr:hover { background: var(--primary-light); }
 
 @media (max-width: 428px) {
   .header-inner { padding: 0.5rem 0.5rem; gap: 0.35rem; }
-  .search-box { display: none; }
+  .nav a { padding: 0.6rem 0.75rem; font-size: 0.95rem; }
   .hero h1 { font-size: 1.3rem; }
   .domain-card { padding: 1rem; }
+  .hero { padding: 1.5rem 0.75rem 1.25rem; }
+  .domain-icon { font-size: 1.6rem; }
+  .section-card { padding: 1rem; }
+  .concept-grid { grid-template-columns: 1fr; }
+  .concept-domain-header { padding: 0.6rem 0.75rem; }
+  .concept-domain-header h2 { font-size: 0.9rem; }
+  .concept-grid { padding: 0.5rem 0.6rem 0.75rem; }
+  .key-pointer-group-header { padding: 0.6rem 0.75rem; }
+  .key-pointer-group-header h2 { font-size: 0.9rem; }
+  .key-pointer-group-body ul { padding: 0.5rem 0.6rem 0.75rem; }
+  .key-pointer-group-body li { font-size: 0.82rem; }
+  .flashcard-controls { flex-direction: column; align-items: stretch; }
+  .flashcard-controls select, .flashcard-controls button { width: 100%; }
+  .flashcard-nav { flex-direction: column; gap: 0.5rem; }
+  .flashcard-nav button { width: 100%; }
+  .flashcard-face { padding: 1.25rem; }
+  .flashcard-3d { min-height: 250px; }
+  .study-guide-layout { flex-direction: column; }
+  .tree-sidebar { width: 100%; position: static; max-height: none; }
+  .content-area { padding: 0; }
+  .search-box input { width: 0; padding: 0; border: none; }
+  .search-box.mobile-open { position: absolute; right: 0.5rem; top: 0.5rem; z-index: 300; background: var(--bg-card); padding: 0.4rem 0.65rem; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
+  .search-box.mobile-open input { display: block; width: 160px; padding: 0.2rem 0; }
+  .search-dropdown { left: 0; right: 0; min-width: 0; width: 100%; }
+  table { font-size: 0.75rem; }
+  th, td { padding: 0.3rem 0.4rem; word-break: break-word; }
+  .module-card { font-size: 0.8rem; padding: 0.4rem 0.5rem; }
+  .domain-module-group { padding: 0.75rem; }
+  .pill-link { font-size: 0.8rem; padding: 0.35rem 0.75rem; }
+  .section-grid > * { min-width: 100%; }
 }
 
 /* Weight badge for tree nav domain headers */

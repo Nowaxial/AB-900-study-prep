@@ -22,6 +22,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Mobile search toggle
+  var searchBox = document.getElementById('searchBox');
+  var searchIcon = searchBox ? searchBox.querySelector('span') : null;
+  if (searchIcon && searchBox) {
+    searchIcon.addEventListener('click', function(e) {
+      if (window.innerWidth <= 428) {
+        e.stopPropagation();
+        searchBox.classList.toggle('mobile-open');
+        var inp = searchBox.querySelector('input');
+        if (searchBox.classList.contains('mobile-open')) {
+          inp.focus();
+        } else {
+          inp.blur();
+          document.getElementById('searchResults').classList.remove('open');
+        }
+      }
+    });
+  }
+
   const searchInput = document.getElementById('searchInput');
   if (searchInput) {
     // On pages with pageSearch (study-guide, flashcards, key-pointers), use their built-in search
