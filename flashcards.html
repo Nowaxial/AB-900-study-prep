@@ -144,6 +144,15 @@
       });
     });
 
+    // Construct direct unit URL from module URL
+    function getUnitUrl(moduleUrl, unitId, unitTitle) {
+      if (!moduleUrl) return null;
+      const unitNum = unitId ? unitId.split('-u')[1] : null;
+      if (!unitNum) return moduleUrl;
+      const slug = unitTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      return moduleUrl.replace(/\/?$/, '/') + unitNum + '-' + slug + '/';
+    }
+
     // Card flip
     flashcard3d.addEventListener('click', () => {
       flashcard3d.classList.toggle('flipped');
@@ -238,14 +247,19 @@
         exactAddr = card.reference;
       }
 
-      // Front — reference
-      cardRef.innerHTML = '<span>📚 ' + exactAddr + '</span>';
+      // Front — reference (linkable to unit)
+      const unitUrl = getUnitUrl(card.learnLink, card.unitId, cardLabel ? cardLabel.title : null);
+      cardRef.innerHTML = unitUrl
+        ? '<span>📚 <a href="' + unitUrl + '" target="_blank" rel="noopener" style="color:var(--text-secondary);text-decoration:underline;text-decoration-style:dotted;">' + exactAddr + '</a></span>'
+        : '<span>📚 ' + exactAddr + '</span>';
 
       // Back — answer + explanation
       answerText.textContent = card.answer;
 
       let backRefHtml = '<span>📚 ' + exactAddr + '</span>';
-      if (card.learnLink) {
+      if (unitUrl) {
+        backRefHtml += ' &middot; <a href="' + unitUrl + '" target="_blank" rel="noopener">📖 Learn more</a>';
+      } else if (card.learnLink) {
         backRefHtml += ' &middot; <a href="' + card.learnLink + '" target="_blank" rel="noopener">📖 Learn more</a>';
       }
       backLinks.innerHTML = backRefHtml;
@@ -275,12 +289,14 @@
           const n = lp2.id === 'lp1' ? 'LP1' : 'LP2';
           addr = n + ' > ' + m.id.toUpperCase() + ' > ' + c.unitId + ': ' + cl.title;
         }
+        const unitUrl = getUnitUrl(c.learnLink, c.unitId, cl ? cl.title : null);
+        const linkHtml = unitUrl ? ' &middot; <a href="' + unitUrl + '" target="_blank" rel="noopener" style="color:var(--primary);">📖 Learn more</a>' : '';
         return `
         <div class="show-answers-item">
           <q>${c.question}</q>
           <div class="answer">${c.answer}</div>
           ${c.explanation ? '<div class="explanation">' + c.explanation + '</div>' : ''}
-          <div class="explanation">📚 ${addr}</div>
+          <div class="explanation">📚 ${addr}${linkHtml}</div>
         </div>`;
       }).join('');
     });
