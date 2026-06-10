@@ -930,216 +930,416 @@ const studyGuideData = {
             {
               unitId: "m3-u1",
               unitTitle: "Introduction",
-              content: `<p>Overview of the Protect and govern Microsoft 365 data module. This module covers Microsoft Purview, data risk identification, compliance and AI data discovery, oversharing in SharePoint, and data protection in Microsoft 365 Copilot.</p>`,
-              examTips: [],
+              content: `<p>Welcome to Module 3: Protect and govern Microsoft 365 data. This is the largest domain on the exam (<strong>35\u201340%</strong>), so careful study here pays the highest score dividend.</p>
+<p>In this module you will explore:</p>
+<ul>
+  <li><strong>Microsoft Purview</strong> \u2014 the unified compliance portal and its full capabilities matrix including Information Protection, DLP, Insider Risk Management, Communication Compliance, DSPM for AI, eDiscovery, and more.</li>
+  <li><strong>Data risk identification</strong> \u2014 how to use Purview tools to find, assess, and respond to data protection and governance risks across your tenant.</li>
+  <li><strong>Compliance, AI data discovery, and eDiscovery</strong> \u2014 Compliance Manager, Data Explorer, Activity Explorer, DSPM for AI, and the eDiscovery lifecycle.</li>
+  <li><strong>Oversharing in SharePoint</strong> \u2014 SharePoint Advanced Management, data access governance reports, and remediating overly broad sharing.</li>
+  <li><strong>Data protection in Microsoft 365 Copilot</strong> \u2014 how Copilot accesses data through Microsoft Graph, permission awareness, Purview controls, and Responsible AI principles.</li>
+</ul>
+<p>After this module, you should be able to identify, classify, protect, and govern sensitive data across Microsoft 365 and Copilot workloads.</p>`,
+              examTips: [
+                "Domain 2 is 35-40% of the exam - the largest single domain",
+                "Focus on Purview capabilities, risk identification tools, and Copilot data protection"
+              ],
               keyConcepts: []
             },
             {
               unitId: "m3-u2",
               unitTitle: "Introduction to Microsoft Purview and data governance",
-              content: `<h4>Microsoft Purview</h4>
-<p>The unified compliance portal at <strong>https://purview.microsoft.com</strong>.</p>
+              content: `<h3>Microsoft Purview Overview</h3>
+<p>Microsoft Purview is the unified compliance portal at <strong>https://purview.microsoft.com</strong>. It brings together data governance, protection, and compliance capabilities in a single platform for managing sensitive data across your Microsoft 365 tenant.</p>
+
+<h3>Capabilities Matrix</h3>
 <table>
   <thead>
     <tr><th>Capability</th><th>Purpose</th></tr>
   </thead>
   <tbody>
-    <tr><td><strong>Purview Information Protection</strong></td><td>Discover, classify, label, and protect sensitive data \u2014 <strong>Sensitivity Labels</strong> travel with the content.</td></tr>
-    <tr><td><strong>Data Loss Prevention (DLP)</strong></td><td>Detect and <strong>prevent</strong> accidental sharing of sensitive data across Exchange, SharePoint, OneDrive, Teams, endpoints, and cloud apps.</td></tr>
-    <tr><td><strong>Insider Risk Management</strong></td><td>Correlate signals (departing user + bulk download, off-hours activity, anomalous data movement) into risk scores and cases.</td></tr>
-    <tr><td><strong>Communication Compliance</strong></td><td>Monitor internal email and Teams chat for harassment, regulatory violations, conflicts of interest, and policy breaches.</td></tr>
-    <tr><td><strong>DSPM for AI</strong></td><td>Discover, monitor, and govern the use of AI services and Copilot activity across the tenant.</td></tr>
-    <tr><td><strong>Data Lifecycle Management</strong></td><td>Govern the lifecycle of data \u2014 retention policies and retention labels, disposition reviews, records management.</td></tr>
-    <tr><td><strong>eDiscovery</strong></td><td>Search, hold, and export content for legal investigations. Standard in E3; Premium (E5) adds analytics and review set tooling.</td></tr>
-    <tr><td><strong>Compliance Manager</strong></td><td>Centralized dashboard of compliance posture across regulations with recommended improvement actions.</td></tr>
-    <tr><td><strong>Data Explorer</strong></td><td>Query tool for content metadata; explore who accessed items, label distribution, sensitive data locations.</td></tr>
-    <tr><td><strong>Activity Explorer</strong></td><td>Shows user activities on labeled content \u2014 view, modify, print, email, share.</td></tr>
-    <tr><td><strong>Adaptive Protection</strong></td><td>Dynamically applies stricter DLP policies as a user's insider-risk score increases.</td></tr>
+    <tr><td><strong>Microsoft Purview Information Protection</strong></td><td>Discover, classify, label, and protect sensitive data \u2014 <strong>Sensitivity Labels</strong> travel with the content wherever it goes.</td></tr>
+    <tr><td><strong>Microsoft Purview Data Loss Prevention (DLP)</strong></td><td>Detect and <strong>prevent</strong> accidental sharing of sensitive data (PII, PHI, financial) across Exchange, SharePoint, OneDrive, Teams, endpoints, and cloud apps.</td></tr>
+    <tr><td><strong>Microsoft Purview Insider Risk Management</strong></td><td>Correlate signals (departing user + bulk download, off-hours activity, anomalous data movement) into risk scores and cases.</td></tr>
+    <tr><td><strong>Microsoft Purview Communication Compliance</strong></td><td>Monitor internal email and Teams chat for harassment, regulatory violations, conflicts of interest, and policy breaches.</td></tr>
+    <tr><td><strong>Microsoft Purview Data Security Posture Management (DSPM) for AI</strong></td><td>Discover, monitor, and govern the use of <strong>AI services and Copilot activity</strong> across the tenant.</td></tr>
+    <tr><td><strong>Microsoft Purview Data Lifecycle Management</strong></td><td>Govern the <strong>lifecycle</strong> of data \u2014 retention policies and retention labels, disposition reviews, records management.</td></tr>
+    <tr><td><strong>Microsoft Purview eDiscovery</strong></td><td>Search, hold, and export content for legal investigations. <strong>Standard</strong> in E3; <strong>Premium</strong> (E5) adds lawyer-client model, analytics, and review set tooling.</td></tr>
+    <tr><td><strong>Microsoft Purview Compliance Manager</strong></td><td>A centralized dashboard of compliance posture across regulations (ISO 27001, GDPR, NIST, HIPAA, etc.) with recommended improvement actions.</td></tr>
+    <tr><td><strong>Microsoft Purview Data Explorer</strong></td><td>A query tool for content metadata; lets you explore who accessed which items, label distribution, sensitive data locations.</td></tr>
+    <tr><td><strong>Microsoft Purview Activity Explorer</strong></td><td>Shows <strong>user activities</strong> on labeled content \u2014 view, modify, print, email, share. Core signal for DSPM and IRM investigations.</td></tr>
+    <tr><td><strong>Microsoft Purview Adaptive Protection</strong></td><td>Dynamically applies stricter <strong>DLP</strong> policies as a user's <strong>insider-risk</strong> score increases \u2014 bridges IRM and DLP so a high-risk user automatically gets the strictest data controls without admin intervention.</td></tr>
   </tbody>
 </table>
-<h4>Sensitivity labels</h4>
+
+<h3>Sensitivity Labels</h3>
 <ul>
-  <li>Use cases: <strong>Confidential/Highly Confidential</strong> (restrict access, encrypt, watermark), <strong>Public</strong> (no restrictions), <strong>Business/General</strong> (internal, visual marking), <strong>Regulatory</strong> (auto-labeled for PII/financial/healthcare).</li>
-  <li>Apply in <strong>Office apps, Outlook, SharePoint, OneDrive, Teams, Power BI</strong>; <strong>travels with the file</strong> even when downloaded.</li>
+  <li><strong>Confidential / Highly Confidential</strong> \u2014 restrict access to a specific group; encrypt with permission policy; add watermark.</li>
+  <li><strong>Public</strong> \u2014 no restrictions; useful for explicit marking.</li>
+  <li><strong>Business / General</strong> \u2014 internal only; might apply visual marking.</li>
+  <li><strong>Regulatory</strong> \u2014 automatically applied via auto-labeling for PII, financial, healthcare, etc.</li>
+  <li>Apply in <strong>Office apps, Outlook, SharePoint, OneDrive, Teams, Power BI</strong>; the label <strong>travels with the file</strong> even when downloaded.</li>
   <li><strong>Auto-labeling</strong> \u2014 Microsoft-managed (built-in) or custom policies detect and label based on content inspection.</li>
 </ul>
-<h4>Data classification</h4>
+
+<h3>Data Classification</h3>
 <ul>
-  <li><strong>Trainable classifiers</strong> \u2014 ML models that identify categories like Resume, Source Code, HR, Finance.</li>
-  <li><strong>Sensitive Information Types (SITs)</strong> \u2014 pattern matches (regex, checksum) for credit card, SSN, passport, IBAN.</li>
-  <li><strong>Exact Data Match (EDM)</strong> \u2014 match against a structured database of sensitive records.</li>
+  <li><strong>Trainable classifiers</strong> \u2014 machine-learning models that identify categories like <em>Resume</em>, <em>Source Code</em>, <em>HR</em>, <em>Finance</em> (built-in) and custom categories you train.</li>
+  <li><strong>Sensitive Information Types (SITs)</strong> \u2014 pattern matches (regex, checksum) for items like credit card, SSN, passport, IBAN.</li>
+  <li><strong>Exact Data Match (EDM)</strong> \u2014 match against a structured database of sensitive records (e.g., patient IDs).</li>
+  <li><strong>Activity classification</strong> \u2014 track which labels users apply and to what content.</li>
 </ul>
-<h4>Data lifecycle management</h4>
+
+<h3>Data Lifecycle Management</h3>
 <ul>
-  <li><strong>Retention policy</strong> \u2014 tenant-level rule (e.g., retain all Teams chat for 7 years then delete).</li>
-  <li><strong>Retention label</strong> \u2014 content-level (e.g., "Customer Records \u2014 10 years" applied to files).</li>
-  <li><strong>Archiving</strong> \u2014 move inactive content to cheaper storage while keeping it discoverable.</li>
+  <li><strong>Retention policy</strong> \u2014 a tenant-level rule (e.g., "retain all Teams chat for 7 years then delete").</li>
+  <li><strong>Retention label</strong> \u2014 content-level (e.g., a label "Customer Records \u2014 10 years" applied to files).</li>
+  <li><strong>Archiving</strong> \u2014 move inactive content to cheaper storage while keeping it discoverable (e.g., Exchange Online Archiving, SharePoint site archive).</li>
   <li><strong>Disposition review</strong> \u2014 an approver confirms deletion before it happens.</li>
-  <li><strong>Records management</strong> \u2014 declares items as immutable records that cannot be edited or deleted.</li>
+  <li><strong>Records management</strong> \u2014 declares items as immutable <strong>records</strong> that cannot be edited or deleted.</li>
 </ul>`,
-              examTips: [],
-              keyConcepts: []
+              examTips: [
+                "Know the Purview portal URL: https://purview.microsoft.com",
+                "Sensitivity labels travel with the content even when downloaded",
+                "Auto-labeling can be Microsoft-managed (built-in) or custom policies",
+                "Adaptive Protection bridges Insider Risk Management and DLP automatically",
+                "eDiscovery Standard is in E3; Premium is in E5"
+              ],
+              keyConcepts: [
+                "Purview Information Protection",
+                "Sensitivity Label",
+                "Auto-labeling",
+                "Trainable Classifier",
+                "Sensitive Information Type",
+                "EDM",
+                "Data Lifecycle Management",
+                "Retention Policy",
+                "Retention Label",
+                "Disposition Review",
+                "Records Management",
+                "Archiving",
+                "Adaptive Protection"
+              ]
             },
             {
               unitId: "m3-u3",
               unitTitle: "Identify and respond to data risks with Microsoft Purview",
-              content: `<h4>Tools to identify data protection and governance risks</h4>
+              content: `<h3>Risk Identification Tools</h3>
+<p>Microsoft Purview provides several tools to identify data protection and governance risks across your Microsoft 365 tenant and Copilot interactions.</p>
+
 <table>
   <thead>
     <tr><th>Tool</th><th>Use to identify\u2026</th></tr>
   </thead>
   <tbody>
-    <tr><td>Compliance Manager</td><td>Compliance posture gaps and improvement actions mapped to regulations.</td></tr>
-    <tr><td>Data Explorer</td><td>Where sensitive data lives, label distribution.</td></tr>
-    <tr><td>Insider Risk Management</td><td>Risky user behavior \u2014 bulk download, off-hours activity, departing user patterns.</td></tr>
-    <tr><td>DLP alerts</td><td>When a DLP policy is triggered \u2014 who, what item, which service, policy response.</td></tr>
-    <tr><td>Communication Compliance</td><td>Policy violations in email and Teams \u2014 harassment, profanity, regulatory concerns.</td></tr>
-    <tr><td>Activity Explorer</td><td>Per-user, per-file activity on labeled content \u2014 view, modify, share, email, print.</td></tr>
-    <tr><td>DSPM for AI</td><td>Discovery of AI activity \u2014 risky prompts, sensitive data flowing into AI, prompt-injection attempts.</td></tr>
-    <tr><td>eDiscovery Content Search</td><td>Search files and emails by keyword, sender, recipient, label, date, location.</td></tr>
-    <tr><td>Unified Audit Log</td><td>Every action across workloads, default 180 days (1 year with E5).</td></tr>
+    <tr><td><strong>Microsoft Purview Compliance Manager</strong></td><td>Compliance posture gaps and improvement actions mapped to regulations (GDPR, ISO 27001, NIST 800-53, HIPAA, etc.).</td></tr>
+    <tr><td><strong>Microsoft Purview Data Explorer</strong></td><td>Where sensitive data lives, which sites/libraries/mailboxes contain it, label distribution.</td></tr>
+    <tr><td><strong>Microsoft Purview Insider Risk Management</strong></td><td>Risky user behavior \u2014 bulk download, off-hours activity, departing user + download pattern, security policy violations.</td></tr>
+    <tr><td><strong>Microsoft Purview DLP alerts</strong></td><td>When a DLP policy is triggered \u2014 who did what, with which item, on which service, and the policy's response.</td></tr>
+    <tr><td><strong>Microsoft Purview Communication Compliance</strong></td><td>Policy violations in email and Teams \u2014 harassment, profanity, regulatory concerns, sensitive info leaks.</td></tr>
+    <tr><td><strong>Microsoft Purview Activity Explorer</strong></td><td>Per-user, per-file activity on labeled content \u2014 view, modify, share, email, print.</td></tr>
+    <tr><td><strong>Microsoft Purview DSPM for AI</strong></td><td>Discovery and governance of AI activity \u2014 risky prompts, sensitive data flowing into AI, prompt-injection attempts.</td></tr>
+    <tr><td><strong>Microsoft Purview eDiscovery \u2014 Content Search</strong></td><td>Search for files and emails by keyword, sender, recipient, label, date, location. Export results for legal review.</td></tr>
+    <tr><td><strong>Microsoft Purview Audit</strong></td><td>Unified audit log \u2014 every action across workloads, default 180 days (1 year with E5).</td></tr>
   </tbody>
 </table>
-<h4>Compliance Manager \u2014 control types</h4>
+
+<h3>Data Loss Prevention (DLP) Details</h3>
 <ul>
-  <li><strong>Microsoft-managed controls</strong> \u2014 automatically monitored by Microsoft (e.g., encryption at rest). No action from you.</li>
-  <li><strong>Customer-managed controls</strong> \u2014 require <strong>manual verification</strong> by your admins (e.g., training completion, documentation).</li>
+  <li>Detects and <strong>prevents</strong> accidental sharing of sensitive data (PII, PHI, financial information) across Exchange, SharePoint, OneDrive, Teams, endpoints, and cloud apps.</li>
+  <li>DLP policy actions can block Copilot from pasting a sensitive number into a prompt or response.</li>
+  <li>DLP alerts tell you who did what, with which item, on which service, and the policy's enforcement action.</li>
+  <li><strong>Adaptive Protection</strong> dynamically applies stricter DLP policies as a user's insider-risk score increases, bridging Insider Risk Management and DLP without manual admin changes.</li>
+</ul>
+
+<h3>Insider Risk Management Details</h3>
+<ul>
+  <li>Correlates signals into risk scores and cases: departing user + bulk download, off-hours activity, anomalous data movement, security policy violations.</li>
+  <li>Optional signals: <strong>Endpoint activity</strong> (Defender for Endpoint), <strong>HR events</strong> (exit interview integration via connector), DLP alerts feeding IRM cases.</li>
+  <li>IRM cases can be <strong>escalated to eDiscovery</strong> for legal hold and further investigation.</li>
+  <li>Adaptive Protection bridges IRM and DLP so a high-risk user automatically receives stricter data controls.</li>
+</ul>
+
+<h3>Communication Compliance Details</h3>
+<ul>
+  <li>Monitors internal email and Teams chat for harassment, regulatory violations, conflicts of interest, and policy breaches.</li>
+  <li>Monitored channels: Microsoft Teams chats and channels, Exchange Online email, Viva Engage, and third-party connectors (Slack, Bloomberg, etc.).</li>
+  <li>Uses trainable classifiers to detect policy violations including harassment, profanity, and sensitive info leaks.</li>
+</ul>
+
+<h3>Compliance Manager Control Types</h3>
+<ul>
+  <li><strong>Microsoft-managed controls</strong> \u2014 automatically monitored by Microsoft (e.g., encryption at rest). No action required from your organization.</li>
+  <li><strong>Customer-managed controls</strong> \u2014 require <strong>manual verification</strong> by your admins (e.g., training completion, documentation of procedures).</li>
   <li><strong>Improvement actions</strong> are mapped to controls, have assigned owners, and roll up into the <strong>Compliance Score</strong>.</li>
-</ul>
-<h4>Insider Risk Management details</h4>
-<ul>
-  <li>Optional signals: <strong>Endpoint activity</strong> (Defender for Endpoint), <strong>HR events</strong> (exit interview integration), DLP alerts feeding IRM cases.</li>
-  <li>IRM cases can be <strong>escalated to eDiscovery</strong> for legal hold.</li>
-</ul>
-<h4>Communication Compliance channels</h4>
-<ul>
-  <li>Microsoft Teams chats and channels, Exchange Online email, Viva Engage, third-party connectors (Slack, Bloomberg).</li>
 </ul>`,
-              examTips: [],
-              keyConcepts: []
+              examTips: [
+                "When asked 'how do I find every file labeled Confidential that a user accessed last month?' the answer is Activity Explorer",
+                "DLP alerts record: who, what item, which service, and the policy enforcement action",
+                "Adaptive Protection automatically bridges Insider Risk Management and DLP",
+                "Unified Audit Log default retention is 180 days; 1 year with E5",
+                "IRM cases can be escalated to eDiscovery for legal hold"
+              ],
+              keyConcepts: [
+                "DLP",
+                "DLP Alert",
+                "Insider Risk Management",
+                "Communication Compliance",
+                "Adaptive Protection",
+                "Activity Explorer",
+                "Data Explorer",
+                "Content Search",
+                "Unified Audit Log"
+              ]
             },
             {
               unitId: "m3-u4",
               unitTitle: "Examine compliance, AI data discovery, and eDiscovery",
-              content: `<h4>eDiscovery</h4>
+              content: `<h3>Compliance Manager</h3>
+<p>A centralized dashboard of compliance posture across regulations including ISO 27001, GDPR, NIST 800-53, HIPAA, and many more. It provides recommended improvement actions to strengthen your compliance posture.</p>
+<ul>
+  <li><strong>Microsoft-managed controls</strong> \u2014 automatically monitored by Microsoft (e.g., encryption at rest). No action required from your organization.</li>
+  <li><strong>Customer-managed controls</strong> \u2014 require <strong>manual verification</strong> by your admins (e.g., training completion, documented procedures).</li>
+  <li><strong>Improvement actions</strong> \u2014 mapped to specific controls, assigned to owners, and roll up into the overall <strong>Compliance Score</strong>.</li>
+</ul>
+
+<h3>eDiscovery</h3>
 <ul>
   <li><strong>eDiscovery Standard</strong> (included in E3) \u2014 search, hold, and export content for legal investigations.</li>
-  <li><strong>eDiscovery Premium</strong> (included in E5) \u2014 adds lawyer-client model, analytics, review set tooling, and advanced processing.</li>
+  <li><strong>eDiscovery Premium</strong> (included in E5) \u2014 adds lawyer-client privilege model, advanced analytics, review set tooling, and intelligent processing (OCR, threading, near-duplicate detection).</li>
+  <li><strong>Content Search</strong> \u2014 search files and emails by keyword, sender, recipient, sensitivity label, date range, and location. Export results natively or as a report for legal review.</li>
 </ul>
-<h4>Data Explorer</h4>
+
+<h3>Data Explorer</h3>
 <ul>
-  <li>Query content metadata; filter by <strong>location</strong>, <strong>sensitivity label</strong>, <strong>content type</strong>.</li>
-  <li>Visualize <strong>data exposure patterns</strong> (where sensitive data lives, who owns it).</li>
+  <li>A query tool for content metadata that lets you explore who accessed which items, label distribution, and sensitive data locations.</li>
+  <li>Filter by <strong>location</strong>, <strong>sensitivity label</strong>, <strong>content type</strong> to find specific data patterns.</li>
+  <li>Visualize <strong>data exposure patterns</strong> \u2014 where sensitive data lives and who owns it.</li>
   <li>Identify <strong>externally shared</strong> or high-risk files. Example: find all "Confidential \u2014 Finance" documents and see how they are shared.</li>
 </ul>
-<h4>Activity Explorer</h4>
+
+<h3>Activity Explorer</h3>
 <ul>
   <li>Shows <strong>user activities</strong> on labeled content \u2014 view, modify, print, email, share.</li>
-  <li>Core signal for DSPM and IRM investigations.</li>
-  <li>Captures every Copilot action for audit.</li>
+  <li>Core signal for DSPM and Insider Risk Management investigations.</li>
+  <li>Captures every Copilot action for audit trails.</li>
+  <li>Answer the question: "find every file labeled Confidential that a user accessed last month."</li>
 </ul>
-<h4>DSPM for AI</h4>
+
+<h3>Data Security Posture Management (DSPM) for AI</h3>
 <ul>
-  <li>Data Security Posture Management for AI \u2014 surfaces <strong>shadow AI</strong> (non-corporate AI services), risky prompts, prompt-injection patterns.</li>
+  <li>Discover, monitor, and govern the use of <strong>AI services and Copilot activity</strong> across the tenant.</li>
+  <li>Surfaces <strong>shadow AI</strong> \u2014 non-corporate AI services being used by employees.</li>
+  <li>Detects <strong>risky prompts</strong>, sensitive data flowing into AI, and <strong>prompt-injection</strong> patterns.</li>
   <li>Integrates with Activity Explorer for the last 30 days of Copilot interactions.</li>
   <li>Flags sites feeding too much data into Copilot without restriction.</li>
+</ul>
+
+<h3>Data Lifecycle Management</h3>
+<ul>
+  <li><strong>Retention policy</strong> \u2014 a tenant-level rule (e.g., "retain all Teams chat for 7 years then delete").</li>
+  <li><strong>Retention label</strong> \u2014 content-level (e.g., a label "Customer Records \u2014 10 years" applied to specific files).</li>
+  <li><strong>Archiving</strong> \u2014 move inactive content to cheaper storage while keeping it discoverable (e.g., Exchange Online Archiving, SharePoint site archive).</li>
+  <li><strong>Disposition review</strong> \u2014 an approver confirms deletion before it happens.</li>
+  <li><strong>Records management</strong> \u2014 declares items as immutable <strong>records</strong> that cannot be edited or deleted, ensuring compliance with regulatory requirements.</li>
 </ul>`,
-              examTips: [],
-              keyConcepts: []
+              examTips: [
+                "eDiscovery Standard = E3, eDiscovery Premium = E5",
+                "Activity Explorer answers questions about who accessed labeled content and what they did with it",
+                "DSPM for AI covers shadow AI, risky prompts, and prompt-injection",
+                "Compliance Manager has Microsoft-managed (auto) and customer-managed (manual verification) controls",
+                "Activity Explorer captures every Copilot action for audit"
+              ],
+              keyConcepts: [
+                "Compliance Manager",
+                "eDiscovery Standard",
+                "eDiscovery Premium",
+                "Content Search",
+                "DSPM for AI",
+                "Data Explorer",
+                "Activity Explorer",
+                "Data Lifecycle Management",
+                "Retention Policy",
+                "Retention Label",
+                "Archiving",
+                "Disposition Review",
+                "Records Management"
+              ]
             },
             {
               unitId: "m3-u5",
               unitTitle: "Explore oversharing and data access governance in SharePoint",
-              content: `<h4>Tools to troubleshoot oversharing</h4>
+              content: `<h3>SharePoint Oversharing Overview</h3>
+<p>Oversharing occurs when content is shared more broadly than necessary. This is one of the most common data protection risks in Microsoft 365. SharePoint Advanced Management provides a suite of tools to identify, monitor, and remediate oversharing.</p>
+
+<h3>Tools to Troubleshoot Oversharing</h3>
 <ul>
-  <li><strong>SharePoint Advanced Management</strong> \u2014 the umbrella capability.</li>
+  <li><strong>SharePoint Advanced Management</strong> \u2014 the umbrella capability that includes all the tools below.</li>
   <li><strong>Data access governance reports</strong> \u2014 surface sites, libraries, and files that are broadly shared.</li>
+  <li><strong>Microsoft Purview DSPM for AI</strong> \u2014 flags sites feeding too much data into Copilot without restriction.</li>
   <li><strong>SharePoint admin center \u2192 Reports</strong> \u2014 sharing summary, file activity, sharing links inventory.</li>
 </ul>
-<h4>Run a data access governance report</h4>
+
+<h3>Run a Data Access Governance Report</h3>
 <ol>
   <li>Go to <strong>SharePoint admin center</strong> (or <strong>https://aka.ms/spoda</strong>).</li>
-  <li>Open <strong>Reports \u2192 Data access governance</strong>.</li>
+  <li>Open <strong>Reports</strong> \u2192 <strong>Data access governance</strong>.</li>
   <li>Select a site or run across all sites.</li>
-  <li>The report shows: broken inheritance, access requests, external sharing, Anyone links, label distribution, sensitivity label violations.</li>
-  <li>Use the report to drive remediation: tighten sharing, apply labels, restrict access.</li>
+  <li>The report shows: <strong>broken inheritance</strong>, <strong>access requests</strong>, <strong>external sharing</strong>, <strong>Anyone links</strong>, <strong>label distribution</strong>, <strong>sensitivity label violations</strong>.</li>
+  <li>Use the report to drive remediation: tighten sharing, apply labels, restrict access, or move content to a private channel.</li>
 </ol>
-<h4>SharePoint Advanced Management features</h4>
+
+<h3>SharePoint Advanced Management Features</h3>
+<table>
+  <thead>
+    <tr><th>Feature</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Restricted Site Access</strong></td><td>Limit content visibility to a specified Entra ID group, even if users have access to the parent site.</td></tr>
+    <tr><td><strong>Oversharing reports / Permission site report</strong></td><td>See what has been shared too broadly; lets a site owner do a <strong>site access review</strong> to validate who really needs access.</td></tr>
+    <tr><td><strong>Conditional access for SharePoint sites</strong></td><td>Block access from unmanaged devices at the site level.</td></tr>
+    <tr><td><strong>Inactive site lifecycle</strong></td><td>Auto-archive or delete inactive sites.</td></tr>
+    <tr><td><strong>Change history</strong></td><td>See who changed permissions and when.</td></tr>
+    <tr><td><strong>Site ownership policy</strong></td><td>Enforces a minimum number of owners (e.g., <strong>at least 2</strong>) on every site.</td></tr>
+    <tr><td><strong>Restricted content discovery (site level)</strong></td><td>Opt a site out of being indexed and used as Copilot / Semantic Index ground. The site is still browseable by its existing members, but Copilot will not include its content in answers.</td></tr>
+    <tr><td><strong>Restricted SharePoint Search (tenant level)</strong></td><td>Restricts Copilot's grounding to a hand-picked allow-list of up to <strong>100 sites</strong> (hub sites and their child sites are not counted toward the 100). Useful while you clean up permissions.</td></tr>
+  </tbody>
+</table>
+
+<h3>Common Oversharing Scenarios</h3>
 <ul>
-  <li><strong>Restricted Site Access</strong> \u2014 limit content visibility to a specified Entra ID group.</li>
-  <li><strong>Oversharing reports / Permission site report</strong> \u2014 see what's been shared too broadly.</li>
-  <li><strong>Conditional access for SharePoint sites</strong> \u2014 block access from unmanaged devices.</li>
-  <li><strong>Inactive site lifecycle</strong> \u2014 auto-archive or delete inactive sites.</li>
-  <li><strong>Site ownership policy</strong> \u2014 enforces a minimum number of owners (e.g., at least 2) on every site.</li>
-  <li><strong>Restricted content discovery</strong> (site level) \u2014 opt a site out of being indexed and used by Copilot Semantic Index.</li>
-  <li><strong>Restricted SharePoint Search</strong> (tenant level) \u2014 restricts Copilot's grounding to a hand-picked allow-list of up to <strong>100 sites</strong> (hub sites and children not counted).</li>
-</ul>
-<h4>Common oversharing scenarios</h4>
-<ul>
-  <li>Sharing with <strong>"Everyone"</strong> or <strong>"Anyone with the link"</strong>.</li>
-  <li>Granting <strong>Edit</strong> when <strong>View only</strong> was intended.</li>
+  <li>Sharing with <strong>"Everyone"</strong> or <strong>"Anyone with the link"</strong> \u2014 these links bypass authentication requirements.</li>
+  <li>Granting <strong>Edit</strong> permissions when <strong>View only</strong> was intended.</li>
   <li>Granting <strong>external guests full site access</strong> when they only needed a single file.</li>
-  <li>DAG reports flag sites with: sensitive content, excessive sharing, inactive owners, missing sensitivity labels.</li>
+  <li>Data Access Governance (DAG) reports flag sites with: sensitive content, excessive sharing, inactive owners, missing sensitivity labels.</li>
 </ul>`,
-              examTips: [],
-              keyConcepts: []
+              examTips: [
+                "SharePoint admin center shortcut URL: https://aka.ms/spoda",
+                "Restricted SharePoint Search limits Copilot grounding to up to 100 sites (hub sites + children not counted)",
+                "Restricted content discovery is site-level; Restricted SharePoint Search is tenant-level",
+                "Site ownership policy enforces minimum 2 owners per site",
+                "DAG reports show: broken inheritance, access requests, external sharing, Anyone links, label distribution"
+              ],
+              keyConcepts: [
+                "SharePoint Advanced Management",
+                "Restricted Site Access",
+                "Data Access Governance Report",
+                "Oversharing",
+                "Restricted SharePoint Search",
+                "Restricted Content Discovery",
+                "Site Ownership Policy",
+                "Inactive Site Lifecycle"
+              ]
             },
             {
               unitId: "m3-u6",
               unitTitle: "Explore data protection in Microsoft 365 Copilot",
-              content: `<h4>How Copilot accesses data</h4>
+              content: `<h3>How Copilot Accesses Data</h3>
 <ul>
   <li><strong>Microsoft 365 Copilot is grounded in your tenant's data</strong> through Microsoft Graph.</li>
-  <li>Copilot only retrieves content the <strong>signed-in user is permitted to see</strong>.</li>
-  <li>Three retrieval layers: <strong>Graph search</strong> (permitted content), <strong>Semantic Index</strong> (pre-computed relationships), <strong>LLM</strong> (reasoning).</li>
-  <li>Prompts, responses, and tenant data are <strong>not</strong> used to train foundation models.</li>
+  <li>Copilot only retrieves content the <strong>signed-in user is permitted to see</strong>. Permissions travel with the data.</li>
+  <li>Three retrieval layers: <strong>Graph search</strong> (permitted content), <strong>Semantic Index</strong> (pre-computed relationships across users, content, and concepts), <strong>LLM</strong> (reasoning that produces natural language).</li>
+  <li>The system prompt, conversation history, and grounding data are <strong>not</strong> used to train foundation models.</li>
 </ul>
-<h4>How Microsoft Graph influences Copilot responses</h4>
+
+<h3>How Microsoft Graph Influences Copilot Responses</h3>
 <ul>
   <li>Every Copilot response is composed from Graph-grounded context \u2014 files, emails, chats, meetings, people.</li>
-  <li><strong>Permission-aware</strong> \u2014 Copilot respects SharePoint/OneDrive permissions, Sensitivity Labels, mailbox delegation, Teams membership.</li>
-  <li>If a user cannot access a document directly, <strong>Copilot cannot surface its content</strong> through another channel.</li>
-  <li>Graph connectors extend the semantic index to <strong>third-party data</strong> (ServiceNow, Confluence, Salesforce).</li>
+  <li><strong>Permission-aware</strong> \u2014 Copilot respects SharePoint and OneDrive item-level permissions, Sensitivity Labels, mailbox delegation, and Teams channel membership.</li>
+  <li>If a user cannot access a document directly, <strong>Copilot cannot surface its content to them</strong> through another channel or workaround.</li>
+  <li><strong>Graph connectors</strong> extend the semantic index to <strong>third-party data</strong> (ServiceNow, Confluence, Salesforce, etc.), which is then available for Copilot grounding.</li>
 </ul>
-<h4>How Copilot uses permissions and controls</h4>
+
+<h3>How Copilot Uses Permissions and Other Controls to Protect Against Risks</h3>
+<h4>Microsoft 365 Controls Honored</h4>
 <ul>
-  <li><strong>Microsoft 365 controls</strong> \u2014 SharePoint permissions, OneDrive sharing links, mailbox access, Teams channel membership, Sensitivity Label encryption.</li>
-  <li><strong>Microsoft Purview controls</strong> \u2014 Sensitivity Labels (encrypted content restricted), DLP (blocks Copilot from pasting sensitive data), DSPM for AI (surfaces risky prompts), Activity Explorer (audits Copilot actions).</li>
-  <li><strong>Microsoft Defender controls</strong> \u2014 Defender for Cloud Apps session policies apply to Copilot actions.</li>
-  <li><strong>Customer Key</strong> \u2014 customer-managed encryption keys; <strong>Customer Lockbox</strong> \u2014 explicit consent for Microsoft engineer access.</li>
+  <li>SharePoint permissions, OneDrive sharing links, mailbox access, Teams channel membership, Sensitivity Label encryption.</li>
 </ul>
-<h4>Responsible AI principles</h4>
+<h4>Microsoft Purview Controls Honored</h4>
 <ul>
-  <li><strong>Fairness</strong> \u2014 consistent for all users, languages, and contexts.</li>
-  <li><strong>Reliability and safety</strong> \u2014 testable outputs; refuses harmful content.</li>
-  <li><strong>Privacy and security</strong> \u2014 tenant data stays in your boundary; permissions honored; actions auditable.</li>
-  <li><strong>Inclusiveness</strong> \u2014 accessible (screen reader, high-contrast).</li>
-  <li><strong>Accountability</strong> \u2014 humans remain accountable; Copilot is an assistant.</li>
-  <li><strong>Transparency</strong> \u2014 Microsoft publishes how Copilot works, data it uses, and limits.</li>
-</ul>`,
-              examTips: [],
+  <li><strong>Sensitivity Labels</strong> \u2014 if a file is encrypted for "Finance group only", only Finance can have its content used by Copilot.</li>
+  <li><strong>DLP</strong> \u2014 DLP policy actions can block Copilot from pasting a sensitive number into a prompt or response.</li>
+  <li><strong>DSPM for AI</strong> \u2014 surfaces risky prompts, overshared data sources, and prompt-injection patterns.</li>
+  <li><strong>Activity Explorer</strong> \u2014 captures every Copilot action for audit.</li>
+</ul>
+<h4>Microsoft Defender Controls</h4>
+<ul>
+  <li><strong>Defender for Cloud Apps</strong> session policies apply to Copilot actions in cloud apps.</li>
+  <li><strong>Defender XDR</strong> incidents can include Copilot-sourced signals.</li>
+</ul>
+<h4>Additional Security Controls</h4>
+<ul>
+  <li><strong>Customer Key</strong> \u2014 customer-managed encryption keys apply to content Copilot retrieves.</li>
+  <li><strong>Customer Lockbox</strong> \u2014 Microsoft engineers require explicit tenant approval to access content.</li>
+</ul>
+
+<h3>Responsible AI Principles</h3>
+<table>
+  <thead>
+    <tr><th>Principle</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Fairness</strong></td><td>Copilot should work consistently for all users, languages, and contexts.</td></tr>
+    <tr><td><strong>Reliability and safety</strong></td><td>Outputs are designed to be testable; Copilot refuses harmful content.</td></tr>
+    <tr><td><strong>Privacy and security</strong></td><td>Tenant data stays in your boundary, permissions are honored, actions are auditable.</td></tr>
+    <tr><td><strong>Inclusiveness</strong></td><td>Accessible to people with disabilities (screen reader support, high-contrast, etc.).</td></tr>
+    <tr><td><strong>Accountability</strong></td><td>Humans remain accountable; Copilot is an assistant, not a decision-maker.</td></tr>
+    <tr><td><strong>Transparency</strong></td><td>Microsoft publishes documentation about how Copilot works, the data it uses, and its limits.</td></tr>
+  </tbody>
+</table>`,
+              examTips: [
+                "Copilot cannot surface content the user cannot directly access - permissions are always honored",
+                "Three retrieval layers: Graph search, Semantic Index, LLM",
+                "Customer Key = customer-managed encryption; Customer Lockbox = explicit consent for Microsoft engineer access",
+                "Graph connectors extend grounding to third-party data (ServiceNow, Confluence, Salesforce)",
+                "Prompts and tenant data are never used to train foundation models"
+              ],
               keyConcepts: [
-                "Purview Information Protection", "Sensitivity Label", "Auto-labeling", "DLP", "DLP Alert",
-                "Insider Risk Management", "Communication Compliance", "DSPM for AI", "Data Lifecycle Management",
-                "Retention Policy", "Retention Label", "Disposition Review", "Records Management", "Archiving",
-                "Compliance Manager", "Data Explorer", "Activity Explorer", "Content Search", "eDiscovery Standard",
-                "eDiscovery Premium", "Trainable Classifier", "Sensitive Information Type", "EDM",
-                "Graph", "Semantic Index", "Grounding", "Customer Key", "Customer Lockbox",
-                "Responsible AI", "SharePoint Advanced Management", "Restricted Site Access",
-                "Data Access Governance Report", "Oversharing", "Adaptive Protection"
+                "Graph",
+                "Semantic Index",
+                "Grounding",
+                "Customer Key",
+                "Customer Lockbox",
+                "Responsible AI",
+                "Fairness",
+                "Reliability",
+                "Privacy",
+                "Inclusiveness",
+                "Accountability",
+                "Transparency"
               ]
             },
             {
               unitId: "m3-u7",
               unitTitle: "Module assessment",
-              content: `<p>Knowledge check for Module 3: Protect and govern Microsoft 365 data. Review Microsoft Purview capabilities, data risk identification, compliance and AI data discovery, oversharing in SharePoint, and data protection in Copilot.</p>`,
+              content: `<p>Knowledge check for Module 3: Protect and govern Microsoft 365 data. Review the following areas before attempting the assessment:</p>
+<ul>
+  <li>Microsoft Purview capabilities matrix and portal URL</li>
+  <li>Sensitivity labels, auto-labeling, trainable classifiers, SITs, and EDM</li>
+  <li>Data Lifecycle Management (retention policies, retention labels, disposition review, records management)</li>
+  <li>Risk identification tools (Compliance Manager, DLP alerts, Insider Risk Management, Communication Compliance, Activity Explorer, Data Explorer, Audit)</li>
+  <li>Compliance Manager control types and Compliance Score</li>
+  <li>eDiscovery Standard vs Premium</li>
+  <li>DSPM for AI and Activity Explorer for Copilot audit</li>
+  <li>SharePoint Advanced Management features and data access governance reports</li>
+  <li>Copilot data access via Microsoft Graph, permission awareness, Purview and Defender controls</li>
+  <li>Responsible AI principles</li>
+</ul>`,
               examTips: [],
               keyConcepts: []
             },
             {
               unitId: "m3-u8",
               unitTitle: "Summary",
-              content: `<p>Module 3 covered Microsoft Purview capabilities including Sensitivity Labels, DLP, Insider Risk Management, Communication Compliance, DSPM for AI, Data Lifecycle Management, eDiscovery, and Compliance Manager. It also covered identifying data risks, oversharing in SharePoint with SharePoint Advanced Management, and data protection for Microsoft 365 Copilot including Graph grounding, permission awareness, and Responsible AI.</p>`,
+              content: `<p>Module 3 covered the full breadth of Domain 2 (35\u201340% of the exam). Key takeaways:</p>
+<ul>
+  <li><strong>Microsoft Purview</strong> is the unified compliance portal at <strong>https://purview.microsoft.com</strong> with 11 core capabilities spanning Information Protection, DLP, Insider Risk Management, Communication Compliance, DSPM for AI, Data Lifecycle Management, eDiscovery, Compliance Manager, Data Explorer, Activity Explorer, and Adaptive Protection.</li>
+  <li><strong>Sensitivity labels</strong> travel with content and can encrypt, watermark, and restrict access. Auto-labeling uses content inspection to apply labels automatically.</li>
+  <li><strong>Data classification</strong> uses trainable classifiers (ML), Sensitive Information Types (regex/checksum), and Exact Data Match (structured database).</li>
+  <li><strong>Risk identification</strong> tools include Compliance Manager (compliance posture), DLP alerts (policy violations), Insider Risk Management (user behavior), Communication Compliance (message violations), Activity Explorer (label activity), Data Explorer (metadata), and the Unified Audit Log (all actions).</li>
+  <li><strong>SharePoint Advanced Management</strong> provides data access governance reports, Restricted Site Access, Conditional Access for sites, site ownership policies, and Restricted SharePoint Search (up to 100 sites).</li>
+  <li><strong>Copilot data protection</strong> relies on Microsoft Graph for permission-aware grounding, honors all M365 and Purview controls (Sensitivity Labels, DLP, DSPM for AI), and follows six Responsible AI principles.</li>
+</ul>`,
               examTips: [],
               keyConcepts: []
             }
