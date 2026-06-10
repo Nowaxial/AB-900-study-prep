@@ -2088,15 +2088,14 @@ const studyGuideData = {
   <li><strong>Fairness &amp; reliability</strong> — LLM models are tested to reduce bias and produce grounded, factual responses based on tenant data (RAG).</li>
   <li><strong>No LLM training on tenant data</strong> — Your organization's data is never used to train or retrain the underlying AI models. Tenant data remains within your compliance boundary.</li>
 </ul>
-
-<h4>Responsible AI Principles for Copilot</h4>
+<h4>Broader Microsoft Responsible AI Principles</h4>
 <ul>
-  <li><strong>Data minimization</strong> — Copilot only retrieves the data needed to answer the query, not the entire user mailbox or tenant.</li>
-  <li><strong>Transparency</strong> — Copilot cites its sources (document names, URLs) so users can verify responses. If it cannot find information, it says so rather than inventing data.</li>
-  <li><strong>Content filtering</strong> — Harmful, offensive, or inappropriate content is blocked at both input (prompt) and output (response) stages.</li>
-  <li><strong>Accountability</strong> — All Copilot interactions are logged to Microsoft Purview Audit (Standard or Premium). Admins can review prompts, responses, and source documents for compliance.</li>
-  <li><strong>Fairness &amp; reliability</strong> — LLM models are tested to reduce bias and produce grounded, factual responses based on tenant data (RAG).</li>
-  <li><strong>No LLM training on tenant data</strong> — Your organization's data is never used to train or retrain the underlying AI models. Tenant data remains within your compliance boundary.</li>
+  <li><strong>Fairness</strong> — AI systems should treat all people fairly, without bias.</li>
+  <li><strong>Reliability and safety</strong> — Systems should perform reliably and refuse harmful content.</li>
+  <li><strong>Security and privacy</strong> — Tenant data is never used to train LLMs; interactions are encrypted.</li>
+  <li><strong>Inclusiveness</strong> — AI should empower everyone, across languages and abilities.</li>
+  <li><strong>Transparency</strong> — Microsoft publishes how Copilot works; responses cite sources.</li>
+  <li><strong>Accountability</strong> — Humans remain responsible for AI outputs; Purview Audit tracks all activity.</li>
 </ul>
 `,
               examTips: [],
@@ -2799,7 +2798,7 @@ const studyGuideData = {
   <li><strong>Authentication = proving who you are</strong> (n factor). <strong>Authorization = what you're allowed to do</strong> (z factor). The exam uses this n/z shorthand.</li>
   <li><strong>MFA</strong> needs 2+ of: something you know (password/PIN), have (phone, FIDO key), or are (biometric).</li>
   <li>A <strong>passkey is still 2 factors</strong>: the device (something you have) + PIN/biometric (something you know/are).</li>
-  <li>Passkeys are <strong>phishing-resistant</strong> because they only work against the exact domain they were issued for.</li>
+  <li>Passkeys are <strong>phishing-resistant</strong> because they only work against the exact domain they were issued for and require <strong>physical proximity</strong> (Bluetooth or NFC) between the device with the passkey and the machine being authenticated.</li>
 </ul>`
       },
       {
