@@ -84,6 +84,18 @@
       chevron.classList.toggle('open');
     }
   </script>
+  <script>
+    window.addEventListener('hashchange', function() {
+      if (location.hash) {
+        var target = document.getElementById(location.hash.replace('#',''));
+        if (target) {
+          target.querySelector('.concept-domain-body').classList.add('open');
+          target.querySelector('.chevron').classList.add('open');
+          setTimeout(function() { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
+        }
+      }
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>

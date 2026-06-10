@@ -141,15 +141,23 @@ document.addEventListener('DOMContentLoaded', () => {
       html += '<div class="search-dropdown-group">';
       html += '<div class="search-dropdown-label">' + src + '</div>';
       items.forEach(function(r) {
-        html += '<a href="' + r.url + '" class="search-dropdown-item">';
+        html += '<div class="search-dropdown-item" data-href="' + r.url.replace(/"/g,'&quot;') + '">';
         html += '<span class="match-text">' + escapeHtml(r.title) + '</span>';
         html += '<span class="match-source">' + src + '</span>';
-        html += '</a>';
+        html += '</div>';
       });
       html += '</div>';
     });
     dd.innerHTML = html;
     dd.classList.add('open');
+    // Click handler on search items
+    dd.querySelectorAll('.search-dropdown-item').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var href = this.dataset.href;
+        if (href) window.location.href = href;
+      });
+    });
   }
 
   function escapeHtml(s) {
