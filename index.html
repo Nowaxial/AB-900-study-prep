@@ -85,9 +85,30 @@
         <a href="https://learn.microsoft.com/en-us/training/paths/explore-microsoft-365-copilot-agent-administration/" target="_blank" rel="noopener" class="theme-toggle searchable">🤖 LP2: Explore Copilot &amp; agent admin</a>
         <a href="https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/" target="_blank" rel="noopener" class="theme-toggle searchable">🎯 Certification page</a>
       </div>
+
+      <h2 style="margin-top:3rem;">Learning Paths</h2>
+      <div id="moduleTree" class="section-grid"></div>
     </div>
   </main>
 
+  <script src="data/modules.js"></script>
   <script src="script.js"></script>
+  <script>
+    (function() {
+      const treeContainer = document.getElementById('moduleTree');
+      let html = '';
+      learningPaths.forEach(function(lp, lpIdx) {
+        html += '<div style="grid-column:1/-1;"><h3 style="margin-bottom:0.5rem;">Learning Path ' + (lpIdx + 1) + ': ' + lp.title + '</h3></div>';
+        lp.modules.forEach(function(mod) {
+          const firstUnitId = mod.units.length > 0 ? mod.units[0].id : '';
+          html += '<a href="study-guide.html#unit-' + firstUnitId + '" class="section-card searchable" style="text-decoration:none;">';
+          html += '<h3>' + getModuleBadgeHtml(mod.id) + ' ' + mod.title + '</h3>';
+          html += '<p>' + mod.units.length + ' units</p>';
+          html += '</a>';
+        });
+      });
+      treeContainer.innerHTML = html;
+    })();
+  </script>
 </body>
 </html>
