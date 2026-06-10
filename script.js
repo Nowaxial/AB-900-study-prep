@@ -350,8 +350,52 @@ function renderUnit(unitId, containerId) {
   }
 
   container.innerHTML = html;
+  appendUnitNav(unitId, container);
   updateTreeSelection(unitId);
   window.scrollTo(0, 0);
+}
+
+function getAllUnitIds() {
+  var ids = [];
+  if (typeof studyGuideData !== 'undefined' && studyGuideData) {
+    studyGuideData.preamble.forEach(function(p) { ids.push(p.id); });
+    studyGuideData.learningPaths.forEach(function(lp) {
+      lp.modules.forEach(function(mod) {
+        mod.units.forEach(function(unit) {
+          if (!unit.unitId.match(/assessment|summary/)) ids.push(unit.unitId);
+        });
+      });
+    });
+  }
+  return ids;
+}
+
+function appendUnitNav(unitId, container) {
+  var ids = getAllUnitIds();
+  var idx = ids.indexOf(unitId);
+  if (idx === -1) return;
+  var prevId = idx > 0 ? ids[idx - 1] : null;
+  var nextId = idx < ids.length - 1 ? ids[idx + 1] : null;
+  var nav = document.createElement('div');
+  nav.style.cssText = 'display:flex;justify-content:space-between;margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);';
+  if (prevId) {
+    var prevBtn = document.createElement('span');
+    prevBtn.innerHTML = '&larr; Previous';
+    prevBtn.style.cssText = 'cursor:pointer;color:var(--primary);font-size:0.9rem;';
+    prevBtn.onclick = function() { if (window.loadUnit) window.loadUnit(prevId); };
+    nav.appendChild(prevBtn);
+  } else {
+    var spacer = document.createElement('span');
+    nav.appendChild(spacer);
+  }
+  if (nextId) {
+    var nextBtn = document.createElement('span');
+    nextBtn.innerHTML = 'Next &rarr;';
+    nextBtn.style.cssText = 'cursor:pointer;color:var(--primary);font-weight:600;font-size:0.9rem;';
+    nextBtn.onclick = function() { if (window.loadUnit) window.loadUnit(nextId); };
+    nav.appendChild(nextBtn);
+  }
+  container.appendChild(nav);
 }
 
 function updateTreeSelection(unitId) {
