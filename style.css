@@ -115,6 +115,39 @@ tr:hover { background: var(--primary-light); }
 .key-concepts-box h3 { margin-top: 0; font-size: 1rem; }
 .concept-tag { display: inline-block; background: var(--primary); color: #fff; padding: 0.1rem 0.5rem; border-radius: 12px; font-size: 0.75rem; margin: 0.15rem; white-space: nowrap; }
 
+/* Tree Nav Sidebar */
+.study-guide-layout { display: flex; gap: 1.5rem; align-items: flex-start; }
+.tree-sidebar { width: 280px; flex-shrink: 0; position: sticky; top: 4.5rem; max-height: calc(100vh - 5.5rem); overflow-y: auto; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.5rem 0; }
+.tree-nav { font-size: 0.82rem; }
+.tree-section + .tree-section { border-top: 1px solid var(--border); margin-top: 0.25rem; padding-top: 0.25rem; }
+.tree-section-title { padding: 0.45rem 0.75rem; cursor: pointer; font-weight: 600; color: var(--primary); display: flex; align-items: center; gap: 0.35rem; user-select: none; }
+.tree-section-title::before { content: "▾"; font-size: 0.65rem; transition: transform 0.2s; }
+.tree-section-title.collapsed::before { content: "▸"; }
+.tree-section-title:hover { background: var(--primary-light); }
+.tree-module-title { padding: 0.35rem 0.75rem 0.35rem 1.5rem; cursor: pointer; font-weight: 500; color: var(--text); display: flex; align-items: center; gap: 0.3rem; user-select: none; font-size: 0.8rem; }
+.tree-module-title::before { content: "▾"; font-size: 0.6rem; transition: transform 0.2s; }
+.tree-module-title.collapsed::before { content: "▸"; }
+.tree-module-title:hover { background: var(--primary-light); }
+.tree-children { overflow: hidden; transition: max-height 0.25s ease; max-height: 2000px; }
+.tree-children.collapsed { max-height: 0; }
+.tree-item { padding: 0.3rem 0.75rem 0.3rem 2.25rem; cursor: pointer; color: var(--text-secondary); border-radius: 4px; margin: 0 0.25rem; transition: background 0.1s, color 0.1s; font-size: 0.8rem; line-height: 1.3; word-break: break-word; }
+.tree-item:hover { background: var(--primary-light); color: var(--primary); }
+.tree-item.selected { background: var(--primary); color: #fff; font-weight: 500; }
+
+/* Content area */
+.content-area { flex: 1; min-width: 0; }
+.content-area h2 { margin-top: 0; }
+.content-area .breadcrumb { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+.content-area .exam-tips { margin-top: 1.5rem; padding: 1rem; background: rgba(245,158,11,0.1); border: 1px solid var(--accent-orange); border-radius: var(--radius); }
+.content-area .exam-tips h3 { margin-top: 0; font-size: 1rem; color: var(--accent-orange); }
+.content-area .key-concepts { margin-top: 1rem; padding: 1rem; background: var(--primary-light); border: 1px solid var(--primary); border-radius: var(--radius); }
+.content-area .key-concepts h3 { margin-top: 0; font-size: 1rem; color: var(--primary); }
+.search-no-results { text-align: center; padding: 2rem; color: var(--text-secondary); font-size: 1.1rem; }
+
+/* Sidebar toggle for mobile */
+.sidebar-toggle { display: none; background: none; border: 1px solid var(--border); border-radius: var(--radius); padding: 0.35rem 0.55rem; cursor: pointer; font-size: 0.9rem; color: var(--text); margin-bottom: 0.75rem; }
+.sidebar-toggle:hover { background: var(--primary-light); }
+
 /* Flashcards */
 .flashcard-wrap { max-width: 700px; margin: 0 auto; }
 .flashcard-question { font-size: 1.1rem; font-weight: 600; margin-bottom: 1.25rem; line-height: 1.5; }
@@ -196,6 +229,9 @@ tr:hover { background: var(--primary-light); }
   .section-grid { grid-template-columns: 1fr; }
   .flashcard-wrap { margin: 0; }
   pre { font-size: 0.7rem; }
+  .study-guide-layout { flex-direction: column; }
+  .tree-sidebar { width: 100%; position: static; max-height: none; }
+  .tree-sidebar.collapsed .tree-children { display: none; }
 }
 
 @media (max-width: 428px) {

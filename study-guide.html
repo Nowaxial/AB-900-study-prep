@@ -28,129 +28,20 @@
 
   <div class="container">
     <h1>Study Guide</h1>
-    <p class="searchable">Complete study material for the AB-900 exam. Click any subsection to expand. Study priority: <strong>Domain 2</strong> (35&ndash;40%) is the largest.</p>
+    <p>Complete study material for the AB-900 exam. Use the navigation tree to browse by learning path, module, and unit.</p>
 
-    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.5rem;">
-      <a href="#domain1" class="theme-toggle" style="font-size:0.8rem;">Domain 1 (30&ndash;35%)</a>
-      <a href="#domain2" class="theme-toggle" style="font-size:0.8rem;">Domain 2 (35&ndash;40%)</a>
-      <a href="#domain3" class="theme-toggle" style="font-size:0.8rem;">Domain 3 (25&ndash;30%)</a>
-      <button class="theme-toggle" id="expandAll" style="font-size:0.8rem;">▼ Expand All</button>
-      <button class="theme-toggle" id="collapseAll" style="font-size:0.8rem;">▲ Collapse All</button>
+    <div class="study-guide-layout">
+      <aside class="tree-sidebar" id="tree-nav"></aside>
+      <main class="content-area" id="content-area"></main>
     </div>
-
-    <div id="guideContent"></div>
   </div>
 
+  <script src="data/modules.js"></script>
   <script src="data/study-guide.js"></script>
   <script>
-    const container = document.getElementById('guideContent');
-    const fragment = document.createDocumentFragment();
-
-    studyGuideSections.forEach(section => {
-      const sectionEl = document.createElement('div');
-      sectionEl.className = 'card searchable';
-      sectionEl.id = section.id;
-
-      const h2 = document.createElement('h2');
-      h2.className = 'section-header';
-      h2.textContent = section.title;
-      sectionEl.appendChild(h2);
-
-      section.subsections.forEach(sub => {
-        const wrapper = document.createElement('div');
-
-        const header = document.createElement('div');
-        header.className = 'collapsible-header';
-        header.setAttribute('role', 'button');
-        header.setAttribute('tabindex', '0');
-        header.setAttribute('aria-expanded', 'false');
-
-        const title = document.createElement('h3');
-        if (sub.id) title.id = sub.id;
-        title.textContent = sub.title;
-        header.appendChild(title);
-
-        const chevron = document.createElement('span');
-        chevron.className = 'chevron';
-        chevron.textContent = '▶';
-        header.appendChild(chevron);
-
-        const body = document.createElement('div');
-        body.className = 'collapsible-body';
-        body.innerHTML = sub.content;
-
-        header.addEventListener('click', () => {
-          const isOpen = body.classList.toggle('open');
-          header.setAttribute('aria-expanded', isOpen);
-          chevron.textContent = isOpen ? '▼' : '▶';
-        });
-        header.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            header.click();
-          }
-        });
-
-        wrapper.appendChild(header);
-        wrapper.appendChild(body);
-        sectionEl.appendChild(wrapper);
-      });
-
-      // Key concepts box if present
-      if (section.keyConcepts && section.keyConcepts.tags && section.keyConcepts.tags.length > 0) {
-        const box = document.createElement('div');
-        box.className = 'key-concepts-box';
-        const boxTitle = document.createElement('h3');
-        boxTitle.textContent = section.keyConcepts.title || 'Key Concepts';
-        box.appendChild(boxTitle);
-        section.keyConcepts.tags.forEach(tag => {
-          const span = document.createElement('span');
-          span.className = 'concept-tag';
-          span.textContent = tag;
-          box.appendChild(span);
-        });
-        sectionEl.appendChild(box);
-      }
-
-      fragment.appendChild(sectionEl);
-    });
-
-    container.appendChild(fragment);
-
-    window.pageSearch = function(q) {
-      document.querySelectorAll('.card.searchable').forEach(card => {
-        if (!q) { card.style.display = ''; return; }
-        const match = card.textContent.toLowerCase().includes(q);
-        card.style.display = match ? '' : 'none';
-        if (match) {
-          card.querySelectorAll('.collapsible-body').forEach(body => {
-            const isMatch = body.textContent.toLowerCase().includes(q);
-            body.classList.toggle('open', isMatch);
-            const chevron = body.previousElementSibling?.querySelector('.chevron');
-            if (chevron) chevron.textContent = isMatch ? '▼' : '▶';
-          });
-        }
-      });
-      document.querySelectorAll('.searchable:not(.card)').forEach(el => {
-        if (!q) { el.style.display = ''; return; }
-        el.style.display = el.textContent.toLowerCase().includes(q) ? '' : 'none';
-      });
-    };
-
-    // Expand / Collapse all
-    document.getElementById('expandAll').addEventListener('click', () => {
-      document.querySelectorAll('.collapsible-body').forEach(b => {
-        b.classList.add('open');
-        b.previousElementSibling.querySelector('.chevron').textContent = '▼';
-        b.previousElementSibling.setAttribute('aria-expanded', 'true');
-      });
-    });
-    document.getElementById('collapseAll').addEventListener('click', () => {
-      document.querySelectorAll('.collapsible-body').forEach(b => {
-        b.classList.remove('open');
-        b.previousElementSibling.querySelector('.chevron').textContent = '▶';
-        b.previousElementSibling.setAttribute('aria-expanded', 'false');
-      });
+    document.addEventListener('DOMContentLoaded', () => {
+      initTreeNav('tree-nav', 'exam-basics');
+      renderUnit('exam-basics');
     });
   </script>
   <script src="script.js"></script>

@@ -96,6 +96,13 @@ function initTreeNav(containerId, selectedUnitId) {
   html += '</div>';
   container.innerHTML = html;
 
+  // Collapse modules by default
+  container.querySelectorAll('.tree-module > .tree-children').forEach(el => {
+    el.classList.add('collapsed');
+    const title = el.previousElementSibling;
+    if (title) title.classList.add('collapsed');
+  });
+
   // Collapsible sections
   container.querySelectorAll('.tree-section-title, .tree-module-title').forEach(el => {
     el.addEventListener('click', () => {
