@@ -103,27 +103,35 @@
       categoryFilter.appendChild(opt);
     });
 
-    // Filter
-    categoryFilter.addEventListener('change', () => {
+    let searchQuery = '';
+
+    function applyFilters() {
       const cat = categoryFilter.value;
-      filteredCards = cat === 'all' ? [...flashcards] : flashcards.filter(c => c.category === cat);
-      if (shuffled) filteredCards.sort(() => 0.5 - Math.random());
+      let cards = cat === 'all' ? [...flashcards] : flashcards.filter(c => c.category === cat);
+      if (shuffled) cards.sort(() => 0.5 - Math.random());
+      if (searchQuery) {
+        cards = cards.filter(c =>
+          c.question.toLowerCase().includes(searchQuery) ||
+          c.answer.toLowerCase().includes(searchQuery) ||
+          c.category.toLowerCase().includes(searchQuery) ||
+          (c.reference && c.reference.toLowerCase().includes(searchQuery))
+        );
+      }
+      filteredCards = cards;
       currentIndex = 0;
       renderCard();
-    });
+    }
+
+    window.pageSearch = function(q) { searchQuery = q; applyFilters(); };
+
+    // Filter
+    categoryFilter.addEventListener('change', applyFilters);
 
     // Shuffle
     shuffleBtn.addEventListener('click', () => {
       shuffled = !shuffled;
       shuffleBtn.style.opacity = shuffled ? '1' : '0.6';
-      if (shuffled) {
-        filteredCards.sort(() => 0.5 - Math.random());
-      } else {
-        const cat = categoryFilter.value;
-        filteredCards = cat === 'all' ? [...flashcards] : flashcards.filter(c => c.category === cat);
-      }
-      currentIndex = 0;
-      renderCard();
+      applyFilters();
     });
 
     // Mode toggle

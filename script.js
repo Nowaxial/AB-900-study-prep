@@ -29,10 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       const q = e.target.value.toLowerCase().trim();
-      document.querySelectorAll('.searchable').forEach(el => {
-        if (!q) { el.style.display = ''; return; }
-        el.style.display = el.textContent.toLowerCase().includes(q) ? '' : 'none';
-      });
+      if (window.pageSearch) {
+        window.pageSearch(q);
+      } else {
+        document.querySelectorAll('.searchable').forEach(el => {
+          if (!q) { el.style.display = ''; return; }
+          el.style.display = el.textContent.toLowerCase().includes(q) ? '' : 'none';
+        });
+      }
     });
   }
 

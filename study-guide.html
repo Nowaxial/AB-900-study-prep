@@ -117,6 +117,26 @@
 
     container.appendChild(fragment);
 
+    window.pageSearch = function(q) {
+      document.querySelectorAll('.card.searchable').forEach(card => {
+        if (!q) { card.style.display = ''; return; }
+        const match = card.textContent.toLowerCase().includes(q);
+        card.style.display = match ? '' : 'none';
+        if (match) {
+          card.querySelectorAll('.collapsible-body').forEach(body => {
+            const isMatch = body.textContent.toLowerCase().includes(q);
+            body.classList.toggle('open', isMatch);
+            const chevron = body.previousElementSibling?.querySelector('.chevron');
+            if (chevron) chevron.textContent = isMatch ? '▼' : '▶';
+          });
+        }
+      });
+      document.querySelectorAll('.searchable:not(.card)').forEach(el => {
+        if (!q) { el.style.display = ''; return; }
+        el.style.display = el.textContent.toLowerCase().includes(q) ? '' : 'none';
+      });
+    };
+
     // Expand / Collapse all
     document.getElementById('expandAll').addEventListener('click', () => {
       document.querySelectorAll('.collapsible-body').forEach(b => {
