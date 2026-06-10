@@ -250,6 +250,31 @@ const keyPointerCategories = [
     ]
   },
   {
+    title: "Agent creation &amp; management",
+    id: "agent-creation-management",
+    pointers: [
+      "Two creation paths: Copilot Studio (copilotstudio.microsoft.com) or inline in M365 Copilot Chat.",
+      "Copilot Studio: Describe mode (NL description) → Configure mode (icon, instructions, knowledge, actions, topics).",
+      "SharePoint agent = fastest path to a governed agent: site-scoped, permissions inherited, no Copilot Studio required.",
+      "Up to 20 knowledge sources per agent; each file up to 512 MB.",
+      "Test in Copilot Studio test pane; use Trace to view conversation transcript + reasoning steps.",
+      "Copilot Studio supports versioning — revert to a previous version at any time.",
+      "Agent sharing: specific users/groups (Entra ID), everyone in org, or external (public website).",
+      "Security roles in Copilot Studio: User (chat), Editor (modify), Owner (full control).",
+      "Approval workflow: admin center → Copilot → Agent inventory shows pending agents for approval.",
+      "Governance: DLP for connectors, Managed environment, Sensitivity Label on agent data, Customer Lockbox.",
+      "Agent lifecycle: Draft → Test → Publish → Operate → Retire.",
+      "Monitor in M365 admin center → Copilot → Agent inventory (usage, owner, last activity, status).",
+      "Copilot Studio analytics: per-agent success rate, escalation rate, session transcripts.",
+      "Power Platform admin center: Dev/Test/Production environments, operational insights (errors, throttling).",
+      "Purview DSPM for AI: detects risky prompts and sensitive data exposure involving agents.",
+      "Autonomous agents require a trigger (event/schedule) and run hands-off without a user in the loop.",
+      "Entra Agent ID (preview) = first-class identity for agents in Entra for governance, audit, and permissions.",
+      "Prefer APIs and MCP over computer-use / GUI scripting for agent actions — UIs change, APIs are stable.",
+      "Pre-built agents: Researcher (deep research), Analyst (data analysis), Writing Coach, Prompt Coach."
+    ]
+  },
+  {
     title: "Numbers to remember",
     id: "numbers",
     pointers: [
