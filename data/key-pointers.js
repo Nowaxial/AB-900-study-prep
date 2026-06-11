@@ -11,7 +11,23 @@ const keyPointerCategories = [
       "Passkeys are still 2 factors: device (have) + PIN/biometric (know/are).",
       "Phishing-resistant methods: Passkeys (FIDO2), Windows Hello for Business, certificate-based &mdash; mandatory for admins.",
       "Passwords alone = banned for admins; least-preferred method overall.",
-      "Entra ID = identity plane of M365; every workload uses it."
+      "Entra ID = identity plane of M365; every workload uses it.",
+      "<table style='width:100%;border-collapse:collapse;font-size:0.8rem;margin:0.25rem 0;'><thead><tr style='background:var(--primary-light,#f0f4ff);'><th style='padding:0.35rem 0.5rem;text-align:left;border:1px solid var(--border);'>Risk type</th><th style='padding:0.35rem 0.5rem;text-align:left;border:1px solid var(--border);'>Description</th></tr></thead><tbody>"
+      + "<tr><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'><strong>Anonymous IP</strong></td><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'>Sign-in from anonymous IP (Tor, anonymizer VPN)</td></tr>"
+      + "<tr><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'><strong>Atypical travel</strong></td><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'>Sign-in from atypical location based on recent sign-ins</td></tr>"
+      + "<tr><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'><strong>Malicious IP</strong></td><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'>Sign-in from known malicious IP address</td></tr>"
+      + "<tr><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'><strong>Unfamiliar sign-in properties</strong></td><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'>Sign-in with properties not seen recently for this user</td></tr>"
+      + "<tr><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'><strong>Leaked credentials</strong></td><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'>User's valid credentials have been leaked</td></tr>"
+      + "<tr><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'><strong>Password spray</strong></td><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'>Multiple usernames attacked using common passwords</td></tr>"
+      + "<tr><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'><strong>Entra threat intelligence</strong></td><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'>Known attack pattern from Microsoft threat intel sources</td></tr>"
+      + "<tr><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'><strong>Anomalous token</strong></td><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'>Unusual token characteristics (lifetime, replayed from unfamiliar location)</td></tr>"
+      + "<tr><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'><strong>Token issuer anomaly</strong></td><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'>SAML token issuer potentially compromised</td></tr>"
+      + "<tr><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'><strong>Suspicious browser</strong></td><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'>Anomalous sign-in across multiple tenants from same browser</td></tr>"
+      + "<tr><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'><strong>Verified threat actor IP</strong></td><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'>Sign-in from IP associated with verified threat actors</td></tr>"
+      + "<tr><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'><strong>New country</strong></td><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'>Discovered by Microsoft Defender for Cloud Apps (MDCA)</td></tr>"
+      + "<tr><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'><strong>Activity from anonymous IP</strong></td><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'>Discovered by MDCA</td></tr>"
+      + "<tr><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'><strong>Suspicious inbox forwarding</strong></td><td style='padding:0.3rem 0.5rem;border:1px solid var(--border);'>Discovered by MDCA</td></tr>"
+      + "</tbody></table>"
     ]
   },
   {
