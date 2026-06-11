@@ -297,6 +297,17 @@
     explanation: null
   },
   {
+    id: 151,
+    category: "Conditional Access",
+    moduleId: "m1",
+    unitId: "m1-u5",
+    question: "Which Entra ID license tiers support Conditional Access?",
+    answer: "Free Entra ID / Free Office 365 = no CA. Entra ID P1 / M365 E3+ = CA with standard rules (users, groups, location, device, app). Entra ID P2 = adds risk-based conditions (Risky sign-in, Risky users) from Identity Protection.",
+    reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
+    learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
+    explanation: null
+  },
+  {
     id: 31,
     category: "RBAC, PIM, JEA, JIT",
     moduleId: "m1",

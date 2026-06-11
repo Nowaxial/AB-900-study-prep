@@ -233,6 +233,7 @@ const studyGuideData = {
   <li><strong>Conditions</strong> \u2014 user risk, <strong>sign-in risk</strong> (from Identity Protection), insider risk, device platforms, locations, client apps, authentication flows.</li>
   <li><strong>Session controls</strong> \u2014 sign-in frequency, persistent browser session, <strong>continuous access evaluation</strong>, conditional access app control (Defender for Cloud Apps), restriction of downloads / printing / clipboard for unmanaged devices.</li>
   <li><strong>Authentication strengths</strong> \u2014 pre-built combos ("Multifactor authentication strength", "Phishing-resistant MFA strength") and custom (Windows Hello for Business, FIDO2/passkey, certificate-based). Required for high-value apps.</li>
+  <li><strong>License requirements for CA</strong> \u2014 Free Entra ID / Free Office 365 = <em>no CA</em>. Entra ID P1 / M365 E3+ = <em>CA with standard rules</em> (users, groups, location, device, app). Entra ID P2 = <em>adds risk-based conditions</em> (Risky sign-in, Risky users) from Identity Protection.</li>
   <li><strong>Global Secure Access client</strong> \u2014 Microsoft's Security Service Edge (SSE) client that integrates with Conditional Access to govern access to private resources and internet destinations.</li>
   <li><strong>Common policies you'll see in exam scenarios</strong>:
     <ul>
@@ -416,6 +417,7 @@ const studyGuideData = {
   <li><strong>Conditions</strong> \u2014 user risk, <strong>sign-in risk</strong> (from Identity Protection), insider risk, device platforms, locations, client apps, authentication flows.</li>
   <li><strong>Session controls</strong> \u2014 sign-in frequency, persistent browser session, <strong>continuous access evaluation</strong>, conditional access app control (Defender for Cloud Apps), restriction of downloads / printing / clipboard for unmanaged devices.</li>
   <li><strong>Authentication strengths</strong> \u2014 pre-built combos ("Multifactor authentication strength", "Phishing-resistant MFA strength") and custom (Windows Hello for Business, FIDO2/passkey, certificate-based). Required for high-value apps.</li>
+  <li><strong>License requirements for CA</strong> \u2014 Free Entra ID / Free Office 365 = <em>no CA</em>. Entra ID P1 / M365 E3+ = <em>CA with standard rules</em> (users, groups, location, device, app). Entra ID P2 = <em>adds risk-based conditions</em> (Risky sign-in, Risky users) from Identity Protection.</li>
   <li><strong>Global Secure Access client</strong> \u2014 Microsoft's Security Service Edge (SSE) client that integrates with Conditional Access to govern access to private resources and internet destinations.</li>
   <li><strong>Common policies you'll see in exam scenarios</strong>:
     <ul>

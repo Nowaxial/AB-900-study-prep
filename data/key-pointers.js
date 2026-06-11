@@ -90,7 +90,11 @@ const keyPointerCategories = [
       "Authentication strengths: built-in (Multifactor, Phishing-resistant MFA) and custom (Hello, FIDO2, certificate).",
       "Global Secure Access client = Microsoft SSE for private/internet resources.",
       "Common policies: MFA for external &middot; block unmanaged devices &middot; block legacy auth &middot; restrict guests &middot; enforce Terms of Use.",
-      "What If tool = test a CA policy before enabling."
+      "What If tool = test a CA policy before enabling.",
+      "<strong>License requirements:</strong>",
+      "&bull; <strong>Free Entra ID / Free Office 365</strong> \u2014 No Conditional Access at all.",
+      "&bull; <strong>Entra ID P1 (or M365 E3+)</strong> \u2014 Conditional Access with standard rules (users, groups, location, device platform, client app).",
+      "&bull; <strong>Entra ID P2</strong> \u2014 Conditional Access + risk-based conditions (Risky sign-in, Risky users, risk-based policy options from Identity Protection)."
     ]
   },
   {
