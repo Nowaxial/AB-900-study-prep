@@ -147,12 +147,12 @@ function getDomainForModule(moduleId) {
 function getLearningPathForModule(moduleId) { return getDomainForModule(moduleId); }
 
 const moduleBadgeColors = {
-  m1: '#4a90d9',
-  m2: '#7c4dff',
-  m3: '#e67e22',
-  m4: '#2ecc71',
-  m5: '#e74c3c',
-  m6: '#9b59b6'
+  m1: '#3b82f6',
+  m2: '#8b5cf6',
+  m3: '#d97706',
+  m4: '#16a34a',
+  m5: '#dc2626',
+  m6: '#0891b2'
 };
 
 function getModuleBadgeHtml(moduleId) {

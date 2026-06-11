@@ -400,7 +400,7 @@ function appendUnitNav(unitId, container) {
   if (prevId) {
     var prevBtn = document.createElement('span');
     prevBtn.innerHTML = '&larr; Previous';
-    prevBtn.style.cssText = 'cursor:pointer;color:var(--primary);font-size:0.9rem;';
+    prevBtn.style.cssText = 'cursor:pointer;color:var(--accent);font-size:0.9rem;';
     prevBtn.onclick = function() { if (window.loadUnit) window.loadUnit(prevId); };
     nav.appendChild(prevBtn);
   } else {

@@ -90,13 +90,13 @@
       });
     });
 
-    var domainAccentColors = { d1: '#4a90d9', d2: '#e67e22', d3: '#2ecc71' };
+    var domainAccentColors = { d1: '#3b82f6', d2: '#d97706', d3: '#16a34a' };
 
     keyPointerCategories.forEach(function(cat) {
       var modId = getPointerModuleId(cat.id);
       var dom = null;
       if (modId) dom = getDomainForModule(modId);
-      var accent = (dom && domainAccentColors[dom.id]) || '#2563eb';
+      var accent = (dom && domainAccentColors[dom.id]) || '#3b82f6';
 
       var group = document.createElement('div');
       group.className = 'key-pointer-group searchable';

@@ -43,12 +43,12 @@
   <script>
     (function() {
       var container = document.getElementById('conceptsContent');
-      var domainColors = { d1: '#4a90d9', d2: '#e67e22', d3: '#2ecc71' };
+      var domainColors = { d1: '#3b82f6', d2: '#d97706', d3: '#16a34a' };
       var domainIcons = { d1: '\uD83D\uDD10', d2: '\uD83D\uDEE1\uFE0F', d3: '\uD83E\uDD16' };
       var html = '';
 
       keyConceptsByDomain.forEach(function(d) {
-        var color = domainColors[d.domain] || '#2563eb';
+        var color = domainColors[d.domain] || '#3b82f6';
         html += '<div class="concept-domain" id="' + d.domain + '" data-domain="' + d.domain + '">';
         html += '<div class="concept-domain-header" onclick="toggleDomain(this)">';
         html += '<h2 style="border-left:3px solid ' + color + ';padding-left:0.6rem;">' + domainIcons[d.domain] + ' ' + d.title + ' <span class="weight-badge">' + d.concepts.length + ' concepts</span></h2>';

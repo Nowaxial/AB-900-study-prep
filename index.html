@@ -30,12 +30,14 @@
 
   <main>
     <section class="hero">
-      <h1>AB-900 Study Hub</h1>
-      <p class="hero-sub">Microsoft 365 Copilot &amp; Agent Administration <span style="opacity:0.5;">Fundamentals</span></p>
-      <div class="hero-tags">
-        <span class="tag tag-blue">Passing score: 700</span>
-        <span class="tag tag-orange">MCQ &middot; Multi-select &middot; Scenario &middot; Drag &amp; drop</span>
-        <span class="tag tag-green">No labs, no case studies</span>
+      <div class="hero-card">
+        <h1>AB-900 Study Hub</h1>
+        <p class="hero-sub">Microsoft 365 Copilot &amp; Agent Administration <span style="opacity:0.5;">Fundamentals</span></p>
+        <div class="hero-tags">
+          <span class="tag tag-blue">Passing score: 700</span>
+          <span class="tag tag-orange">MCQ &middot; Multi-select &middot; Scenario &middot; Drag &amp; drop</span>
+          <span class="tag tag-green">No labs, no case studies</span>
+        </div>
       </div>
     </section>
 
@@ -101,7 +103,7 @@
     (function() {
       const domainGrid = document.getElementById('domainGrid');
       domainGrid.innerHTML = examDomains.map(function(d, dIdx) {
-        var colors = ['#4a90d9', '#e67e22', '#2ecc71'];
+        var colors = ['#3b82f6', '#d97706', '#16a34a'];
         var icons = ['🔐', '🛡️', '🤖'];
         return '<div class="domain-card" style="border-top:4px solid ' + colors[dIdx] + ';">' +
           '<div class="domain-icon">' + icons[dIdx] + '</div>' +
@@ -115,7 +117,7 @@
 
       var treeContainer = document.getElementById('moduleTree');
       treeContainer.innerHTML = examDomains.map(function(d, dIdx) {
-        var colors = ['#4a90d9', '#e67e22', '#2ecc71'];
+        var colors = ['#3b82f6', '#d97706', '#16a34a'];
         return '<div class="domain-module-group">' +
           '<h4 class="domain-module-header"><span style="color:' + colors[dIdx] + ';">Domain ' + (dIdx + 1) + '</span> <span class="weight-badge">' + d.weight + '</span></h4>' +
           d.modules.map(function(mod) {
