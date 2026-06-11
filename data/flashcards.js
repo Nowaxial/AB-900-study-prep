@@ -572,6 +572,17 @@
     explanation: null
   },
   {
+    id: 152,
+    category: "Defender XDR",
+    moduleId: "m1",
+    unitId: "m1-u4",
+    question: "What is Conditional Access App Control and how does it work?",
+    answer: "A reverse proxy in Defender for Cloud Apps integrated with Entra CA. Enforces session policies: block download/copy/print of sensitive docs, protect on download (AIP label), block upload of unlabeled files, monitor risky sessions, block access or custom activities (e.g. scan Teams/Slack messages).",
+    reference: "Learning Path 1, Module 1 — Explore M365 security foundations",
+    learnLink: "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/",
+    explanation: null
+  },
+  {
     id: 55,
     category: "Defender XDR",
     moduleId: "m1",

@@ -330,7 +330,7 @@ const studyGuideData = {
 <h4>Defender for Cloud Apps (CASB)</h4>
 <ul>
   <li>Discovers <strong>shadow IT</strong> (which SaaS apps employees are actually using).</li>
-  <li><strong>Session policies</strong> \u2014 control what users can do inside a sanctioned app (block downloads, monitor activity).</li>
+  <li><strong>Session policies</strong> \u2014 Conditional Access App Control via reverse proxy: block download/cut/copy/print of sensitive docs, protect on download (AIP labeling), block upload of unlabeled files, monitor risky sessions, block custom activities like scanning Teams/Slack messages.</li>
   <li>App governance \u2014 sanction / unsanction apps tenant-wide.</li>
 </ul>
 <h4>Microsoft Sentinel</h4>
@@ -514,7 +514,7 @@ const studyGuideData = {
 <h4>Defender for Cloud Apps (CASB)</h4>
 <ul>
   <li>Discovers <strong>shadow IT</strong> (which SaaS apps employees are actually using).</li>
-  <li><strong>Session policies</strong> \u2014 control what users can do inside a sanctioned app (block downloads, monitor activity).</li>
+  <li><strong>Session policies</strong> \u2014 Conditional Access App Control via reverse proxy: block download/cut/copy/print of sensitive docs, protect on download (AIP labeling), block upload of unlabeled files, monitor risky sessions, block custom activities like scanning Teams/Slack messages.</li>
   <li>App governance \u2014 sanction / unsanction apps tenant-wide.</li>
 </ul>
 <h4>Microsoft Sentinel</h4>
@@ -584,7 +584,7 @@ const studyGuideData = {
 <h4>Defender for Cloud Apps (CASB)</h4>
 <ul>
   <li>Discovers <strong>shadow IT</strong> (which SaaS apps employees are actually using).</li>
-  <li><strong>Session policies</strong> — control what users can do inside a sanctioned app (block downloads, monitor activity).</li>
+  <li><strong>Session policies</strong> — Conditional Access App Control via reverse proxy: block download/cut/copy/print of sensitive docs, protect on download (AIP labeling), block upload of unlabeled files, monitor risky sessions, block custom activities like scanning Teams/Slack messages.</li>
   <li>App governance — sanction / unsanction apps tenant-wide.</li>
 </ul>
 <h4>Microsoft Sentinel</h4>

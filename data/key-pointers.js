@@ -142,6 +142,13 @@ const keyPointerCategories = [
       "Threat Analytics = reports with MITRE ATT&amp;CK mappings.",
       "Defender for Endpoint: EDR, AV, attack surface reduction, automated investigations, attack path tracking, device isolation.",
       "Defender for Cloud Apps (CASB): shadow IT discovery, session policies, app governance.",
+      "<strong>Conditional Access App Control</strong> \u2014 reverse proxy architecture integrated with Entra CA:",
+      "&bull; <strong>Prevent data exfiltration</strong> \u2014 block download, cut, copy, print of sensitive docs on unmanaged devices.",
+      "&bull; <strong>Protect on download</strong> \u2014 instead of blocking, require AIP labeling + protection on download.",
+      "&bull; <strong>Prevent upload of unlabeled files</strong> \u2014 block upload until the user classifies the content.",
+      "&bull; <strong>Monitor sessions</strong> \u2014 log risky user activity within apps for later analysis.",
+      "&bull; <strong>Block access</strong> \u2014 granularly block specific apps/users based on risk factors (e.g. client certificates).",
+      "&bull; <strong>Block custom activities</strong> \u2014 scan messages in Teams/Slack for sensitive content in real time.",
       "Microsoft Sentinel = cloud SIEM + SOAR; KQL hunting; Logic Apps playbooks.",
       "Defender for Cloud = posture across Azure, AWS, GCP."
     ]
