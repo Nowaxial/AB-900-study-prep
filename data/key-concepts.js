@@ -33,6 +33,7 @@ const keyConceptsByDomain = [
       { term: "SharePoint Online", explanation: "Content management platform. Sites with visitors (read), members (edit), owners (full control). Document libraries, co-editing, permission inheritance." },
       { term: "OneDrive", explanation: "Personal document storage. Backed by SharePoint storage. Used for private file storage and sync." },
       { term: "Microsoft Graph", explanation: "Unified API for all M365 data. Used by PowerShell SDK, Copilot, and all admin tools." },
+      { term: "Admin Center Big Picture", explanation: "Entra = identity & security. Defender = threat protection. Purview = compliance. Teams/Exchange/SharePoint = data & collaboration. Copilot Studio + Power Platform = agents & low-code. M365 admin center = tenant-wide settings, billing, adoption. This mapping is frequently tested on AB-900." },
       { term: "Microsoft 365 admin center", explanation: "Main console for M365 administration. Users, groups, licenses, roles, services, reports, health." },
       { term: "PowerShell for M365", explanation: "Four modules: Exchange Online, Teams, SharePoint Online Management Shell, Microsoft Graph PowerShell SDK (most modern). Used for automation and bulk operations." },
       { term: "Hybrid identity", explanation: "Users synced from on-prem AD to Entra ID via Entra Connect or Cloud Sync. The source of truth is on-prem." },

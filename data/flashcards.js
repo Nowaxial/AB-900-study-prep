@@ -759,6 +759,17 @@
     explanation: null
   },
   {
+    id: 153,
+    category: "Microsoft 365 admin center",
+    moduleId: "m2",
+    unitId: "m2-u3",
+    question: "Map each admin center to its primary role: Which admin center handles identity? Security? Compliance? Collaboration? Agents? Tenant-wide settings?",
+    answer: "Identity → Entra. Security → Defender. Compliance → Purview. Collaboration → Teams/Exchange/SharePoint admin centers. Agents → Power Platform admin center + Copilot Studio. Tenant-wide → M365 admin center.",
+    reference: "Learning Path 1, Module 2 — Intro to M365 core services",
+    learnLink: "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-core-services-admin-control/",
+    explanation: "AB-900 exam tip: many questions test WHERE to do something, not just HOW. Know the 'right tool for the right job' mapping."
+  },
+  {
     id: 71,
     category: "Microsoft Purview",
     moduleId: "m3",

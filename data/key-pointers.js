@@ -187,6 +187,19 @@ const keyPointerCategories = [
     ]
   },
   {
+    title: "Admin Center &mdash; Big Picture",
+    id: "admin-center-big-picture",
+    pointers: [
+      "<strong>Right tool for the right job</strong> \u2014 exam tip: AB-900 tests <em>where</em> to do something. Know which admin center handles what.",
+      "<strong>People &amp; Identities</strong> \u2192 <strong>Entra admin center</strong> (users, groups, MFA, CA, PIM, identity security).",
+      "<strong>Data</strong> \u2192 <strong>Exchange, SharePoint, Teams admin centers</strong> (mail, files, collaboration, policies).",
+      "<strong>Security</strong> \u2192 <strong>Microsoft 365 Defender</strong> (Secure Score, alerts, threat hunting, attack simulation).",
+      "<strong>Compliance</strong> \u2192 <strong>Microsoft Purview</strong> (DLP, sensitivity labels, eDiscovery, IRM, audit, compliance manager).",
+      "<strong>Agents &amp; Low-Code</strong> \u2192 <strong>Copilot Studio + Power Platform admin center</strong> (build agents, environments, DLP for connectors).",
+      "<strong>Tenant-wide</strong> \u2192 <strong>M365 admin center</strong> (users, licenses, billing, service health, reports, Copilot adoption)."
+    ]
+  },
+  {
     title: "Microsoft Purview",
     id: "microsoft-purview",
     pointers: [

@@ -1004,6 +1004,15 @@ const studyGuideData = {
     <tr><td><strong>Copilot Studio</strong></td><td>copilotstudio.microsoft.com</td><td>Build custom agents and Copilots</td></tr>
   </tbody>
 </table>
+<h4>The Big Picture \u2014 how it all fits together</h4>
+<ul>
+  <li><strong>People &amp; Identities</strong> \u2014 managed in <strong>Entra admin center</strong> (users, groups, MFA, CA, PIM). Synced from on-prem via Entra Connect/Cloud Sync.</li>
+  <li><strong>Data</strong> \u2014 stored in <strong>Microsoft 365</strong> (SharePoint, OneDrive, Exchange, Teams). Managed via Exchange, SharePoint, and Teams admin centers.</li>
+  <li><strong>Security &amp; Compliance</strong> \u2014 protected by <strong>Microsoft 365 Defender</strong> (Secure Score, alerts, threat hunting) and <strong>Microsoft Purview</strong> (DLP, sensitivity labels, eDiscovery, IRM).</li>
+  <li><strong>Copilot &amp; Agents</strong> \u2014 built and managed in <strong>Copilot Studio</strong> + <strong>Power Platform admin center</strong> (environments, DLP for connectors).</li>
+  <li><strong>Insights &amp; Adoption</strong> \u2014 monitored in <strong>M365 admin center</strong> (Copilot dashboard, adoption reports, agent inventory).</li>
+</ul>
+<p><strong>Exam Tip (AB-900):</strong> Know which admin center or tool to use for each scenario. Many exam questions test <em>where</em> to do something, not just <em>how</em>. Think: identity \u2192 Entra, security \u2192 Defender, compliance \u2192 Purview, collaboration \u2192 Teams admin center, agents \u2192 Power Platform admin center, tenant-wide settings \u2192 M365 admin center.</p>
 <h4>PowerShell modules for administration</h4>
 <ul>
   <li><strong>Exchange Online PowerShell</strong> — mailbox management, mail flow rules, anti-spam policies</li>
@@ -1238,6 +1247,7 @@ const studyGuideData = {
   <li><strong>License plans</strong>: Business (up to 300 users, no Purview), E3 (full productivity + core security), E5 (adds full Purview, Defender Plan 2, eDiscovery Premium). Copilot is a $30/user/month add-on requiring E3/Business Premium baseline.</li>
   <li><strong>M365 admin center</strong> (admin.microsoft.com) handles users, groups, billing, service health, message center, reports, roles, and settings. Service Health monitors incidents; Message Center communicates planned changes.</li>
   <li><strong>Specialized admin centers</strong>: Entra (entra.microsoft.com), Exchange (admin.exchange.microsoft.com), SharePoint (admin.microsoft.com/sharepoint), Teams (admin.teams.microsoft.com), Defender (security.microsoft.com), Purview (purview.microsoft.com).</li>
+  <li><strong>Exam Tip \u2014 Right tool for the job</strong>: Many AB-900 questions test <em>where</em> to do something. Identity &rarr; Entra, Security &rarr; Defender, Compliance &rarr; Purview, Collaboration &rarr; Teams/Exchange/SP admin centers, Agents &rarr; Power Platform admin center + Copilot Studio, Tenant-wide &rarr; M365 admin center.</li>
   <li><strong>Exchange Online</strong> manages mailboxes (user, shared, resource, group), mail flow (connectors, accepted domains, transport rules), and anti-spam/anti-malware via Defender for Office 365. Shared mailboxes under 50 GB need no license.</li>
   <li><strong>SharePoint Online</strong>: communication and team sites, hub sites, document libraries with versioning, permission levels (Full Control through Read), sharing settings (Anyone to Only org), file storage limits (1 TB + 10 GB/licensed user). SharePoint Advanced Management adds DAG reports, site ownership policies, and Restricted SharePoint Search.</li>
   <li><strong>Teams</strong>: built on M365 Groups; channel types (Standard, Private, Shared); policies for messaging, meetings, calling, apps. Guest access via Entra B2B. Files in channels stored in SharePoint, files in private chats in OneDrive.</li>
